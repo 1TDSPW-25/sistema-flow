@@ -24,12 +24,13 @@ body{
                 @apply flex gap-5;
                 & a{
                     @apply text-black dark:text-white hover:underline;
+
                 }
             }
         }
 
         & main{
-            @apply bg-amber-50 h-[60vh] w-[100vw];
+            @apply bg-amber-50 h-[60vh] w-[100vw] overflow-auto;
         }
 
         & footer{
@@ -37,4 +38,24 @@ body{
         }
 
     }
+
+    .tblProdutos{
+        @apply w-[90%] mx-auto my-5 border-2 border-black bg-white text-black;
+        & th, td{
+            @apply border-2 border-black p-2;
+
+            & a{
+                @apply text-black hover:underline;
+
+                & svg{
+                    @apply block mx-auto text-2xl hover:text-amber-300;
+                }
+
+            }
+        }
+        & th{
+            @apply bg-amber-300;
+        }
+    }
+
 }

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import type { ProdutoType } from "../../types/produto";
+import { CiEdit as Editar } from "react-icons/ci";
 
 export default function Produtos(){
     const [produtos,setProdutos] = useState<ProdutoType[]>([]);
@@ -23,7 +24,7 @@ export default function Produtos(){
     return(
         <main>
             <h1>Produtos</h1>
-            <table>
+            <table className="tblProdutos">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -38,7 +39,7 @@ export default function Produtos(){
                         <td>{produto.id}</td>
                         <td>{produto.nome}</td>
                         <td>{produto.preco}</td>
-                        <td><Link to={`/editar/produto/${produto.id}`}>Editar</Link></td>
+                        <td><Link to={`/editar/produto/${produto.id}`}><Editar/></Link></td>
                     </tr>
                  ))}
                 </tbody>
