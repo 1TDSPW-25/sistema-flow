@@ -8,7 +8,6 @@ export default function EditarProduto() {
 
     const navigate = useNavigate();
 
-
     const [produto, setProduto] = useState<ProdutoType>({
         id: 0,
         nome: '',
