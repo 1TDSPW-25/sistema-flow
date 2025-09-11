@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+:root{
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+@layer{
+    
+    .container{
+        @apply h-screen w-full flex flex-col;
+
+        & header{
+            @apply bg-blue-500 h-[20vh] w-[100vw];
+        }
+
+        & main{
+            @apply bg-amber-50 h-[60vh] w-[100vw];
+        }
+
+        & footer{
+            @apply bg-blue-500 h-[20vh] w-[100vw];
+        }
+
+    }
+}

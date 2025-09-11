@@ -1,0 +1,13 @@
+
+export const listaProdutos = [
+    {id:1,nome:'Teclado',preco:150},
+    {id:2,nome:'Mouse',preco:100},
+    {id:3,nome:'Monitor',preco:500},
+    {id:4,nome:'Gabinete',preco:200},
+    {id:5,nome:'Headset',preco:300},
+    {id:6,nome:'Mousepad',preco:50},
+    {id:7,nome:'Cadeira',preco:1000},
+    {id:8,nome:'Mesa',preco:2000},
+    {id:9,nome:'WebCam',preco:500},
+    {id:10,nome:'Microfone',preco:300},
+];
