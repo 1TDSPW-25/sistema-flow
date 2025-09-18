@@ -28,11 +28,13 @@ export default function GitUsers() {
     <main>
         
         <h1>Lista de Usuários</h1>
+        <div className="flex flex-wrap justify-center gap-4 mt-4">
         {usuarios.map((usuario) => (
             <div key={usuario.id}>
                 <Card usuario={usuario}/>
             </div>
         ))}
+        </div>
 
     </main>
   )

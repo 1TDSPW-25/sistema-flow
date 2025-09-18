@@ -58,4 +58,12 @@ body{
         }
     }
 
+    .card{
+        @apply w-[10vw] flex flex-col items-center justify-between;
+
+        & img{
+            @apply rounded-2xl;
+        }
+    }
+
 }
