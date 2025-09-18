@@ -10,6 +10,7 @@ import Home from './routes/Home/index.tsx';
 import Produtos from './routes/Produtos/index.tsx';
 import Error from './routes/Error/index.tsx';
 import GitUsers from './routes/GitUsers/index.tsx';
+import CadProdutos from './routes/CadProdutos/index.tsx';
 //Importando as rotas
 
 const router = createBrowserRouter([
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
       {path: "/produtos", element: <Produtos/>},
       {path: "/editar/produto/:id", element: <EditarProduto/>},
       {path: "/git-users", element: <GitUsers/>},
+      {path: "/cad-produtos", element: <CadProdutos/>},
   ]
   }
 ])
