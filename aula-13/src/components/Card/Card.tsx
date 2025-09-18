@@ -1,10 +1,11 @@
+import type { UserTipo } from "../../types/gitUserTipo";
 
-export default function Card() {
+export default function Card({usuario}: UserTipo) {
   return (
     <figure>
-        <img src="" alt="" />
+        <img src={usuario.avatar_url} alt={usuario.login} />
         <hr />
-        <figcaption>-</figcaption>
+        <figcaption>{usuario.login}</figcaption>
     </figure>
   )
 }

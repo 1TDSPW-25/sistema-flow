@@ -3,3 +3,7 @@ export type GitUserTipo = {
     login:string;
     avatar_url:string;
 }
+
+export type UserTipo = {
+    usuario:GitUserTipo;
+}

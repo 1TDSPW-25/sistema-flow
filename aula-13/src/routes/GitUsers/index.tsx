@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import type { GitUserTipo } from "../../types/gitUserTipo";
+import Card from "../../components/Card/Card";
 
 export default function GitUsers() {
 
@@ -28,7 +29,9 @@ export default function GitUsers() {
         
         <h1>Lista de Usuários</h1>
         {usuarios.map((usuario) => (
-            <p>{usuario.login}</p>
+            <div key={usuario.id}>
+                <Card usuario={usuario}/>
+            </div>
         ))}
 
     </main>
