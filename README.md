@@ -571,3 +571,17 @@ export default function ProdutosPage() {
 - `fetch` com **async/await** deixa o código limpo e fácil de entender.
 
 > Próximos passos : adicionar validações de formulário, tratamento de erros mais completo e paginação com os parâmetros do `json-server`.
+
+
+Exercício PRESENCIAL:
+Objetivo: Consumir a api de usuários Github e apresentar os dados através de CARDS que irão receber eles por PROPS...
+
+URL da api : https://api.github.com/users
+
+- os dados a serem mostrados são: {id, login, avatar_url}
+- o card deve ser estilizado
+- As rotas devem ser criadas neste padrão com estes nomes:
+-- Em routes crie: GitUsers/index.tsx
+-- em main crie a rota com o nome de /git-users, replique essa rota para um novo link em Menu.tsx.
+-- Crie o componente card com o nome de CardGit.
+-- Crie um tipo especifico para estes dados.
