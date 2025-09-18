@@ -1,59 +1,74 @@
 {
   "produtos": [
     {
-      "id": 1,
+      "id": "1",
       "nome": "Teclado Mecânico",
       "preco": 150
     },
     {
-      "id": 2,
+      "id": "2",
       "nome": "Mouse",
       "preco": 100
     },
     {
-      "id": 3,
+      "id": "3",
       "nome": "Monitor 32'",
       "preco": 3500
     },
     {
-      "id": 4,
+      "id": "4",
       "nome": "Gabinete",
       "preco": 200
     },
     {
-      "id": 5,
+      "id": "5",
       "nome": "Headset",
       "preco": 300
     },
     {
-      "id": 6,
+      "id": "6",
       "nome": "Mousepad",
       "preco": 50
     },
     {
-      "id": 7,
+      "id": "7",
       "nome": "Cadeira",
       "preco": 1000
     },
     {
-      "id": 8,
+      "id": "8",
       "nome": "Mesa",
       "preco": 2000
     },
     {
-      "id": 9,
+      "id": "9",
       "nome": "WebCam",
       "preco": 500
     },
     {
-      "id": 10,
+      "id": "10",
       "nome": "Microfone",
       "preco": 300
     },
     {
-      "id": 11,
+      "id": "11",
       "nome": "Suporte",
       "preco": 100
+    },
+    {
+      "id": "2f0d",
+      "nome": "Disco SSD - 1TB",
+      "preco": "770"
+    },
+    {
+      "nome": "Mouse sem PILHA",
+      "preco": "10",
+      "id": "VIua9SU"
+    },
+    {
+      "nome": "Pilha AAA",
+      "preco": "27",
+      "id": "xWKVdn4"
     }
   ]
 }
