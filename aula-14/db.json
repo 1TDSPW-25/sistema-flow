@@ -2,8 +2,8 @@
   "produtos": [
     {
       "id": "1",
-      "nome": "Teclado Mecânico Brown",
-      "preco": 150
+      "nome": "Teclado Key-RED",
+      "preco": 330.67
     },
     {
       "id": "2",
@@ -27,8 +27,8 @@
     },
     {
       "id": "6",
-      "nome": "Mousepad",
-      "preco": 50
+      "nome": "Mousepad Grande",
+      "preco": 100.9
     },
     {
       "id": "7",
