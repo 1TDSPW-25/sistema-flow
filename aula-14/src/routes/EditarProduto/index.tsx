@@ -57,11 +57,11 @@ export default function EditarProduto() {
                         <legend className="text-center block w-full font-bold">Produtos</legend>
                         <div>
                             <label htmlFor="idNome" className="font-bold block">Produto : </label>
-                            <input type="text" name="nome" id="idNome"  className="border-2 rounded-[5px] bg-amber-50 p-1 mb-5 w-90"/>
+                            <input type="text" id="idNome"  className="border-2 rounded-[5px] bg-amber-50 p-1 mb-5 w-90" {...register("nome",{required:true})}/>
                         </div>
                         <div> 
                             <label htmlFor="idPreco" className="font-bold block">R$: </label>
-                            <input type="number" name="preco" id="idPreco"  className="border-2 rounded-[5px] bg-amber-50 p-1 mb-5 w-90"/>
+                            <input type="number" id="idPreco" step={0.01} className="border-2 rounded-[5px] bg-amber-50 p-1 mb-5 w-90" {...register("preco",{required:true, valueAsNumber:true})}/>
                         </div>
                         <div>
                             <button className="bg-green-600 border-2 rounded-[5px] border-white w-40 h-15 my-2 mx-auto block hover:bg-amber-300 hover:text-white">Editar</button>
