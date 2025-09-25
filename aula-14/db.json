@@ -2,12 +2,12 @@
   "produtos": [
     {
       "id": "1",
-      "nome": "Teclado Mecânico",
+      "nome": "Teclado Mecânico Brown",
       "preco": 150
     },
     {
       "id": "2",
-      "nome": "Mouse",
+      "nome": "Mouse Óptico",
       "preco": 100
     },
     {
