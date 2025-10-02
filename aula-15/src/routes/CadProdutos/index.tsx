@@ -5,7 +5,7 @@ export default function CadProdutos() {
 
 const navigate = useNavigate();
 
-const {register, handleSubmit, setValue} = useForm({
+const {register, handleSubmit} = useForm({
     defaultValues:{
         nome: "",
         preco: 0
@@ -29,8 +29,6 @@ const onSubmit =   handleSubmit(async (data) => {
             console.log(data);
             alert("Produto cadastrado com sucesso!");
             navigate("/produtos");
-            setValue("nome", "");
-            setValue("preco", 0);
         }
 
     } catch (error) {
