@@ -51,7 +51,11 @@ const onSubmit =   handleSubmit(async (data) => {
                         </div>
                         <div>
                             <label htmlFor="idPreco" className="font-bold block">R$: </label>
-                            <input type="number" id="idPreco" className="border-2 rounded-[5px] bg-amber-50 p-1 mb-5 w-90" {...register("preco", {required: true})}/>
+                            <input type="number" id="idPreco" step={0.01} className="border-2 rounded-[5px] bg-amber-50 p-1 mb-5 w-90" {...register("preco", 
+                                {required:"Digite um valor válido",
+                                 min:{value:0.01,message:"Valores negativos não são aceitos!"}   
+                                })} aria-invalid={!!errors.preco}/>
+                                {errors.preco && <p role="alert" className="text-red-500">{errors.preco.message}</p>}
                         </div>
                         <div>
                             <button type="submit" className="bg-green-600 border-2 rounded-[5px] border-white w-40 h-15 my-2 mx-auto block hover:bg-amber-300 hover:text-white">Cadastrar</button>
