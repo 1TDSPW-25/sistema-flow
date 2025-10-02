@@ -1,11 +1,12 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import type { ProdutoType } from "../../types/produto";
 
 export default function CadProdutos() {
 
 const navigate = useNavigate();
 
-const {register, handleSubmit, formState:{errors}} = useForm({
+const {register, handleSubmit, formState:{errors}} = useForm<ProdutoType>({
     mode:"onChange"
 });
 
@@ -41,7 +42,12 @@ const onSubmit =   handleSubmit(async (data) => {
                     <fieldset>
                         <div>
                             <label htmlFor="idNome" className="font-bold block">Produto : </label>
-                            <input type="text" id="idNome" className="border-2 rounded-[5px] bg-amber-50 p-1 mb-5 w-90" {...register("nome", {required: true, maxLength: 200})} />
+                            <input type="text" id="idNome" className="border-2 rounded-[5px] bg-amber-50 p-1 mb-5 w-90" {...register("nome", 
+                            {required:"Digite um nome válido!",
+                             minLength:{value:3,message:"O nome deve ter mais de 3 caractéres!"},
+                             maxLength:{value:100,message:"O nome deve ter menos de 100 caractéres!"}
+                             })} aria-invalid={!!errors.nome} />
+                            
                         </div>
                         <div>
                             <label htmlFor="idPreco" className="font-bold block">R$: </label>
