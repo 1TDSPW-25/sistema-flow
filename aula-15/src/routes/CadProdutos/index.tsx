@@ -1,9 +1,14 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import type { ProdutoType } from "../../types/produto";
+import { useEffect } from "react";
 
 export default function CadProdutos() {
 
+    useEffect(() => {
+        document.title = "Cadastro de Produtos";
+    }, []);
+    
 const navigate = useNavigate();
 
 const {register, handleSubmit, formState:{errors}} = useForm<ProdutoType>({
