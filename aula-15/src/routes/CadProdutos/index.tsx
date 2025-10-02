@@ -47,7 +47,7 @@ const onSubmit =   handleSubmit(async (data) => {
                              minLength:{value:3,message:"O nome deve ter mais de 3 caractéres!"},
                              maxLength:{value:100,message:"O nome deve ter menos de 100 caractéres!"}
                              })} aria-invalid={!!errors.nome} />
-                            
+                            {errors.nome && <p role="alert" className="text-red-500">{errors.nome.message}</p>}
                         </div>
                         <div>
                             <label htmlFor="idPreco" className="font-bold block">R$: </label>
