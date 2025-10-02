@@ -1,15 +1,13 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import type { ProdutoType } from "../../types/produto";
 
 export default function CadProdutos() {
 
 const navigate = useNavigate();
 
-const {register, handleSubmit, setValue} = useForm({
-    defaultValues:{
-        nome: "",
-        preco: 0
-    }
+const {register, handleSubmit, formState:{errors}} = useForm<ProdutoType>({
+    mode:"onChange"
 });
 
 const onSubmit =   handleSubmit(async (data) => {
@@ -29,8 +27,6 @@ const onSubmit =   handleSubmit(async (data) => {
             console.log(data);
             alert("Produto cadastrado com sucesso!");
             navigate("/produtos");
-            setValue("nome", "");
-            setValue("preco", 0);
         }
 
     } catch (error) {
@@ -46,11 +42,20 @@ const onSubmit =   handleSubmit(async (data) => {
                     <fieldset>
                         <div>
                             <label htmlFor="idNome" className="font-bold block">Produto : </label>
-                            <input type="text" id="idNome" className="border-2 rounded-[5px] bg-amber-50 p-1 mb-5 w-90" {...register("nome", {required: true, maxLength: 200})} />
+                            <input type="text" id="idNome" className="border-2 rounded-[5px] bg-amber-50 p-1 mb-5 w-90" {...register("nome", 
+                            {required:"Digite um nome válido!",
+                             minLength:{value:3,message:"O nome deve ter mais de 3 caractéres!"},
+                             maxLength:{value:100,message:"O nome deve ter menos de 100 caractéres!"}
+                             })} aria-invalid={!!errors.nome} />
+                            {errors.nome && <p role="alert" className="text-red-500">{errors.nome.message}</p>}
                         </div>
                         <div>
                             <label htmlFor="idPreco" className="font-bold block">R$: </label>
-                            <input type="number" id="idPreco" className="border-2 rounded-[5px] bg-amber-50 p-1 mb-5 w-90" {...register("preco", {required: true})}/>
+                            <input type="number" id="idPreco" step={0.01} className="border-2 rounded-[5px] bg-amber-50 p-1 mb-5 w-90" {...register("preco", 
+                                {required:"Digite um valor válido",
+                                 min:{value:0.01,message:"Valores negativos não são aceitos!"}   
+                                })} aria-invalid={!!errors.preco}/>
+                                {errors.preco && <p role="alert" className="text-red-500">{errors.preco.message}</p>}
                         </div>
                         <div>
                             <button type="submit" className="bg-green-600 border-2 rounded-[5px] border-white w-40 h-15 my-2 mx-auto block hover:bg-amber-300 hover:text-white">Cadastrar</button>
