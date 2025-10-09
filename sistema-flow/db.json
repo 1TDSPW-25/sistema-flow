@@ -20,6 +20,27 @@
       "nomeUser": "icaro.m",
       "email": "icaro.mendes@example.com",
       "avatar": "https://i.pravatar.cc/150?img=13"
+    },
+    {
+      "id": 4,
+      "nome": "Thaiza Silva",
+      "nomeUser": "thaiza.s",
+      "email": "thaiza.silva@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=14"
+    },
+    {
+      "id": 5,
+      "nome": "Tais Pereira",
+      "nomeUser": "tais.p",
+      "email": "tais.pereira@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=15"
+    },
+    {
+      "id": 6,
+      "nome": "Laura Silva",
+      "nomeUser": "laura.s",
+      "email": "laura.s@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=16"
     }
   ]
 }
