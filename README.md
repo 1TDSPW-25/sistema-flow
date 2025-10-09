@@ -17,7 +17,7 @@
 
 ---
 ## EM DESENVOLVIMENTO:
-<ul style="color:blue">
+<ul style="color:yellow">
 <li>[   ] FEATURE / Realizar a lista de tarefas no README.md / ... </li>
 <li>[   ] FEATURE / Criar o projeto (VITE+REACT+TS) do zero / ...</li>
 <li>[   ] FEATURE / Limpar o boiler-plate e instalar os pacotes react-router-dom, tailwindcss, json-server, react-icons, react-use-form/... </li>
