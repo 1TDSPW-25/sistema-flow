@@ -1,0 +1,25 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Pedro Oliveira",
+      "nomeUser": "pedroo",
+      "email": "pedro.oliveira@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=11"
+    },
+    {
+      "id": 2,
+      "nome": "Guilherme Santos",
+      "nomeUser": "guilherme_s",
+      "email": "guilherme.santos@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=12"
+    },
+    {
+      "id": 3,
+      "nome": "Icaro Mendes",
+      "nomeUser": "icaro.m",
+      "email": "icaro.mendes@example.com",
+      "avatar": "https://i.pravatar.cc/150?img=13"
+    }
+  ]
+}
