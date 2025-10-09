@@ -32,5 +32,5 @@
 
 ### TIMES
 - LIBERADOS
-[ ]
+[ Zezinho, Luizinho, Huguinho ]
 
