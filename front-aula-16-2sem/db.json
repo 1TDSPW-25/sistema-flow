@@ -1,0 +1,22 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Caio Martins",
+      "nomeUser": "caioM",
+      "email": "caio.martins@fiap.com"
+    },
+    {
+      "id": 2,
+      "nome": "Larissa Almeida",
+      "nomeUser": "lariA",
+      "email": "larissa.almeida@fiap.com"
+    },
+    {
+      "id": 3,
+      "nome": "Thiago Rocha",
+      "nomeUser": "thiagoR",
+      "email": "thiago.rocha@fiap.com"
+    }
+  ]
+}
