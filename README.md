@@ -16,7 +16,7 @@
 ## EM HOMOLOGAÇÃO:GUSTAVO TAVARES / GABRIEL DUARTE / TIAGO GUEDES / GABRIEL FACHIN
 <ul style="color:orange">
 <li>[   ] FEATURE / Criar os componentes principais dentro dos padrões estabelecidos com nomes e pastas Cabecalho, Rodape e Menu /Miguel+Pedro+Evelyn </li><span style="color:red">DEADLINE [19:35]</span>
-<li>[   ] FEATURE / Criar uma api com json-server, o endpoint de nome usuarios, os dados do endpoint são [id,nome,nomeUser,email,avatar]/ PedroO+Guilherme+Icaro</li><span style="color:red">DEADLINE [19:35]</span>
+<li>[   ] FEATURE / Criar uma api com json-server, o endpoint de nome usuarios, os dados do endpoint são [id,nome,nomeUser,email,avatar] / PedroO+Guilherme+Icaro</li><span style="color:red">DEADLINE [19:35]</span>
 <li>[   ] FEATURE / Criar estrutura de rotas e registrar estas. Criar as ROTAS [Home, Login, Cadastro] / Barranha + Iago + João </li><span style="color:red">DEADLINE [19:40]</span>
 <li>[   ] FEATURE / Instalar todas as libs necessárias no projeto. react-router-dom, react-icons, tailwindcss, react-use-form,json-server / Anna - Charles - Leonardo</li><span style="color:red">DEADLINE [19:35]</span>
    <li> ... </li>
@@ -30,7 +30,41 @@
 
 </ul>
 
-### TIMES
-- LIBERADOS
-[ Zezinho, Luizinho, Huguinho ]
 
+
+###  **TIMES**
+
+####  **LIBERADOS PARA TRABALHO**
+- **[ Maicon, GustavoC, Gregory ]**  
+  &rarr; Todas as tarefas concluídas.  
+
+- **[ Pedro Oliveira, Guilherme, Icaro ]**  
+
+---
+
+####  **EM ANDAMENTO**
+- **[ Pedro Oliveira, Guilherme, Icaro ]**  
+  &rarr; **Tarefa:** Criar uma API com **json-server** com o endpoint `usuarios`, contendo os dados `[id, nome, nomeUser, email, avatar]`.  
+  &rarr; **Status:** Em desenvolvimento.  
+
+- **[ Miguel, Evelyn, Pedro Crus ]**  
+  &rarr; **Tarefa:** Criar os componentes principais dentro dos padrões estabelecidos, com as pastas e nomes: **Cabecalho**, **Rodape** e **Menu**.  
+  &rarr; **Status:** Menu pronto, Cabecalho falta importar rodapé. **Rodapé** ainda não foi feito.  
+
+- **[ Barranha, Iago, João ]**  
+  &rarr; **Tarefa:** Criar estrutura de rotas e registrar as rotas principais: **Home**, **Login** e **Cadastro**.  
+  &rarr; **Status:** Em andamento.  
+
+- **[ Camilo, Carlos, Laura ]**  
+  &rarr; **Tarefa:** Na página **Home**, criar um sistema de **notícias** através de cards com API pública (ex: UOL, MSN, Terra).  
+  &rarr; **Status:** Desenvolvimento iniciado.  
+
+- **[ Anna, Charles, Leonardo ]**  
+  &rarr; **Tarefa:** Instalar todas as libs necessárias: `react-router-dom`, `react-icons`, `tailwindcss`, `react-use-form`, `json-server`.  
+  &rarr; **Status:** Em instalação.  
+
+---
+
+####  **PARA TERMINAR NA PRÓXIMA AULA**
+- **[ Tiago, Duarte, Facchin, GustavoT ]**  
+  &rarr; **Tarefa:** Testes e homologação final.  
