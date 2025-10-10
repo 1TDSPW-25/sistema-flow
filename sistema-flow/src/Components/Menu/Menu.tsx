@@ -1,38 +1,31 @@
-/*import React from 'react';
-
+import React from 'react';
+import { Link } from 'react-router-dom';
+import "./Menu.css";
 
 interface MenuItem {
-  id: number;
-  label: string;
-  path: string;
+    label: string;
+    path: string;
 }
 
-interface MenuProps {
-  items?: MenuItem[];
-}
-
-const defaultMenuItems: MenuItem[] = [
-  { id: 1, label: 'Início', path: '/' },
-  { id: 2, label: 'Sobre', path: '/sobre' },
-  { id: 3, label: 'Contato', path: '/contato' },
+const menuItems: MenuItem[] = [
+    { label: 'Home', path: '/' },
+    { label: 'About', path: '/about' },
+    { label: 'Services', path: '/services' },
+    { label: 'Contact', path: '/contact' },
 ];
-
-const Menu: React.FC<MenuProps> = ({ items = defaultMenuItems }) => {
-
-
-  return (
-    <nav className="menu-container">
-      <ul className="menu-list">
-        {items.map((item) => ( // Use parênteses para retorno implícito de JSX
-          <li key={item.id} className="menu-item">
-            <a href={item.path} className="menu-link">
-              {item.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  );
+const Menu: React.FC = () => {
+    return (
+        <nav className="menu">
+            <ul className="menu-list">
+                {menuItems.map((item, index) => (
+                    <li key={index} className="menu-item">
+                        <Link to={item.path} className="menu-link">
+                            {item.label}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+            </nav>
+    );
 };
-
-export default Menu;*/
+export default Menu;
