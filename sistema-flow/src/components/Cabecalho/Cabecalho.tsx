@@ -1,6 +1,6 @@
 import React from "react";
 import Menu from "../Menu/Menu";
-import Rodape from "../Rodape/Rodape";
+
 
 const Cabecalho: React.FC = () => {
   return (
@@ -11,7 +11,7 @@ const Cabecalho: React.FC = () => {
 
         {/* Menu de navegação */}
         <Menu />
-        <Rodape />
+       
 
         {/* Botão (exemplo) */}
         <button >Sair</button>
