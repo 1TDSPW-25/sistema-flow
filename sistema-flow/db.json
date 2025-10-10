@@ -41,6 +41,34 @@
       "nomeUser": "laura.s",
       "email": "laura.s@example.com",
       "avatar": "https://i.pravatar.cc/150?img=16"
+    },
+    {
+      "id": 7,
+      "nome": "Pedro Almeida",
+      "nomeUser": "pedro.almeida",
+      "email": "pedro.almeida@example.com",
+      "avatar": "https://i.pravatar.cc/150?u=12"
+    },
+    {
+      "id": 8,
+      "nome": "Quintino Rocha",
+      "nomeUser": "quintino.rocha",
+      "email": "quintino.rocha@example.com",
+      "avatar": "https://i.pravatar.cc/150?u=13"
+    },
+    {
+      "id": 9,
+      "nome": "Rafaela Barros",
+      "nomeUser": "rafaela.barros",
+      "email": "rafaela.barros@example.com",
+      "avatar": "https://i.pravatar.cc/150?u=14"
+    },
+    {
+      "id": 10,
+      "nome": "Sofia Carvalho",
+      "nomeUser": "sofia.carvalho",
+      "email": "sofia.carvalho@example.com",
+      "avatar": "https://i.pravatar.cc/150?u=15"
     }
   ]
 }
