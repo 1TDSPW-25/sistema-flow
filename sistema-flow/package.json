@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "api": "npm run json-server:usuarios",
     "json-server:usuarios": "json-server --watch db.json --port 3001"
   },
   "dependencies": {
