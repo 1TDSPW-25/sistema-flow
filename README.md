@@ -45,7 +45,7 @@
 ####  **EM ANDAMENTO**
 - **[ Pedro Oliveira, Guilherme, Icaro ]**  
   &rarr; **Tarefa:** Criar uma API com **json-server** com o endpoint `usuarios`, contendo os dados `[id, nome, nomeUser, email, avatar]`.  
-  &rarr; **Status:** Em desenvolvimento.  
+  &rarr; **Status:** Falta dar o finish na feature.  
 
 - **[ Miguel, Evelyn, Pedro Crus ]**  
   &rarr; **Tarefa:** Criar os componentes principais dentro dos padrões estabelecidos, com as pastas e nomes: **Cabecalho**, **Rodape** e **Menu**.  
@@ -57,11 +57,11 @@
 
 - **[ Camilo, Carlos, Laura ]**  
   &rarr; **Tarefa:** Na página **Home**, criar um sistema de **notícias** através de cards com API pública (ex: UOL, MSN, Terra).  
-  &rarr; **Status:** Desenvolvimento iniciado.  
+  &rarr; **Status:** Em andamento.  
 
 - **[ Anna, Charles, Leonardo ]**  
   &rarr; **Tarefa:** Instalar todas as libs necessárias: `react-router-dom`, `react-icons`, `tailwindcss`, `react-use-form`, `json-server`.  
-  &rarr; **Status:** Em instalação.  
+  &rarr; **Status:** Em andamento.  
 
 ---
 
