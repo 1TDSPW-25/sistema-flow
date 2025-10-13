@@ -17,7 +17,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="grail [&>*]:px-4">
+    <main className="grail [&>*]:px-4 bg-orange-200">
       <h1>Home - Notícias</h1>
       <section className="card-gallery py-2">
         {news.map((post) => {
