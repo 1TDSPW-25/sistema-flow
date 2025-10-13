@@ -4,11 +4,24 @@ function Card(props: Article) {
   const { author, title, urlToImage, description } = props;
 
   return (
-    <article className="max-w-80 grid justify-items-center gap-y-4 grid-rows-[repeat(3,max-content)_1fr]">
-      <img src={urlToImage} alt={description} width={220} height={120} className="max-h-30 object-cover w-full" />
+    <article className="
+        max-w-80 
+        grid justify-items-center gap-y-4 
+        grid-rows-[repeat(3,max-content)_1fr]
+        bg-stone-50
+        backdrop-blur-sm
+        shadow-md hover:shadow-xl 
+        rounded-2xl 
+        overflow-hidden
+        transition-all duration-300
+        hover:-translate-y-1
+        border-stone-200 border-2
+        p-4
+      ">
+      <img src={urlToImage} alt={description} width={220} height={120} className="" />
       <h2>{title}</h2>
       <p>{description}</p>
-      <small className="w-full mt-auto">Por {author}</small>
+      <small className="">Por {author}</small>
     </article>
   );
 }
