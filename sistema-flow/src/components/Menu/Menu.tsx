@@ -1,4 +1,4 @@
-/*import React from 'react';
+import React from 'react';
 
 
 interface MenuItem {
@@ -35,4 +35,4 @@ const Menu: React.FC<MenuProps> = ({ items = defaultMenuItems }) => {
   );
 };
 
-export default Menu;*/
+export default Menu;
