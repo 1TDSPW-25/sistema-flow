@@ -9,7 +9,7 @@
 <li>[ x ] FEATURE / Realizar a lista de tarefas no README.md / prof.Alexandre </li>
 <li>[ x ] FEATURE / Criar o projeto (VITE+REACT+TS) do zero / Camilo + Carlos + Laura</li>
 <li>[ x ] FEATURE / Limpar o boiler-plate e instalar os pacotes react-router-dom, tailwindcss, json-server, react-icons, react-use-form/ Maicon + GustavoC + Gregory  </li>
-<li>[ x ] FEATURE / Criar estrutura de rotas e registrar estas. Criar as ROTAS [Home, Login, Cadastro] / Barranha + Iago + João </li>... 
+<li>[ x ] FEATURE / Criar estrutura de rotas e registrar estas. Criar as ROTAS [Home, Login, Cadastro] / Barranha + Iago + João </li> 
 
 </ul>
 
