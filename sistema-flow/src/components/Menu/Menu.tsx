@@ -1,21 +1,38 @@
-export default function Menu() {
-    return (
-        <header className="container-menu">
-            <div className="menu-logo">
-            <h1>Logo</h1>
-            </div>
-            <nav className="menu-navegacao">
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Sobre</a></li>
-                    <li><a href="#">Serviço</a></li>
-                    <li><a href="#">Contato</a></li>
-                </ul>
-            </nav>
-            <div className="menu-acoes">
-                <button>Entrar</button>
-            </div>
-        </header>
+/*import React from 'react';
 
-    );
+
+interface MenuItem {
+  id: number;
+  label: string;
+  path: string;
 }
+
+interface MenuProps {
+  items?: MenuItem[];
+}
+
+const defaultMenuItems: MenuItem[] = [
+  { id: 1, label: 'Início', path: '/' },
+  { id: 2, label: 'Sobre', path: '/sobre' },
+  { id: 3, label: 'Contato', path: '/contato' },
+];
+
+const Menu: React.FC<MenuProps> = ({ items = defaultMenuItems }) => {
+
+
+  return (
+    <nav className="menu-container">
+      <ul className="menu-list">
+        {items.map((item) => ( // Use parênteses para retorno implícito de JSX
+          <li key={item.id} className="menu-item">
+            <a href={item.path} className="menu-link">
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
+
+export default Menu;*/
