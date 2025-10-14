@@ -32,8 +32,19 @@ function Card(props: Article) {
           shadow-sm
         "
       />
-      <h2>{title}</h2>
-      <p>{description}</p>
+      <h2
+        className=" 
+          font-[Newsreader] 
+          text-2xl 
+          font-bold 
+          text-align: left 
+          text-stone-950  
+          line-clamp-2
+          "
+      >
+        {title}
+      </h2>
+      <p className="font-serif ">{description}</p>
       <small className="">Por {author}</small>
     </article>
   );
