@@ -8,8 +8,9 @@
 <ul style="color:green">
 <li>[ x ] FEATURE / Realizar a lista de tarefas no README.md / prof.Alexandre </li>
 <li>[ x ] FEATURE / Criar o projeto (VITE+REACT+TS) do zero / Camilo + Carlos + Laura</li>
-<li>[ x ] FEATURE / Limpar o boiler-plate e instalar os pacotes react-router-dom, tailwindcss, json-server, react-icons, react-use-form/ Maicon + GustavoC + Gregory  </li><span style="color:red">DEADLINE [19:25]</span>
- <li> ... </li>
+<li>[ x ] FEATURE / Limpar o boiler-plate e instalar os pacotes react-router-dom, tailwindcss, json-server, react-icons, react-use-form/ Maicon + GustavoC + Gregory  </li>
+<li>[ x ] FEATURE / Criar estrutura de rotas e registrar estas. Criar as ROTAS [Home, Login, Cadastro] / Barranha + Iago + João </li>... 
+
 </ul>
 
 ---
@@ -17,8 +18,7 @@
 <ul style="color:orange">
 <li>[   ] FEATURE / Criar os componentes principais dentro dos padrões estabelecidos com nomes e pastas Cabecalho, Rodape e Menu /Miguel+Pedro+Evelyn </li><span style="color:red">DEADLINE [19:35]</span>
 <li>[   ] FEATURE / Criar uma api com json-server, o endpoint de nome usuarios, os dados do endpoint são [id,nome,nomeUser,email,avatar]/ PedroO+Guilherme+Icaro</li><span style="color:red">DEADLINE [19:35]</span>
-<li>[   ] FEATURE / Criar estrutura de rotas e registrar estas. Criar as ROTAS [Home, Login, Cadastro] / Barranha + Iago + João </li><span style="color:red">DEADLINE [19:40]</span>
-<li>[   ] FEATURE / Instalar todas as libs necessárias no projeto. react-router-dom, react-icons, tailwindcss, react-use-form,json-server / Anna - Charles - Leonardo</li><span style="color:red">DEADLINE [19:35]</span>
+<li>[   ] FEATURE / Instalar todas as libs necessárias no projeto. react-router-dom, react-icons, tailwindcss, react-use-form,json-server / Anna - Charlles - Leonardo</li><span style="color:red">DEADLINE [19:35]</span>
    <li> ... </li>
 </ul>
 
@@ -33,4 +33,3 @@
 ### TIMES
 - LIBERADOS
 [ Zezinho, Luizinho, Huguinho ]
-
