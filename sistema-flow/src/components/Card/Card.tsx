@@ -44,7 +44,9 @@ function Card(props: Article) {
       >
         {title}
       </h2>
-      <p className="font-serif ">{description}</p>
+      <p className="text-sm font-serif text-center line-clamp-3">
+        {description}
+      </p>
       <small className="">Por {author}</small>
     </article>
   );
