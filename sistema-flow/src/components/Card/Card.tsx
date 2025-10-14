@@ -44,10 +44,12 @@ function Card(props: Article) {
       >
         {title}
       </h2>
-      <p className="text-sm font-serif text-center line-clamp-3">
+      <p className="text-sm font-serif text-left line-clamp-3 text-stone-800">
         {description}
       </p>
-      <small className="">Por {author}</small>
+      <small className="w-full mt-auto text-xs text-stone-500 text-right">
+        Por {author}
+      </small>  
     </article>
   );
 }
