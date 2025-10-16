@@ -6,9 +6,9 @@ export default function Menu(){
         <nav>
             <Link to="/">Home</Link>
             <span> | </span>
-            <Link to="/sobre">sobre</Link>
+            <Link to="/sobre">Sobre</Link>
             <span> | </span>
-            <Link to="/cad">Cadastro</Link>
+            <Link to="/cadastro">Cadastro</Link>
             <span> | </span>
             <Link to="/contato">Contato</Link>
         </nav>
