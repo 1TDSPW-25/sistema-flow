@@ -1,10 +1,13 @@
-import { type FormEvent, useState } from "react";
+import { FormEvent, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Cadastro() {
+  const navigate = useNavigate();
+
   const [nome, setNome] = useState("");
   const [nomeUser, setNomeUser] = useState("");
   const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
+  the [senha, setSenha] = useState("");
   const [avatar, setAvatar] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -28,6 +31,8 @@ export default function Cadastro() {
       if (!response.ok) {
         throw new Error("Não foi possível cadastrar o usuário.");
       }
+
+      navigate("/login");
     } catch (submitError) {
       const message =
         submitError instanceof Error
@@ -38,7 +43,8 @@ export default function Cadastro() {
       setIsSubmitting(false);
     }
   }
-    return (
+
+  return (
     <main>
       <h1>Cadastro</h1>
       <form onSubmit={handleSubmit}>
@@ -90,9 +96,12 @@ export default function Cadastro() {
           required
         />
 
-        <button type="submit">Cadastrar</button>
+        {error && <p>{error}</p>}
+
+        <button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? "Enviando..." : "Cadastrar"}
+        </button>
       </form>
     </main>
   );
-
 }
