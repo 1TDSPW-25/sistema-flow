@@ -10,8 +10,8 @@ export default function App() {
     <div className="container">
 
         <ApiTester /> {/* Apague esta linha junto do arquivo ApiTester.tsx quando tiver certeza que a API está funcionando e o projeto finalizado. Esta linha serve apenas para testar a comunicação com a API, retornando o resultado no console do navegador. */}
-        <Outlet />
         <Menu />
+        <Outlet />
         <Rodape />
     </div>
    
