@@ -35,37 +35,37 @@
 ## EM DESENVOLVIMENTO:
 
 <ul style="color:yellow">
-<li>[   ] FEATURE / Criar formulário de cadastro com campos (nome, nomeUser, email, senha, avatar), enviar via POST para endpoint usuarios e redirecionar para login , sem estilização / Pedro Oliveira + Guilherme + Icaro</li>
+<li>[   ] FEATURE / Criar formulário de cadastro com campos (nome, nomeUser, email, senha, avatar), enviar via POST para endpoint usuarios e redirecionar para login , sem estilização / Grupo 1</li>
 <span style="color:red">[DEADLINE 20:10]</span>
 
-<li>[   ] FEATURE / Estilizar a página de notícia / Miguel + Pedro + Evelyn</li>
+<li>[   ] FEATURE / Estilizar a página de notícia /  + Grupo 4</li>
 <span style="color:red">[DEADLINE 20:10]</span>
 
-<li>[   ] FEATURE / Criar página /contato, incluindo formulário de contato (nome, email, mensagem e botão enviar), sem estilização/ Maicon + GustavoC + Gregory</li>
+<li>[   ] FEATURE / Criar página /contato, incluindo formulário de contato (nome, email, mensagem e botão enviar), sem estilização/ Grupo 5</li>
 <span style="color:red">[DEADLINE 20:10]</span>
 
-<li>[   ] FEATURE / Testar rotas, componentes e integração com API. Corrigir erros no console e validar responsividade antes do merge final / Tiago + Facchin + GustavoT</li>
+<li>[   ] FEATURE / Testar rotas, componentes e integração com API. Corrigir erros no console e validar responsividade antes do merge final /  Grupo 7</li>
 <span style="color:red">[Conforme os grupos forem finalizando]</span>
 </ul>
 
-<li>[   ] FEATURE / Modificar estrutura de rotas: criar pasta routes, dentro dela o arquivo AppRoutes e criar uma pasta pages e transferir as páginas criadas para ela / Camilo + Carlos + Laura</li>
+<li>[   ] FEATURE / Modificar estrutura de rotas: criar pasta routes, dentro dela o arquivo AppRoutes e criar uma pasta pages e transferir as páginas criadas para ela / Grupo 3 </li>
 <span style="colorei">[20:30]</span>
 
-<li>[   ] FEATURE / Estilizar página de login / Barranha + Iago + João</li>
+<li>[   ] FEATURE / Estilizar página de login / Grupo 2 </li>
 <span style="color:red">[20:40]</span>
 
-<li>[   ] FEATURE / Estilizar página /contato / Richard + Charles + Leonardo</li>
+<li>[   ] FEATURE / Estilizar página /contato / Grupo 6</li>
 <span style="color:red">[20:40]</span>
 
 
 
 ####  **LIBERADOS PARA TRABALHO**
 Grupo 1 - [ Pedro Oliveira, Guilherme, Icaro ] -> Desenvolvimento : Cadastro
-Grupo 2 - [ Barranha, Iago, João ]  -> Disponivel
-Grupo 3 - [ Camilo, Carlos, Laura ] -> Disponivel 
+Grupo 2 - [ Barranha, Iago, João ]  -> Desenvolvimento : Estilização Login
+Grupo 3 - [ Camilo, Carlos, Laura ] -> Desenvolvimento : Estrutura de Rotas 
 Grupo 4 - [ Miguel, Evelyn, Pedro Crus ] -> Desenvolvimento : Estilização Home
 Grupo 5 - [ Maicon, GustavoC, Gregory ] -> Desenvolvimento : Contato
-Grupo 6 - [ Richard, Charles, Leonardo ] -> Disponivel
+Grupo 6 - [ Richard, Charles, Leonardo ] -> Desenvolvimento : Estilização Contato
 Grupo 7 - [ Tiago, Facchin, Gustavo ] -> Desenvolvimento : Testes
 
 ---
