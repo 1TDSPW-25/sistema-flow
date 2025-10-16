@@ -33,11 +33,11 @@ export default function Sobre() {
         <ul>
           <li>
             Editorial:{" "}
-            <a href="mailto:redacao@exemplo.com">redacao@exemplo.com</a>
+            <a>redacao@exemplo.com</a>
           </li>
           <li>
             Comercial:{" "}
-            <a href="mailto:anuncios@exemplo.com">anuncios@exemplo.com</a>
+            <a>anuncios@exemplo.com</a>
           </li>
         </ul>
       </section>
