@@ -30,3 +30,60 @@ async function fetchUsuarios(): Promise<UsuarioType[]> {
     return [];
   }
 }
+
+export default function Login() {
+  const navigate = useNavigate();
+ 
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+ 
+  const [mensagem, setMensagem] = useState("");
+  const [corMensagem, setCorMensagem] = useState<"red" | "green">("red");
+  const [isLoading, setIsLoading] = useState(false);
+ 
+  useEffect(() => {
+    document.title = "Login";
+  }, []);
+ 
+  async function handleLogin(e: React.FormEvent) {
+    e.preventDefault();
+    setMensagem("");
+    setIsLoading(true);
+ 
+    try {
+      const usuarios = await fetchUsuarios();
+     
+      if (usuarios.length === 0) {
+        setMensagem("Erro de conexão. Não foi possível carregar os usuários. Verifique o servidor.");
+        setCorMensagem("red");
+        return;
+      }
+ 
+      const usuarioValido = usuarios.find(
+        (user) => user.email === email && user.senha === senha
+      );
+ 
+      if (!usuarioValido) {
+        setMensagem("E-mail ou senha incorretos.");
+        setCorMensagem("red");
+        return;
+      }
+ 
+      setMensagem("Login realizado com sucesso! Redirecionando...");
+      setCorMensagem("green");
+ 
+      localStorage.setItem('userToken', usuarioValido.email);
+ 
+      setTimeout(() => {
+        navigate("/home");
+      }, 1500);
+ 
+    } catch (error) {
+      setMensagem("Ocorreu um erro inesperado. Tente novamente.");
+      setCorMensagem("red");
+    } finally {
+      if (corMensagem !== "green") {
+        setIsLoading(false);
+      }
+    }
+  }
