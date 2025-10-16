@@ -17,23 +17,42 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="grail [&>*]:px-4 bg-orange-200">
-      <h1
-        className="
-        uppercase
-        font-bold
-        text-8xl
-        font-[Bebas_Neue]
-        text-left
-        mt-6
-        px-2
-        py-6
-        bg-orange-100
-      "
-      >
-        Notícias
-      </h1>
-      <section className="card-gallery py-2">
+    // Fundo
+    <main className="min-h-screen pb-16 bg-gray-50"> 
+      
+     
+      <div className="w-full bg-orange-200 shadow-md mb-10 pt-8 pb-6"> 
+        
+        
+        <h1
+          className="
+            text-center
+            text-5xl
+            font-bold
+            uppercase
+            font-[Bebas_Neue]
+            text-amber-900 
+            mb-2                 
+          "
+        >
+          NOTÍCIAS
+        </h1>
+        
+        <p 
+          className="
+            text-center 
+            text-lg
+            font-light
+            text-gray-600
+            tracking-widest
+          "
+        >
+          O QUE ESTÁ ACONTECENDO NO MUNDO?
+        </p>
+
+      </div>
+      
+      <section className="card-gallery px-4 py-2">
         {news.map((post) => {
           return <Card {...post} />;
         })}
