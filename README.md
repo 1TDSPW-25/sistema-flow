@@ -3,6 +3,11 @@
 ## Todas as TAREFAS/FEATURES devem ser finalizadas.
 ### Prestar atenção ao <span style="color:red">DEADLINE</span> das FEATURES. 
 
+## RESPONSABILIDADES:
+### MENTORIA: PROF.ALEXANDRE
+### TECHLEAD: ANNA
+### HOMOLOG : DUARTE
+
 ---
 ## IMPLEMENTADOS:
 <ul style="color:green">
@@ -31,7 +36,6 @@
 
 
 
-###  **TIMES**
 
 ####  **LIBERADOS PARA TRABALHO**
 -[ Maicon, GustavoC, Gregory ] 
@@ -43,29 +47,3 @@
 
 ---
 
-####  **EM ANDAMENTO**
-- **[ Pedro Oliveira, Guilherme, Icaro ]**  
-  &rarr; **Tarefa:** Criar uma API com **json-server** com o endpoint `usuarios`, contendo os dados `[id, nome, nomeUser, email, avatar]`.  
-  &rarr; **Status:** Falta dar o finish na feature.  
-
-- **[ Miguel, Evelyn, Pedro Crus ]**  
-  &rarr; **Tarefa:** Criar os componentes principais dentro dos padrões estabelecidos, com as pastas e nomes: **Cabecalho**, **Rodape** e **Menu**.  
-  &rarr; **Status:** Menu pronto, Cabecalho falta importar rodapé. **Rodapé** ainda não foi feito.  
-
-- **[ Barranha, Iago, João ]**  
-  &rarr; **Tarefa:** Criar estrutura de rotas e registrar as rotas principais: **Home**, **Login** e **Cadastro**.  
-  &rarr; **Status:** Em andamento.  
-
-- **[ Camilo, Carlos, Laura ]**  
-  &rarr; **Tarefa:** Na página **Home**, criar um sistema de **notícias** através de cards com API pública (ex: UOL, MSN, Terra).  
-  &rarr; **Status:** Em andamento.  
-
-- **[ Richard, Charles, Leonardo ]**  
-  &rarr; **Tarefa:** Instalar todas as libs necessárias: `react-router-dom`, `react-icons`, `tailwindcss`, `react-use-form`, `json-server`.  
-  &rarr; **Status:** Em andamento.  
-
----
-
-####  **PARA TERMINAR NA PRÓXIMA AULA**
-- **[ Tiago, Duarte, Facchin, GustavoT ]**  
-  &rarr; **Tarefa:** Testes e homologação final.  
