@@ -20,7 +20,7 @@ function Card(props: CardProps) {
         overflow-hidden
         transition-all duration-300
         hover:-translate-y-1
-        border-orange-300 border-2
+        border-black-300 border-4
         p-4
       "
     >
@@ -52,7 +52,7 @@ function Card(props: CardProps) {
       <p className="text-sm font-serif text-left line-clamp-3 text-stone-8 ">
         {description}
       </p>
-      <small className="w-full mt-auto text-xs text-orange-400 text-right">
+      <small className="w-full mt-auto text-xs text-black-400 text-right font-bold">
         Por {author}
       </small>  
 
