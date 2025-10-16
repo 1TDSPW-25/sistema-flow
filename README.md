@@ -20,34 +20,32 @@
 ---
 ## 🚧 EM HOMOLOGAÇÃO  
 <ul style="color:orange">
-
-<li>[   ] FEATURE / Criar formulário de login (usuário e senha), validar com react-use-form, autenticar com json-server (endpoint usuarios) e redirecionar para /home após login / Barranha + Iago + João</li>
-<span style="color:red">DEADLINE [23:00]</span>
-
-<li>[   ] FEATURE / Criar formulário de cadastro com campos (nome, nomeUser, email, senha, avatar), enviar via POST para endpoint usuarios e redirecionar para login / Pedro Oliveira + Guilherme + Icaro</li>
-<span style="color:red">DEADLINE [23:00]</span>
-
-<li>[   ] FEATURE / Criar rota /noticia/:id exibindo conteúdo completo da notícia (imagem, título, texto, data) e botão “Voltar para Home”/ Camilo + Carlos + Laura</li>
-<span style="color:red">DEADLINE [Até próxima aula]</span>
-
-<li>[   ] FEATURE / Estilizar a página de detalhes da notícia / Miguel + Pedro + Evelyn</li>
-<span style="color:red">DEADLINE [Até próxima aula]</span>
-
-<li>[   ] FEATURE / Criar página /sobre , sem estilização/ Maicon + GustavoC + Gregory</li>
-<span style="color:red">DEADLINE [Até próxima aula]</span>
-
-<li>[   ] FEATURE / Testar rotas, componentes e integração com API. Corrigir erros no console e validar responsividade antes do merge final / Tiago + Facchin + GustavoT</li>
-<span style="color:red">DEADLINE [Conforme os grupos forem finalizando]</span>
-
-<li>[   ] FEATURE / Criar página /contato, incluindo formulário de contato (nome, email, mensagem e botão enviar), sem estilização/ Richard + Charles + Leonardo</li>
-<span style="color:red">DEADLINE [Até próxima aula]</span>
-
 </ul>
 
 
 ---
 ## EM DESENVOLVIMENTO:
 <ul style="color:yellow">
+<li>[   ] FEATURE / Criar formulário de login (usuário e senha), validar com react-use-form, autenticar com json-server (endpoint usuarios) e redirecionar para /home após login , sem estilização/ Barranha + Iago + João</li>
+<span style="color:red">[23:00]</span>
+
+<li>[   ] FEATURE / Criar formulário de cadastro com campos (nome, nomeUser, email, senha, avatar), enviar via POST para endpoint usuarios e redirecionar para login , sem estilização / Pedro Oliveira + Guilherme + Icaro</li>
+<span style="color:red">[23:00]</span>
+
+<li>[   ] FEATURE / Criando botão 'ver mais' + verificação de cadastro / Camilo + Carlos + Laura</li>
+<span style="color:red">[Até próxima aula]</span>
+
+<li>[   ] FEATURE / Estilizar a página de notícia / Miguel + Pedro + Evelyn</li>
+<span style="color:red">[Até próxima aula]</span>
+
+<li>[   ] FEATURE / Criar página /sobre , sem estilização/ Maicon + GustavoC + Gregory</li>
+<span style="color:red">[Até próxima aula]</span>
+
+<li>[   ] FEATURE / Testar rotas, componentes e integração com API. Corrigir erros no console e validar responsividade antes do merge final / Tiago + Facchin + GustavoT</li>
+<span style="color:red">[Conforme os grupos forem finalizando]</span>
+
+<li>[   ] FEATURE / Criar página /contato, incluindo formulário de contato (nome, email, mensagem e botão enviar), sem estilização/ Richard + Charles + Leonardo</li>
+<span style="color:red">[Até próxima aula]</span>
 </ul>
 
 
