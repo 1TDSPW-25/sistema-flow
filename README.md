@@ -40,7 +40,7 @@
 <span style="color:red">DEADLINE [Conforme os grupos forem finalizando]</span>
 
 <li>[   ] FEATURE / Criar página /contato  incluindo formulário de contato (nome, email, mensagem e botão enviar)/ Richard + Charles + Leonardo</li>
-<span style="color:red">DEADLINE [Após conclusão das features principais]</span>
+<span style="color:red">DEADLINE [Até próxima aula]</span>
 
 </ul>
 
@@ -48,9 +48,6 @@
 ---
 ## EM DESENVOLVIMENTO:
 <ul style="color:yellow">
-
-<li>[   ] FEATURE / Na página Home, criar um sistema de notícias através de cards com api púplica ou outro meio. Veja exemplos nos sites UOL, MSN e Terra / Camilo + Carlos + Laura</li><span style="color:red">DEADLINE [20:40]</span>
-
 </ul>
 
 
