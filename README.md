@@ -13,7 +13,7 @@
 </ul>
 
 ---
-## EM HOMOLOGAÇÃO:GUSTAVO TAVARES / GABRIEL DUARTE / TIAGO GUEDES / GABRIEL FACHIN
+## EM HOMOLOGAÇÃO
 <ul style="color:orange">
 <li>[   ] FEATURE / Criar os componentes principais dentro dos padrões estabelecidos com nomes e pastas Cabecalho, Rodape e Menu /Miguel+Pedro+Evelyn </li><span style="color:red">DEADLINE [19:35]</span>
 <li>[   ] FEATURE / Criar uma api com json-server, o endpoint de nome usuarios, os dados do endpoint são [id,nome,nomeUser,email,avatar]/ PedroO+Guilherme+Icaro</li><span style="color:red">DEADLINE [19:35]</span>
@@ -34,10 +34,12 @@
 ###  **TIMES**
 
 ####  **LIBERADOS PARA TRABALHO**
-- **[ Maicon, GustavoC, Gregory ]**  
-  &rarr; Todas as tarefas concluídas.  
-
-- **[ Pedro Oliveira, Guilherme, Icaro ]**  
+-[ Maicon, GustavoC, Gregory ] 
+-[ Pedro Oliveira, Guilherme, Icaro ]
+-[ Miguel, Evelyn, Pedro Crus ]
+-[ Barranha, Iago, João ]
+-[ Camilo, Carlos, Laura ]
+-[ Richard, Charles, Leonardo ]
 
 ---
 
@@ -58,7 +60,7 @@
   &rarr; **Tarefa:** Na página **Home**, criar um sistema de **notícias** através de cards com API pública (ex: UOL, MSN, Terra).  
   &rarr; **Status:** Em andamento.  
 
-- **[ Anna, Charles, Leonardo ]**  
+- **[ Richard, Charles, Leonardo ]**  
   &rarr; **Tarefa:** Instalar todas as libs necessárias: `react-router-dom`, `react-icons`, `tailwindcss`, `react-use-form`, `json-server`.  
   &rarr; **Status:** Em andamento.  
 
