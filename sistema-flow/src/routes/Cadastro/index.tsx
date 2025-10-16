@@ -1,4 +1,4 @@
-export default function Cad() {
+export default function Cadastro() {
 
     return(
         <main>
