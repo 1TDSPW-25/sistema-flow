@@ -87,3 +87,73 @@ export default function Login() {
       }
     }
   }
+
+  return (
+    <main>
+      <section>
+        <div>
+          <h2>Login</h2>
+          <p>
+            Acesse sua conta para continuar
+          </p>
+        </div>
+ 
+        <form onSubmit={handleLogin}>
+          <div>
+            <label htmlFor="email">E-mail</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="seu.email@exemplo.com"
+              required
+              disabled={isLoading}
+            />
+          </div>
+ 
+          <div>
+            <label htmlFor="senha">Senha</label>
+            <input
+              id="senha"
+              name="senha"
+              type="password"
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+              placeholder="Digite sua senha"
+              required
+              disabled={isLoading}
+            />
+          </div>
+ 
+          {mensagem && (
+            <div
+              style={{ color: corMensagem === "red" ? "red" : "green" }}
+            >
+              {mensagem}
+            </div>
+          )}
+         
+          <button
+            type="submit"
+            disabled={isLoading}
+          >
+            {isLoading ? "Entrando..." : "Entrar"}
+          </button>
+        </form>
+ 
+        <div>
+          <p>
+            Não tem uma conta?{" "}
+            <Link
+              to="/cadastro"
+            >
+              Cadastre-se
+            </Link>
+          </p>
+        </div>
+      </section>
+    </main>
+  );
+}
