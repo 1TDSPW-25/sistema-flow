@@ -79,6 +79,7 @@ export default function Login() {
       }, 1500);
  
     } catch (error) {
+      console.error("Erro inesperado ao tentar logar.", error);
       setMensagem("Ocorreu um erro inesperado. Tente novamente.");
       setCorMensagem("red");
     } finally {
