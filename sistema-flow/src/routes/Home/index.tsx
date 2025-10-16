@@ -20,28 +20,37 @@ export default function Home() {
     // Fundo
     <main className="min-h-screen pb-16 bg-gray-50"> 
       
-      <h1
-        className="
-          w-full               
-          py-6                
-          px-4                 
-          text-center         
-          
-          /* ESTILOS DE TEXTO */
-          text-5xl             
-          font-bold            
-          uppercase
-          font-[Bebas_Neue]    
-          text-amber-900       
+     
+      <div className="w-full bg-orange-200 shadow-md mb-10 pt-8 pb-6"> 
+        
+        
+        <h1
+          className="
+            text-center
+            text-5xl
+            font-bold
+            uppercase
+            font-[Bebas_Neue]
+            text-amber-900 
+            mb-2                 
+          "
+        >
+          NOTÍCIAS
+        </h1>
+        
+        <p 
+          className="
+            text-center 
+            text-lg
+            font-light
+            text-gray-600
+            tracking-widest
+          "
+        >
+          O QUE ESTÁ ACONTECENDO NO MUNDO?
+        </p>
 
-          /* ESTILO DA FAIXA */
-          bg-orange-200        
-          shadow-md            
-          mb-10              
-        "
-      >
-        NOTÍCIAS
-      </h1>
+      </div>
       
       <section className="card-gallery px-4 py-2">
         {news.map((post) => {
