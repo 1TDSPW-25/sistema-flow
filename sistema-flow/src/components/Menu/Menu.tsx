@@ -11,6 +11,8 @@ export default function Menu(){
             <Link to="/cadastro">Cadastro</Link>
             <span> | </span>
             <Link to="/contato">Contato</Link>
+            <span> | </span>
+            <Link to="/login">Login</Link>
         </nav>
     );
 }
