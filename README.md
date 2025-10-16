@@ -48,6 +48,14 @@
 <span style="color:red">[Conforme os grupos forem finalizando]</span>
 </ul>
 
+<li>[   ] FEATURE / Modificar estrutura de rotas: criar pasta routes, dentro dela o arquivo AppRoutes e criar uma pasta pages e transferir as páginas criadas para ela / Camilo + Carlos + Laura</li>
+<span style="colorei">[20:30]</span>
+
+<li>[   ] FEATURE / Estilizar página de login / Barranha + Iago + João</li>
+<span style="color:red">[20:40]</span>
+
+<li>[   ] FEATURE / Estilizar página /contato / Richard + Charles + Leonardo</li>
+<span style="color:red">[20:40]</span>
 
 
 
