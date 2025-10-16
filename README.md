@@ -18,7 +18,7 @@
 </ul>
 
 ---
-## EM HOMOLOGAÇÃO:GUSTAVO TAVARES / GABRIEL DUARTE / TIAGO GUEDES / GABRIEL FACHIN
+## EM HOMOLOGAÇÃO:
 <ul style="color:orange">
 <li>[   ] FEATURE / Criar os componentes principais dentro dos padrões estabelecidos com nomes e pastas Cabecalho, Rodape e Menu /Miguel+Pedro+Evelyn </li><span style="color:red">DEADLINE [19:35]</span>
 <li>[   ] FEATURE / Criar uma api com json-server, o endpoint de nome usuarios, os dados do endpoint são [id,nome,nomeUser,email,avatar]/ PedroO+Guilherme+Icaro</li><span style="color:red">DEADLINE [19:35]</span>
