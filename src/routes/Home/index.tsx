@@ -22,7 +22,7 @@ export default function Home() {
 
   const handleProtectedAction = () => {
     const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado") || "null");
-    if (!usuarioLogado) {
+    if(!usuarioLogado) {
       setShowModal(true);
     } else {
       alert("Usuário logado! Aqui você pode abrir a notícia ou navegar.");
@@ -30,14 +30,26 @@ export default function Home() {
   };
 
   return (
-    <main className="grail [&>*]:px-4 bg-orange-200"> 
-      <h1 className="uppercase font-bold text-8xl font-[Bebas_Neue] text-left mt-6 px-2 py-6 bg-orange-100">
-        Notícias
-      </h1>
+    <main className="min-h-screen pb-16 bg-gray-50 max-w-7xl mx-auto"> 
+      
+      <div className="w-full pt-8 pb-6 mb-8"> 
+        
+        <p 
+          className="
+            text-center 
+            text-lg
+            font-normal /* Tornando um pouco mais visível */
+            text-gray-700 /* Escurecendo para ser lido sem a faixa de fundo */
+            tracking-widest
+          "
+        >
+          O QUE ESTÁ ACONTECENDO NO MUNDO?
+        </p>
 
-      <section className="card-gallery py-2">
+      </div>
+      <section className="card-gallery px-4 py-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {news.map((post, index) => (
-          <Card key={index} {...post} onVerMais={handleProtectedAction}/>
+         <Card key={index} {...post} onVerMais={handleProtectedAction}/>
         ))}
       </section>
 
