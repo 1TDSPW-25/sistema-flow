@@ -17,33 +17,16 @@ export default function Home() {
   }, []);
 
   return (
-    // Fundo
-    <main className="min-h-screen pb-16 bg-gray-50"> 
+    <main className="min-h-screen pb-16 bg-gray-50 max-w-7xl mx-auto"> 
       
-     
-      <div className="w-full bg-orange-200 shadow-md mb-10 pt-8 pb-6"> 
-        
-        
-        <h1
-          className="
-            text-center
-            text-5xl
-            font-bold
-            uppercase
-            font-[Bebas_Neue]
-            text-amber-900 
-            mb-2                 
-          "
-        >
-          NOTÍCIAS
-        </h1>
+      <div className="w-full pt-8 pb-6 mb-8"> 
         
         <p 
           className="
             text-center 
             text-lg
-            font-light
-            text-gray-600
+            font-normal /* Tornando um pouco mais visível */
+            text-gray-700 /* Escurecendo para ser lido sem a faixa de fundo */
             tracking-widest
           "
         >
@@ -51,10 +34,10 @@ export default function Home() {
         </p>
 
       </div>
-      
-      <section className="card-gallery px-4 py-2">
-        {news.map((post) => {
-          return <Card {...post} />;
+      <section className="card-gallery px-4 py-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {news.map((post, index) => {
+          
+          return <Card key={index} {...post} />;
         })}
       </section>
     </main>
