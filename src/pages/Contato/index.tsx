@@ -31,11 +31,11 @@ export default function Contato() {
   return (
     <main className="min-h-screen bg-gray-50 py-16 px-4">
       <section className="mx-auto max-w-3xl overflow-hidden rounded-3xl bg-white shadow-2xl">
-        <header className="bg-orange-200 px-10 py-12 text-center shadow-inner">
-          <h1 className="font-[Bebas_Neue] text-5xl font-bold uppercase tracking-[0.35em] text-amber-900">
+        <header className="bg-gray-800 px-10 py-12 text-center shadow-inner">
+          <h1 className="font-[Bebas_Neue] text-5xl font-bold uppercase tracking-[0.35em] text-green-400">
             Contato
           </h1>
-          <p className="mt-4 text-lg font-light tracking-widest text-amber-900/80">
+          <p className="mt-4 text-lg font-light tracking-widest text-white">
             Envie uma mensagem para nossa redação
           </p>
         </header>
@@ -44,7 +44,7 @@ export default function Contato() {
           <div className="flex flex-col gap-2">
             <label
               htmlFor="nome"
-              className="text-sm font-semibold uppercase tracking-widest text-amber-900"
+              className="text-sm font-semibold uppercase tracking-widest bg-gray"
             >
               Nome
             </label>
@@ -63,7 +63,7 @@ export default function Contato() {
           <div className="flex flex-col gap-2">
             <label
               htmlFor="email"
-              className="text-sm font-semibold uppercase tracking-widest text-amber-900"
+              className="text-sm font-semibold uppercase tracking-widest bg-gray"
             >
               E-mail
             </label>
@@ -83,7 +83,7 @@ export default function Contato() {
           <div className="flex flex-col gap-2">
             <label
               htmlFor="mensagem"
-              className="text-sm font-semibold uppercase tracking-widest text-amber-900"
+              className="text-sm font-semibold uppercase tracking-widest bg-gray"
             >
               Mensagem
             </label>
@@ -100,9 +100,9 @@ export default function Contato() {
             />
           </div>
 
-          <div className="rounded-xl border border-amber-100 bg-amber-50/40 p-4 text-sm text-amber-900/70">
+          <div className="rounded-xl border border-amber-100 bg-amber-50/40 p-4 text-sm bg-gray">
             Respondemos em até 24 horas. Se preferir, escreva para{" "}
-            <span className="font-semibold text-amber-900">fiapnews@fiap.com</span>.
+            <span className="font-semibold bg-gray">fiapnews@fiap.com</span>.
           </div>
 
           <button
