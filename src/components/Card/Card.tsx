@@ -1,7 +1,11 @@
 import type { Article } from "../../types/home";
 
-function Card(props: Article) {
-  const { author, title, urlToImage, description } = props;
+type CardProps = Article & {
+  onVerMais: () => void;
+};
+
+function Card(props: CardProps) {
+  const { author, title, urlToImage, description, onVerMais } = props;
 
   return (
     <article
@@ -41,7 +45,6 @@ function Card(props: Article) {
           text-stone-950  
           line-clamp-2
           tracking-tighter
-          text-2xl
           "
       >
         {title}
@@ -52,8 +55,14 @@ function Card(props: Article) {
       <small className="w-full mt-auto text-xs text-black-400 text-right font-bold">
         Por {author}
       </small>  
+
+      <button onClick={onVerMais}  
+      className="mt-4 text-sm text-orange-600 underline hover:text-orange-800 cursor-pointer">
+        Ver mais
+      </button>
     </article>
   );
 }
 
 export { Card };
+
