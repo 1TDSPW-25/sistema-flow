@@ -54,10 +54,12 @@ function Card(props: CardProps) {
       </p>
       <small className="w-full mt-auto text-xs text-black-400 text-right font-bold">
         Por {author}
-      </small>  
+      </small>
 
-      <button onClick={onVerMais}  
-      className="mt-4 text-sm text-orange-600 underline hover:text-orange-800 cursor-pointer">
+      <button
+        onClick={onVerMais}
+        className="mt-4 text-sm text-green-400 underline hover:text-green-500 cursor-pointer transition-colors duration-200"
+      >
         Ver mais
       </button>
     </article>
