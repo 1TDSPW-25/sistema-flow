@@ -83,7 +83,7 @@ export default function Contato() {
           <div className="flex flex-col gap-2">
             <label
               htmlFor="mensagem"
-              className="text-sm font-semibold uppercase tracking-widest text-gray-800"
+              className="text-sm font-semibold uppercase tracking-widest text-gray-830"
             >
               Mensagem
             </label>
