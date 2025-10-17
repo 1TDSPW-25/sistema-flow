@@ -92,23 +92,25 @@ export default function Login() {
     }
   }
 
+
+
   return (
-    <main className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <section className="w-full max-w-md bg-white shadow-xl rounded-lg p-8 space-y-6 border border-gray-200">
+    <main className="min-h-screen bg-[#EFEFEF] flex items-center justify-center p-4">
+      <section className="w-full max-w-md bg-[#333333] shadow-xl rounded-lg p-8 space-y-6 border border-gray-200">
         
         <div className="text-center space-y-2">
-          <h2 className="text-3xl font-serif font-bold text-orange-700">Login</h2>
-          <p className="text-gray-500 font-sans">
+          <h2 className="text-3xl font-serif font-bold text-[#FFFFFF]">Login</h2>
+          <p className="text-[#FFFFFF] font-sans">
             Acesse sua conta para continuar
           </p>
         </div>
 
         <form onSubmit={handleLogin} className="space-y-4">
-          
+
           <div>
             <label 
               htmlFor="email" 
-              className="block text-sm font-medium text-gray-700 mb-1"
+              className="block text-sm font-medium text-[#FFFFFF] mb-1"
             >
               E-mail
             </label>
@@ -121,14 +123,14 @@ export default function Login() {
               placeholder="seu.email@exemplo.com"
               required
               disabled={isLoading}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 disabled:bg-gray-100 disabled:text-gray-500"
+              className="w-full px-3 py-2 border border-[#cacaca] rounded-md focus:outline-none focus:ring-2 focus:ring-[#FFFFFF] disabled:bg-gray-100 disabled:text-gray-500 placeholder:text-[#bbbbbb]"
             />
           </div>
 
           <div>
             <label 
               htmlFor="senha" 
-              className="block text-sm font-medium text-gray-700 mb-1"
+              className="block text-sm font-medium text-[#FFFFFF] mb-1"
             >
               Senha
             </label>
@@ -141,7 +143,7 @@ export default function Login() {
               placeholder="Digite sua senha"
               required
               disabled={isLoading}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 disabled:bg-gray-100 disabled:text-gray-500"
+              className="w-full px-3 py-2 border border-[#cacaca]  rounded-md focus:outline-none focus:ring-2 focus:ring-[#FFFFFF] disabled:bg-gray-100 disabled:text-gray-500 placeholder:text-[#bbbbbb]"
             />
           </div>
  
@@ -160,7 +162,7 @@ export default function Login() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-lg font-semibold text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 disabled:bg-gray-400 transition duration-150 ease-in-out"
+            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-lg font-semibold text-white bg-[#1C3546] hover:bg-[#30576b] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FFFFFF] disabled:bg-gray-400 transition duration-150 ease-in-out"
           >
             {isLoading ? (
               <span className="flex items-center">
@@ -175,11 +177,11 @@ export default function Login() {
         </form>
 
         <div className="text-center pt-4 border-t border-gray-100">
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-[#FFFFFF]">
             Não tem uma conta?{" "}
             <Link
               to="/cadastro"
-              className="font-medium text-orange-600 hover:text-orange-700"
+              className="font-medium text-[#ffffff] hover:text-[#d6e0ff]"
             >
               Cadastre-se
             </Link>
