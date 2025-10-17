@@ -8,17 +8,17 @@ export default function Menu(){
     <nav 
       className="
         w-full 
-        bg-gray-800         
-        py-3                 
-        px-8                 
-        shadow-md            
+        bg-gray-800 
+        py-6 
+        px-8 
+        shadow-md 
         flex 
-        items-center         
+        items-center 
       "
     >
       
       
-      <h2 className="text-green-400 font-extrabold text-xl tracking-wider">
+      <h2 className="text-green-400 font-extrabold text-xl tracking-widest">
         NOTÍCIAS
       </h2>
       
@@ -34,7 +34,7 @@ export default function Menu(){
         <Link to="/cadastro" className="text-white font-semibold text-lg hover:text-gray-400 transition duration-150">
           Cadastre-se/Login
         </Link> 
-       
+        
       </div>
     </nav>
   );
