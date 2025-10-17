@@ -57,7 +57,7 @@ function Card(props: CardProps) {
       </small>  
 
       <button onClick={onVerMais}  
-      className="mt-4 text-sm text-orange-600 underline hover:text-orange-800">
+      className="mt-4 text-sm text-orange-600 underline hover:text-orange-800 cursor-pointer">
         Ver mais
       </button>
     </article>
