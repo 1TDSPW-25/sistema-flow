@@ -1,9 +1,9 @@
-
-export default function Rodape(){
-
-    return(
-        <footer>
-            <p>&copy; Todos os direitos reservados - 2025.</p>
-        </footer>
-    );
+export default function Rodape() {
+  return (
+    <footer className="bg-gray-800 text-white text-center py-4 shadow-inner">
+      <p className="text-sm">
+        &copy; {new Date().getFullYear()} Todos os direitos reservados - Sistema Flow.
+      </p>
+    </footer>
+  );
 }
