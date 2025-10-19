@@ -31,8 +31,8 @@ export default function Menu(){
 
       
       <div>
-        <Link to="/cadastro" className="text-white font-semibold text-lg hover:text-gray-400 transition duration-150">
-          Cadastre-se/Login
+        <Link to="/login" className="text-white font-semibold text-lg hover:text-gray-400 transition duration-150">
+          Entrar
         </Link> 
         
       </div>
