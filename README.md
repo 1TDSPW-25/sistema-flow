@@ -46,7 +46,16 @@
 | ✅ | Realizar a lista de tarefas no README.md | Prof. Alexandre |
 | ✅ | Criar o projeto (VITE+REACT+TS) do zero | Camilo, Carlos, Laura |
 | ✅ | Limpar o boiler-plate e instalar pacotes: react-router-dom, tailwindcss, json-server, react-icons, react-use-form | Maicon, GustavoC, Gregory |
-| ✅ | Criar estrutura de rotas e registrar estas (ROTAS: Home, Login, Cadastro) | Barranha, Iago, João |
+| ✅ | Criar estrutura de rotas e registrar estas (ROTAS: Home, Login, Cadastro) | Barranha, Iago, João 
+| ✅ | Criar página `/sobre`, sem estilização | Grupo 5 (Maicon, GustavoC, Gregory) | 
+| ✅ | Criar botão “ver mais” + verificação de cadastro | Grupo 3 (Camilo, Carlos, Lau
+| ✅ | Criar formulário de login (usuário e senha), validar com react-use-form e autenticar cr (`/usuarios`), redirecionar p/ `/home` | Grupo 2 (Barranha, Iago, João) | 
+| ✅ | Criar página `/contato` com formulário (nome, email, mensagem e botão enviar), sem estilização | Grupo 5 | 
+| ✅ | Estilizar página de login | Grupo 2 | 
+| ✅ | Criar formulário de cadastro (nome, nom senha, avatar), enviar via POST para `/usuarios` e redirecionar p/ login | Grupo 1 | 
+| ✅ | Estilizar página `/contato` | Grupo 6 | 
+| ✅ | Estilizar página de notícia | Grupo 4 | 
+| ✅ | Modificar estrutura de rotas: criar pasta `routes/AppRoutes`, mover páginas para `pages/` | Grupo 3 | 
 
 ---
 
@@ -54,15 +63,7 @@
 
 | Status | Feature | Grupo / Responsáveis | Observação |
 |:-------|:---------|:----------------------|:------------|
-| ⏳ | Criar página `/sobre`, sem estilização | Grupo 5 (Maicon, GustavoC, Gregory) | 🔴 Homologar |
-| ⏳ | Criar botão “ver mais” + verificação de cadastro | Grupo 3 (Camilo, Carlos, Laura) | 🔴 Homologar |
-| ⏳ | Criar formulário de login (usuário e senha), validar com react-use-form e autenticar com json-server (`/usuarios`), redirecionar p/ `/home` | Grupo 2 (Barranha, Iago, João) | 🔴 Homologar |
-| ⏳ | Criar página `/contato` com formulário (nome, email, mensagem e botão enviar), sem estilização | Grupo 5 | 🔴 Homologar |
-| ⏳ | Estilizar página de login | Grupo 2 | 🔴 Homologar |
-| ⏳ | Criar formulário de cadastro (nome, nomeUser, email, senha, avatar), enviar via POST para `/usuarios` e redirecionar p/ login | Grupo 1 | 🔴 Homologar |
-| ⏳ | Estilizar página `/contato` | Grupo 6 | 🔴 Homologar |
-| ⏳ | Estilizar página de notícia | Grupo 4 | 🔴 Homologar |
-| ⏳ | Modificar estrutura de rotas: criar pasta `routes/AppRoutes`, mover páginas para `pages/` | Grupo 3 | 🔴 Homologar |
+
 
 ---
 
@@ -78,12 +79,12 @@
 
 | Grupo | Integrantes | Status Atual | Disponibilidade |
 |:------|:-------------|:--------------|:----------------|
-| **1** | Pedro Oliveira, Guilherme, Icaro | Feature de cadastro em homologação | ✅ Disponível |
-| **2** | Barranha, Iago, João | Login em homologação | ✅ Disponível |
-| **3** | Camilo, Carlos, Laura | Estrutura de rotas em homologação | ✅ Disponível |
-| **4** | Miguel, Evelyn, Pedro Crus | Estilização de notícia em homologação | ✅ Disponível |
-| **5** | Maicon, GustavoC, Gregory | Página /sobre e /contato em homologação | ✅ Disponível |
-| **6** | Leonardo, Richard, Charles | Estilização de contato em homologação | ✅ Disponível |
+| **1** | Pedro Oliveira, Guilherme, Icaro | Aguardando nova task | ✅ Disponível |
+| **2** | Barranha, Iago, João | Aguardando nova task | ✅ Disponível |
+| **3** | Camilo, Carlos, Laura | Aguardando nova task | ✅ Disponível |
+| **4** | Miguel, Evelyn, Pedro Crus | Aguardando nova task | ✅ Disponível |
+| **5** | Maicon, GustavoC, Gregory | Aguardando nova task | ✅ Disponível |
+| **6** | Leonardo, Richard, Charles | Aguardando nova task | ✅ Disponível |
 | **7** | Tiago, Facchin, Gustavo | Testes e validações gerais | 🚧 Em desenvolvimento |
 
 ---
