@@ -71,7 +71,13 @@
 
 | Status | Feature | Grupo / Responsáveis | Observação |
 |:-------|:---------|:----------------------|:------------|
-| 🧩 | Testar rotas, componentes e integração com API. Corrigir erros no console e validar responsividade antes do merge final | Grupo 7 (Tiago, Facchin, Gustavo) | 🔴 Conforme os grupos forem finalizando |
+| 🧩 | Estilizar página de cadastro | Grupo 1 (Pedro Oliveira, Guilherme, Icaro) | 🔴 22:00 |
+| 🧩 | Adicionar botão “Salvar notícia” na página de detalhes | Grupo 2 (Barranha, Iago, João) | 🔴 22:30 |
+| 🧩 | Criar página de detalhes da notícia | Grupo 3 (Camilo, Carlos, Laura) | 🔴 22:10 |
+| 🧩 | Estilizar botão salvar + layout da página de detalhes | Grupo 4 (Miguel, Pedro, Evelyn) | 🔴 22:40 |
+| 🧩 | Estilizar página de sobre | Grupo 5 (Maicon, GustavoC, Gregory) | 🔴 22:00 |
+| 🧩 | Criar componente CardIntegrantes com: nome, turma  linkedin e github | Grupo 6 (Leonardo, Richard, Charles) | 🔴 22:00 |
+| 🧩 | Corrigir alinhamento das páginas, testar funcionalidades criadas e validar fluxo de navegação | Grupo 7 (Tiago, Facchin, Gustavo) | 🔴 Conforme os grupos forem finalizando |
 
 ---
 
@@ -79,12 +85,12 @@
 
 | Grupo | Integrantes | Status Atual | Disponibilidade |
 |:------|:-------------|:--------------|:----------------|
-| **1** | Pedro Oliveira, Guilherme, Icaro | Aguardando nova task | ✅ Disponível |
-| **2** | Barranha, Iago, João | Aguardando nova task | ✅ Disponível |
-| **3** | Camilo, Carlos, Laura | Aguardando nova task | ✅ Disponível |
-| **4** | Miguel, Evelyn, Pedro Crus | Aguardando nova task | ✅ Disponível |
-| **5** | Maicon, GustavoC, Gregory | Aguardando nova task | ✅ Disponível |
-| **6** | Leonardo, Richard, Charles | Aguardando nova task | ✅ Disponível |
+| **1** | Pedro Oliveira, Guilherme, Icaro | Estilização cadastro| 🚧 Em desenvolvimento |
+| **2** | Barranha, Iago, João | Criação do botão | 🚧 Em desenvolvimento|
+| **3** | Camilo, Carlos, Laura | Criação página de detalhes | 🚧 Em desenvolvimento |
+| **4** | Miguel, Evelyn, Pedro Crus | Estilização botão salvar| 🚧 Em desenvolvimento |
+| **5** | Maicon, GustavoC, Gregory | Estilização sobre | 🚧 Em desenvolvimento |
+| **6** | Leonardo, Richard, Charles | Criação card dos integrantes   | 🚧 Em desenvolvimento |
 | **7** | Tiago, Facchin, Gustavo | Testes e validações gerais | 🚧 Em desenvolvimento |
 
 ---
@@ -103,7 +109,7 @@
 ## ⏰ DEADLINES
 | Feature | Grupo | Prazo Final | Status |
 |----------|--------|-----------------|---------|
-| Página /sobre | Grupo 5 | 16/10 - 20:30 | 🟠 Em desenvolvimento |
+
 
 ---
 
