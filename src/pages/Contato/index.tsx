@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
+import { FiMail, FiPhone, FiClock } from "react-icons/fi";
 
 export default function Contato() {
   const [nome, setNome] = useState("");
@@ -29,89 +30,155 @@ export default function Contato() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-50 py-16 px-4">
-      <section className="mx-auto max-w-3xl overflow-hidden rounded-3xl bg-white shadow-2xl">
-        <header className="bg-orange-200 px-10 py-12 text-center shadow-inner">
-          <h1 className="font-[Bebas_Neue] text-5xl font-bold uppercase tracking-[0.35em] text-amber-900">
-            Contato
-          </h1>
-          <p className="mt-4 text-lg font-light tracking-widest text-amber-900/80">
-            Envie uma mensagem para nossa redação
+    <main className="min-h-screen bg-[#EFEFEF] py-16 px-4">
+      <section className="mx-auto flex w-full max-w-5xl flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-stretch lg:gap-12">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-10 text-white shadow-2xl">
+          <div className="absolute -left-20 -top-24 h-48 w-48 rounded-full bg-[#1C3546]/50 blur-2xl" />
+          <div className="absolute -bottom-16 -right-24 h-56 w-56 rounded-full bg-emerald-500/20 blur-3xl" />
+
+          <header className="relative space-y-4">
+            <p className="text-sm font-semibold uppercase tracking-[0.35em] text-emerald-300/90">
+              Fale com a redação
+            </p>
+            <h1 className="text-4xl font-black tracking-tight text-white">
+              Contato
+            </h1>
+            <p className="text-base text-gray-300">
+              Tem uma pauta urgente, sugestão de reportagem ou deseja falar com
+              o nosso time comercial? Estamos prontos para ouvir você.
+            </p>
+          </header>
+
+          <dl className="relative mt-10 space-y-6 text-sm">
+            <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 shadow-lg shadow-black/20">
+              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-300">
+                <FiMail className="h-6 w-6" aria-hidden="true" />
+              </span>
+              <div>
+                <dt className="text-xs uppercase tracking-[0.2em] text-gray-400">
+                  E-mail principal
+                </dt>
+                <dd className="text-base font-semibold text-white">
+                  fiapnews@fiap.com
+                </dd>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 shadow-lg shadow-black/20">
+              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-300">
+                <FiPhone className="h-6 w-6" aria-hidden="true" />
+              </span>
+              <div>
+                <dt className="text-xs uppercase tracking-[0.2em] text-gray-400">
+                  Atendimento comercial
+                </dt>
+                <dd className="text-base font-semibold text-white">
+                  (11) 3000-4000
+                </dd>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 shadow-lg shadow-black/20">
+              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-300">
+                <FiClock className="h-6 w-6" aria-hidden="true" />
+              </span>
+              <div>
+                <dt className="text-xs uppercase tracking-[0.2em] text-gray-400">
+                  Horário de resposta
+                </dt>
+                <dd className="text-base font-semibold text-white">
+                  Até 1 dia útil
+                </dd>
+              </div>
+            </div>
+          </dl>
+
+          <p className="relative mt-10 text-sm text-gray-400">
+            Prefere falar com a equipe responsável por uma editoria específica?
+            Indique no campo de mensagem e direcionaremos seu contato.
           </p>
-        </header>
+        </div>
 
-        <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-6 px-10 py-12">
-          <div className="flex flex-col gap-2">
-            <label
-              htmlFor="nome"
-              className="text-sm font-semibold uppercase tracking-widest text-amber-900"
-            >
-              Nome
-            </label>
-            <input
-              id="nome"
-              name="nome"
-              value={nome}
-              onChange={(e) => setNome(e.target.value)}
-              required
+        <form
+          onSubmit={handleSubmit}
+          noValidate
+          className="h-full rounded-3xl border border-gray-200/80 bg-white/95 p-10 shadow-2xl shadow-gray-900/10 backdrop-blur"
+        >
+          <div className="space-y-5">
+            <div className="space-y-2">
+              <label
+                htmlFor="nome"
+                className="text-sm font-semibold uppercase tracking-[0.2em] text-gray-600"
+              >
+                Nome completo
+              </label>
+              <input
+                id="nome"
+                name="nome"
+                value={nome}
+                onChange={(e) => setNome(e.target.value)}
+                required
+                disabled={enviando}
+                className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-base text-gray-900 placeholder:text-gray-400 shadow-sm transition focus:border-[#1C3546] focus:outline-none focus:ring-4 focus:ring-[#1C3546]/20 disabled:cursor-not-allowed disabled:bg-gray-100 disabled:text-gray-500"
+                placeholder="Como devemos te chamar?"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label
+                htmlFor="email"
+                className="text-sm font-semibold uppercase tracking-[0.2em] text-gray-600"
+              >
+                E-mail
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                disabled={enviando}
+                className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-base text-gray-900 placeholder:text-gray-400 shadow-sm transition focus:border-[#1C3546] focus:outline-none focus:ring-4 focus:ring-[#1C3546]/20 disabled:cursor-not-allowed disabled:bg-gray-100 disabled:text-gray-500"
+                placeholder="seu.email@exemplo.com"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label
+                htmlFor="mensagem"
+                className="text-sm font-semibold uppercase tracking-[0.2em] text-gray-600"
+              >
+                Mensagem
+              </label>
+              <textarea
+                id="mensagem"
+                name="mensagem"
+                value={mensagem}
+                onChange={(e) => setMensagem(e.target.value)}
+                required
+                rows={6}
+                disabled={enviando}
+                className="w-full resize-none rounded-xl border border-gray-300 bg-white px-4 py-3 text-base text-gray-900 placeholder:text-gray-400 shadow-sm transition focus:border-[#1C3546] focus:outline-none focus:ring-4 focus:ring-[#1C3546]/20 disabled:cursor-not-allowed disabled:bg-gray-100 disabled:text-gray-500"
+                placeholder="Conte o que está acontecendo ou como podemos ajudar."
+              />
+            </div>
+          </div>
+
+          <div className="mt-8 flex flex-col gap-4">
+            <p className="text-sm text-gray-500">
+              Respondemos mensagens enviadas pelo formulário ou pelo e-mail
+              acima dentro do próximo dia útil.
+            </p>
+
+            <button
+              type="submit"
               disabled={enviando}
-              className="w-full rounded-xl border border-amber-200 bg-amber-50/40 px-4 py-3 text-base text-amber-950 placeholder:text-amber-900/40 outline-none transition focus:border-amber-500 focus:bg-white focus:ring-2 focus:ring-amber-300 disabled:cursor-not-allowed disabled:opacity-60"
-              placeholder="Seu nome completo"
-            />
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <label
-              htmlFor="email"
-              className="text-sm font-semibold uppercase tracking-widest text-amber-900"
+              className="inline-flex w-full items-center justify-center rounded-xl bg-[#1C3546] px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white transition duration-200 hover:bg-[#30576b] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1C3546] disabled:cursor-not-allowed disabled:bg-gray-400"
             >
-              E-mail
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              disabled={enviando}
-              className="w-full rounded-xl border border-amber-200 bg-amber-50/40 px-4 py-3 text-base text-amber-950 placeholder:text-amber-900/40 outline-none transition focus:border-amber-500 focus:bg-white focus:ring-2 focus:ring-amber-300 disabled:cursor-not-allowed disabled:opacity-60"
-              placeholder="seu.email@exemplo.com"
-            />
+              {enviando ? "Enviando..." : "Enviar mensagem"}
+            </button>
           </div>
-
-          <div className="flex flex-col gap-2">
-            <label
-              htmlFor="mensagem"
-              className="text-sm font-semibold uppercase tracking-widest text-amber-900"
-            >
-              Mensagem
-            </label>
-            <textarea
-              id="mensagem"
-              name="mensagem"
-              value={mensagem}
-              onChange={(e) => setMensagem(e.target.value)}
-              required
-              rows={6}
-              disabled={enviando}
-              className="w-full rounded-xl border border-amber-200 bg-amber-50/40 px-4 py-3 text-base text-amber-950 placeholder:text-amber-900/40 outline-none transition focus:border-amber-500 focus:bg-white focus:ring-2 focus:ring-amber-300 disabled:cursor-not-allowed disabled:opacity-60"
-              placeholder="Escreva sua mensagem..."
-            />
-          </div>
-
-          <div className="rounded-xl border border-amber-100 bg-amber-50/40 p-4 text-sm text-amber-900/70">
-            Respondemos em até 24 horas. Se preferir, escreva para{" "}
-            <span className="font-semibold text-amber-900">fiapnews@fiap.com</span>.
-          </div>
-
-          <button
-            type="submit"
-            disabled={enviando}
-            className="mt-2 inline-flex items-center justify-center rounded-xl bg-amber-900 px-8 py-3 text-sm font-semibold uppercase tracking-widest text-white transition hover:bg-amber-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700 disabled:cursor-not-allowed disabled:opacity-70"
-          >
-            {enviando ? "Enviando..." : "Enviar mensagem"}
-          </button>
         </form>
       </section>
     </main>
