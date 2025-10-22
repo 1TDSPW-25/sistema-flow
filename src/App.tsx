@@ -7,7 +7,7 @@ export default function App() {
 
   return (
     
-    <div className="container">
+    <div className="mx-auto">
 
         <ApiTester /> {/* Apague esta linha junto do arquivo ApiTester.tsx quando tiver certeza que a API está funcionando e o projeto finalizado. Esta linha serve apenas para testar a comunicação com a API, retornando o resultado no console do navegador. */}
         <Menu />
