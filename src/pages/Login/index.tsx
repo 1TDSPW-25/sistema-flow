@@ -97,10 +97,10 @@ export default function Login() {
 
   return (
     <main className="min-h-screen bg-[#EFEFEF] flex items-center justify-center p-4">
-      <section className="w-full max-w-md bg-[#333333] shadow-xl rounded-lg p-8 space-y-6 border border-gray-200">
+      <section className="w-full max-w-md bg-gray-900 shadow-xl rounded-lg p-8 space-y-6 border border-gray-200">
         
         <div className="text-center space-y-2">
-          <h2 className="text-3xl font-serif font-bold text-[#FFFFFF]">Login</h2>
+          <h2 className="text-3xl font-black tracking-tight text-[#FFFFFF]">Login</h2>
           <p className="text-[#FFFFFF] font-sans">
             Acesse sua conta para continuar
           </p>
@@ -124,7 +124,7 @@ export default function Login() {
               placeholder="seu.email@exemplo.com"
               required
               disabled={isLoading}
-              className="w-full px-3 py-2 border border-[#cacaca] rounded-md focus:outline-none focus:ring-2 focus:ring-[#FFFFFF] disabled:bg-gray-100 disabled:text-gray-500 placeholder:text-[#bbbbbb]"
+              className="w-full px-3 py-2 border border-[#cacaca] rounded-md focus:outline-none focus:ring-2 focus:ring-[#FFFFFF] disabled:bg-gray-100 disabled:text-gray-500 placeholder:text-[#bbbbbb] text-white"
             />
           </div>
 
@@ -144,7 +144,7 @@ export default function Login() {
               placeholder="Digite sua senha"
               required
               disabled={isLoading}
-              className="w-full px-3 py-2 border border-[#cacaca]  rounded-md focus:outline-none focus:ring-2 focus:ring-[#FFFFFF] disabled:bg-gray-100 disabled:text-gray-500 placeholder:text-[#bbbbbb]"
+              className="w-full px-3 py-2 border border-[#cacaca]  rounded-md focus:outline-none focus:ring-2 focus:ring-[#FFFFFF] disabled:bg-gray-100 disabled:text-gray-500 placeholder:text-[#bbbbbb] text-white"
             />
           </div>
  
