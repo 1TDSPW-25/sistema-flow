@@ -59,9 +59,10 @@ Esta seção está aqui para manter um registro claro, no qual todo bug encontra
 Siga o seguinte modelo:
 
 # Data
-Feature | Grupo | Status | Responsável pelo Bugfix | Observação |
+Página | Grupo | Status | Responsável pelo Bugfix | Observação |
 
 ---
 
+Cadastro | Grupo | Corrigido | Gustavo Tavares | Página de cadastro permitindo dualidade no cadastro de user e email.
 
 ---
