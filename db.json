@@ -97,6 +97,13 @@
       "nomeUser": "jacareinformado",
       "email": "jacare@gmail.com",
       "senha": "lacosteinformado"
+    },
+    {
+      "id": "93c1",
+      "nome": "bob",
+      "nomeUser": "bob",
+      "email": "bob@bob",
+      "senha": "bob"
     }
   ]
 }

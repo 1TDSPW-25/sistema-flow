@@ -46,9 +46,9 @@
 | ✅ | Realizar a lista de tarefas no README.md | Prof. Alexandre |
 | ✅ | Criar o projeto (VITE+REACT+TS) do zero | Camilo, Carlos, Laura |
 | ✅ | Limpar o boiler-plate e instalar pacotes: react-router-dom, tailwindcss, json-server, react-icons, react-use-form | Maicon, GustavoC, Gregory |
-| ✅ | Criar estrutura de rotas e registrar estas (ROTAS: Home, Login, Cadastro) | Barranha, Iago, João 
+| ✅ | Criar estrutura de rotas e registrar estas (ROTAS: Home, Login, Cadastro) | Barranha, Iago, João |
 | ✅ | Criar página `/sobre`, sem estilização | Grupo 5 (Maicon, GustavoC, Gregory) | 
-| ✅ | Criar botão “ver mais” + verificação de cadastro | Grupo 3 (Camilo, Carlos, Lau
+| ✅ | Criar botão “ver mais” + verificação de cadastro | Grupo 3 (Camilo, Carlos, Laura)|
 | ✅ | Criar formulário de login (usuário e senha), validar com react-use-form e autenticar cr (`/usuarios`), redirecionar p/ `/home` | Grupo 2 (Barranha, Iago, João) | 
 | ✅ | Criar página `/contato` com formulário (nome, email, mensagem e botão enviar), sem estilização | Grupo 5 | 
 | ✅ | Estilizar página de login | Grupo 2 | 
@@ -63,6 +63,8 @@
 
 | Status | Feature | Grupo / Responsáveis | Observação |
 |:-------|:---------|:----------------------|:------------|
+| 🚧 | Criar página de detalhes da notícia | Grupo 3 (Camilo, Carlos, Laura) | Tratar exceção de notícia inexistente, abrir link em outra página e mudar a tag <a> |
+
 
 
 ---
@@ -71,12 +73,12 @@
 
 | Status | Feature | Grupo / Responsáveis | Observação |
 |:-------|:---------|:----------------------|:------------|
-| 🧩 | Estilizar página de cadastro | Grupo 1 (Pedro Oliveira, Guilherme, Icaro) | 🔴 22:00 |
+| 🧩 | Estilizar página de cadastro | Grupo 1 (Pedro Oliveira, Guilherme, Icaro) | 🔴 <span style="color:red">DEADLINE 22:40</span> |
 | 🧩 | Adicionar botão “Salvar notícia” na página de detalhes | Grupo 2 (Barranha, Iago, João) | 🔴 22:30 |
-| 🧩 | Criar página de detalhes da notícia | Grupo 3 (Camilo, Carlos, Laura) | 🔴 22:10 |
+| 🧩 | Criar menu do usuário (ao clicar no icone do perfil) com as opções: Perfil e Salvos | Grupo 3 (Camilo, Carlos, Laura) | 🔴 Até a próxima aula |
 | 🧩 | Estilizar botão salvar + layout da página de detalhes | Grupo 4 (Miguel, Pedro, Evelyn) | 🔴 22:40 |
-| 🧩 | Estilizar página de sobre | Grupo 5 (Maicon, GustavoC, Gregory) | 🔴 22:00 |
-| 🧩 | Criar componente CardIntegrantes com: nome, turma  linkedin e github | Grupo 6 (Leonardo, Richard, Charles) | 🔴 22:00 |
+| 🧩 | Estilizar página de sobre | Grupo 5 (Maicon, GustavoC, Gregory) | 🔴 <span style="color:red">DEADLINE 22:40</span> |
+| 🧩 | Criar componente CardIntegrantes com: nome, turma  linkedin e github | Grupo 6 (Leonardo, Richard, Charles) | 🔴 22:40 |
 | 🧩 | Corrigir alinhamento das páginas, testar funcionalidades criadas e validar fluxo de navegação | Grupo 7 (Tiago, Facchin, Gustavo) | 🔴 Conforme os grupos forem finalizando |
 
 ---
