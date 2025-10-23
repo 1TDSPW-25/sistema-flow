@@ -1,25 +1,35 @@
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+
+type Membro = {
+  nome: string;
+  turma: string;
+  linkedin: string;
+  github: string;
+};
+
 export default function Integrantes() {
-  const membros: string[] = [
-    "Integrante 1",
-    "Integrante 2",
-    "Integrante 3",
-    "Integrante 4",
-    "Integrante 5",
-    "Integrante 6",
-    "Integrante 7",
-    "Integrante 8",
-    "Integrante 9",
-    "Integrante 10",
-    "Integrante 11",
-    "Integrante 12",
-    "Integrante 13",
-    "Integrante 14",
-    "Integrante 15",
-    "Integrante 16",
-    "Integrante 17",
-    "Integrante 18",
-    "Integrante 19",
-    "Integrante 20",
+  const TURMA = "1TDSPW";
+  const membros: Membro[] = [
+    { nome: "Integrante 1", turma: TURMA, linkedin: "#", github: "#" },
+    { nome: "Integrante 2", turma: TURMA, linkedin: "#", github: "#" },
+    { nome: "Integrante 3", turma: TURMA, linkedin: "#", github: "#" },
+    { nome: "Integrante 4", turma: TURMA, linkedin: "#", github: "#" },
+    { nome: "Integrante 5", turma: TURMA, linkedin: "#", github: "#" },
+    { nome: "Integrante 6", turma: TURMA, linkedin: "#", github: "#" },
+    { nome: "Integrante 7", turma: TURMA, linkedin: "#", github: "#" },
+    { nome: "Integrante 8", turma: TURMA, linkedin: "#", github: "#" },
+    { nome: "Integrante 9", turma: TURMA, linkedin: "#", github: "#" },
+    { nome: "Integrante 10", turma: TURMA, linkedin: "#", github: "#" },
+    { nome: "Integrante 11", turma: TURMA, linkedin: "#", github: "#" },
+    { nome: "Integrante 12", turma: TURMA, linkedin: "#", github: "#" },
+    { nome: "Integrante 13", turma: TURMA, linkedin: "#", github: "#" },
+    { nome: "Integrante 14", turma: TURMA, linkedin: "#", github: "#" },
+    { nome: "Integrante 15", turma: TURMA, linkedin: "#", github: "#" },
+    { nome: "Integrante 16", turma: TURMA, linkedin: "#", github: "#" },
+    { nome: "Integrante 17", turma: TURMA, linkedin: "#", github: "#" },
+    { nome: "Integrante 18", turma: TURMA, linkedin: "#", github: "#" },
+    { nome: "Integrante 19", turma: TURMA, linkedin: "#", github: "#" },
+    { nome: "Integrante 20", turma: TURMA, linkedin: "#", github: "#" },
   ];
 
   return (
@@ -31,13 +41,34 @@ export default function Integrantes() {
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {membros.map((nome, i) => (
+          {membros.map((m, i) => (
             <div
               key={i}
               className="bg-white rounded-lg shadow p-5 flex flex-col items-start"
             >
               <div className="w-16 h-16 rounded-full bg-gray-200 mb-4" />
-              <h3 className="text-lg font-semibold">{nome}</h3>
+              <h3 className="text-lg font-semibold">{m.nome}</h3>
+              <span className="text-sm text-gray-600 mb-3">{m.turma}</span>
+              <div className="flex items-center gap-3 mt-auto">
+                <a
+                  href={m.linkedin}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="text-blue-600 hover:text-blue-700"
+                  aria-label={`LinkedIn de ${m.nome}`}
+                >
+                  <FaLinkedin size={20} />
+                </a>
+                <a
+                  href={m.github}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="text-gray-800 hover:text-black"
+                  aria-label={`GitHub de ${m.nome}`}
+                >
+                  <FaGithub size={20} />
+                </a>
+              </div>
             </div>
           ))}
         </div>
