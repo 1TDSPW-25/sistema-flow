@@ -182,7 +182,7 @@ export default function Login() {
             Não tem uma conta?{" "}
             <Link
               to="/cadastro"
-              className="font-medium text-[#ffffff] hover:text-[#d6e0ff]"
+              className="font-medium text-[#ffffff] hover:text-gray-400"
             >
               Cadastre-se
             </Link>
