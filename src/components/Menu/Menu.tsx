@@ -26,6 +26,7 @@ export default function Menu(){
       <div className="flex-grow flex justify-center space-x-6">
         <Link to="/" className={linkClasses}>Home</Link>
         <Link to="/sobre" className={linkClasses}>Sobre</Link>
+        <Link to="/integrantes" className={linkClasses}>Integrantes</Link>
         <Link to="/contato" className={linkClasses}>Contato</Link>
       </div>
 
