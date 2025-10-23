@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import type { UsuarioType } from "../../types/usuario";
 import type { LoginSearchParamsType } from "./Login.types";
+import { useLogado } from "../../hooks/useLogado";
 
 const API_URL = "http://localhost:3001";
 
@@ -40,6 +41,7 @@ async function fetchUsuarios(): Promise<UsuarioType[]> {
 export default function Login() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
+  const { setLogin } = useLogado();
 
   const isFromArticle = searchParams.has("article");
 
@@ -87,9 +89,9 @@ export default function Login() {
       setCorMensagem("green");
       setLoginSuccess(true);
 
-      localStorage.setItem("userToken", usuarioValido.email);
+      setLogin("userToken", usuarioValido.email);
 
-      let navigationPath: LoginSearchParamsType = {
+      const navigationPath: LoginSearchParamsType = {
         pathname: "/home",
       };
 
@@ -99,6 +101,7 @@ export default function Login() {
 
       setTimeout(() => {
         navigate(navigationPath);
+        window.location.reload();
       }, 1500);
     } catch (error) {
       console.error("Erro inesperado ao tentar logar.", error);
