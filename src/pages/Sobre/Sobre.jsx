@@ -44,4 +44,31 @@ export default function Sobre() {
           </ul>
         </section>
 
-        
+         {/* Seção: Contato */}
+        <section>
+          <h2 className="text-2xl font-semibold text-gray-900 mb-3">Contato</h2>
+          <div className="text-gray-700 leading-relaxed space-y-2">
+            <p>
+              <span className="font-medium text-gray-900">Editorial:</span>{" "}
+              <a
+                href="mailto:redacao@exemplo.com"
+                className="text-blue-600 hover:underline"
+              >
+                redacao@exemplo.com
+              </a>
+            </p>
+            <p>
+              <span className="font-medium text-gray-900">Comercial:</span>{" "}
+              <a
+                href="mailto:anuncios@exemplo.com"
+                className="text-blue-600 hover:underline"
+              >
+                anuncios@exemplo.com
+              </a>
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+  );
+}
