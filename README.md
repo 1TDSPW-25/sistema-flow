@@ -65,6 +65,9 @@
 |:-------|:---------|:----------------------|:------------|
 | 🚧 | Criar página de detalhes da notícia | Grupo 3 (Camilo, Carlos, Laura) | Tratar exceção de notícia inexistente, abrir link em outra página e mudar a tag <a> |
 | 🚧 | Estilizar página de cadastro | Grupo 1 (Pedro Oliveira, Guilherme, Icaro) | Em homologação |
+| 🚧 | Adicionar botão “Salvar notícia” na página de detalhes | Grupo 2 (Barranha, Iago, João) | Implementando lógicas | 
+| 🚧 | Estilizar botão salvar + layout da página de detalhes | Grupo 4 (Miguel, Pedro, Evelyn) | Em homologação | 
+| 🚧 | Estilizar página de sobre | Grupo 5 (Maicon, GustavoC, Gregory) | G7 precisa arrumar o commit certo
 
 
 ---
@@ -73,13 +76,11 @@
 
 | Status | Feature | Grupo / Responsáveis | Observação |
 |:-------|:---------|:----------------------|:------------|
-| 🧩 | Criar logo do site e adicionar no cabeçalho e no index(da raiz do projeto) + mudar titulo para o nome do projeto (NewsLab) | Grupo 1 (Pedro Oliveira, Guilherme, Icaro) | 🔴 Até a próxima aula | 
-| 🧩 | Adicionar botão “Salvar notícia” na página de detalhes | Grupo 2 (Barranha, Iago, João) | 🔴 22:30 | 
-| 🧩 | Criar menu do usuário (ao clicar no icone do perfil) com as opções: Perfil e Salvos | Grupo 3 (Camilo, Carlos, Laura) | 🔴 Até a próxima aula |  
-| 🧩 | Estilizar botão salvar + layout da página de detalhes | Grupo 4 (Miguel, Pedro, Evelyn) | 🔴 22:40 | 
-| 🧩 | Estilizar página de sobre | Grupo 5 (Maicon, GustavoC, Gregory) | 🔴 <span style="color:red">DEADLINE 22:40</span> | 
-| 🧩 | Criar componente CardIntegrantes com: nome, turma  linkedin e github | Grupo 6 (Leonardo, Richard, Charles) | 🔴 22:40 | 
-| 🧩 | Corrigir alinhamento das páginas, testar funcionalidades criadas e validar fluxo de navegação | Grupo 7 (Tiago, Facchin, Gustavo) | 🔴 Conforme os grupos forem finalizando |
+| 🧩 |  Fazer lógica do botão salvar   | Grupo 2 (Barranha, Iago, João) | 20:50 |
+| 🧩 |  Página de erro + botão de voltar | Grupo 4 (Miguel, Evelyn, Pedro Crus) | 21:00 |
+| 🧩 |  Criar página de perfil (dados da conta)| Grupo 6 (Leonardo, Richard, Charles) | 21:00 |
+| 🧩 |  Criar página de editar dados da conta | Grupo 5 (Maicon, GustavoC, Gregory) | 21:00 |
+| 🧩 | Página Sobre | Grupo 7 (Tiago, Facchin, Gustavo) | 🔴 Corrigindo estilização da página Sobre |
 
 ---
 
@@ -87,10 +88,10 @@
 
 | Grupo | Integrantes | Status Atual | Disponibilidade |
 |:------|:-------------|:--------------|:----------------|
-| **1** | Pedro Oliveira, Guilherme, Icaro | Estilização cadastro| 🚧 Em desenvolvimento |
-| **2** | Barranha, Iago, João | Criação do botão | 🚧 Em desenvolvimento|
-| **3** | Camilo, Carlos, Laura | Criação página de detalhes | 🚧 Em desenvolvimento |
-| **4** | Miguel, Evelyn, Pedro Crus | Estilização botão salvar| 🚧 Em desenvolvimento |
+| **1** | Pedro Oliveira, Guilherme, Icaro | Criar Logo | 🔴 DEADLINE |
+| **2** | Barranha, Iago, João | Criação do botão | 🚧 Em desenvolvimento |
+| **3** | Camilo, Carlos, Laura | Criação página de detalhes | 🔴 DEADLINE |
+| **4** | Miguel, Evelyn, Pedro Crus | Estilização botão salvar| 🚧 Em desenvolvimento  |
 | **5** | Maicon, GustavoC, Gregory | Estilização sobre | 🚧 Em desenvolvimento |
 | **6** | Leonardo, Richard, Charles | Criação card dos integrantes   | 🚧 Em desenvolvimento |
 | **7** | Tiago, Facchin, Gustavo | Testes e validações gerais | 🚧 Em desenvolvimento |
@@ -111,6 +112,9 @@
 ## ⏰ DEADLINES
 | Feature | Grupo | Prazo Final | Status |
 |----------|--------|-----------------|---------|
+| Criação card dos integrantes | Grupo 6 (Leonardo, Richard, Charles) | 🔴 <span style="color:red">DEADLINE 20:00</span> | Ajustando git
+| Criar logo | Grupo 1 (Pedro Oliveira, Guilherme, Icaro) | 🔴 <span style="color:red">DEADLINE 20:00</span> | Finalizando
+| Criação página de detalhes | Grupo 3 (Camilo, Carlos, Laura) | 🔴 <span style="color:red">DEADLINE 20:00</span> |  Finalizando
 
 
 ---
