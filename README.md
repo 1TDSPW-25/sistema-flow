@@ -46,9 +46,9 @@
 | ✅ | Realizar a lista de tarefas no README.md | Prof. Alexandre |
 | ✅ | Criar o projeto (VITE+REACT+TS) do zero | Camilo, Carlos, Laura |
 | ✅ | Limpar o boiler-plate e instalar pacotes: react-router-dom, tailwindcss, json-server, react-icons, react-use-form | Maicon, GustavoC, Gregory |
-| ✅ | Criar estrutura de rotas e registrar estas (ROTAS: Home, Login, Cadastro) | Barranha, Iago, João 
+| ✅ | Criar estrutura de rotas e registrar estas (ROTAS: Home, Login, Cadastro) | Barranha, Iago, João |
 | ✅ | Criar página `/sobre`, sem estilização | Grupo 5 (Maicon, GustavoC, Gregory) | 
-| ✅ | Criar botão “ver mais” + verificação de cadastro | Grupo 3 (Camilo, Carlos, Lau
+| ✅ | Criar botão “ver mais” + verificação de cadastro | Grupo 3 (Camilo, Carlos, Laura)|
 | ✅ | Criar formulário de login (usuário e senha), validar com react-use-form e autenticar cr (`/usuarios`), redirecionar p/ `/home` | Grupo 2 (Barranha, Iago, João) | 
 | ✅ | Criar página `/contato` com formulário (nome, email, mensagem e botão enviar), sem estilização | Grupo 5 | 
 | ✅ | Estilizar página de login | Grupo 2 | 
@@ -63,6 +63,8 @@
 
 | Status | Feature | Grupo / Responsáveis | Observação |
 |:-------|:---------|:----------------------|:------------|
+| 🚧 | Criar página de detalhes da notícia | Grupo 3 (Camilo, Carlos, Laura) | Tratar exceção de notícia inexistente, abrir link em outra página e mudar a tag <a> |
+
 
 
 ---
@@ -73,7 +75,6 @@
 |:-------|:---------|:----------------------|:------------|
 | 🧩 | Estilizar página de cadastro | Grupo 1 (Pedro Oliveira, Guilherme, Icaro) | 🔴 22:00 |
 | 🧩 | Adicionar botão “Salvar notícia” na página de detalhes | Grupo 2 (Barranha, Iago, João) | 🔴 22:30 |
-| 🧩 | Criar página de detalhes da notícia | Grupo 3 (Camilo, Carlos, Laura) | 🔴 22:10 |
 | 🧩 | Estilizar botão salvar + layout da página de detalhes | Grupo 4 (Miguel, Pedro, Evelyn) | 🔴 22:40 |
 | 🧩 | Estilizar página de sobre | Grupo 5 (Maicon, GustavoC, Gregory) | 🔴 22:00 |
 | 🧩 | Criar componente CardIntegrantes com: nome, turma  linkedin e github | Grupo 6 (Leonardo, Richard, Charles) | 🔴 22:00 |
@@ -87,7 +88,7 @@
 |:------|:-------------|:--------------|:----------------|
 | **1** | Pedro Oliveira, Guilherme, Icaro | Estilização cadastro| 🚧 Em desenvolvimento |
 | **2** | Barranha, Iago, João | Criação do botão | 🚧 Em desenvolvimento|
-| **3** | Camilo, Carlos, Laura | Criação página de detalhes | 🚧 Em desenvolvimento |
+| **3** | Camilo, Carlos, Laura | Criação página de detalhes | ✅ Disponível |
 | **4** | Miguel, Evelyn, Pedro Crus | Estilização botão salvar| 🚧 Em desenvolvimento |
 | **5** | Maicon, GustavoC, Gregory | Estilização sobre | 🚧 Em desenvolvimento |
 | **6** | Leonardo, Richard, Charles | Criação card dos integrantes   | 🚧 Em desenvolvimento |
