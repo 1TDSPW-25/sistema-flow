@@ -1,25 +1,13 @@
-import { useEffect, useState } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
-import type { Article } from "../../types/home";
+import { useNoticia } from "../../context/useNoticia";
 
 function Artigo() {
-  const [news, setNews] = useState<Array<Article>>([]);
+  const news = useNoticia();
   const [searchParams] = useSearchParams();
   const { id } = useParams();
   const paramId = id || searchParams.get("artigo");
 
-  useEffect(() => {
-    const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=0596354ecea24b1c93f25943b4f8dd9e`;
-
-    const req = async () => {
-      const getNews = await fetch(url);
-      const newsResponse = await getNews.json();
-      setNews(newsResponse.articles);
-    };
-    req();
-  }, []);
-
-  let filteredNews = news[Number(paramId) - 1] || null;
+  const filteredNews = news[Number(paramId) - 1] || null;
 
   return (
     <article className="grail py-4">
