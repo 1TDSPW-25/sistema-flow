@@ -205,7 +205,7 @@ export default function Cadastro() {
                 <div className="text-center pt-4 border-t border-gray-100">
                     <p className="text-sm text-[#FFFFFF]">
                         Já tem uma conta?{" "}
-                        <Link to="/login" className="font-medium text-[#ffffff] hover:text-[#d6e0ff]">
+                        <Link to="/login" className="font-medium text-[#ffffff] hover:text-gray-400">
                             Fazer login
                         </Link>
                     </p>

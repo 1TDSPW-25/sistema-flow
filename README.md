@@ -73,8 +73,9 @@
 
 | Status | Feature | Grupo / Responsáveis | Observação |
 |:-------|:---------|:----------------------|:------------|
+| 🧩 | Criar logo do site e adicionar no cabeçalho e no index(da raiz do projeto) + mudar titulo para o nome do projeto (NewsLab) | Grupo 1 (Pedro Oliveira, Guilherme, Icaro) | 🔴 Até a próxima aula | 
 | 🧩 | Adicionar botão “Salvar notícia” na página de detalhes | Grupo 2 (Barranha, Iago, João) | 🔴 22:30 | 
-| 🧩 | Criar menu do usuário (ao clicar no icone do perfil) com as opções: Perfil e Salvos | Grupo 3 (Camilo, Carlos, Laura) | 🔴 Até a próxima aula | 
+| 🧩 | Criar menu do usuário (ao clicar no icone do perfil) com as opções: Perfil e Salvos | Grupo 3 (Camilo, Carlos, Laura) | 🔴 Até a próxima aula |  
 | 🧩 | Estilizar botão salvar + layout da página de detalhes | Grupo 4 (Miguel, Pedro, Evelyn) | 🔴 22:40 | 
 | 🧩 | Estilizar página de sobre | Grupo 5 (Maicon, GustavoC, Gregory) | 🔴 <span style="color:red">DEADLINE 22:40</span> | 
 | 🧩 | Criar componente CardIntegrantes com: nome, turma  linkedin e github | Grupo 6 (Leonardo, Richard, Charles) | 🔴 22:40 | 
