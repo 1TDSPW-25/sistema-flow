@@ -76,6 +76,10 @@
 
 | Status | Feature | Grupo / Responsáveis | Observação |
 |:-------|:---------|:----------------------|:------------|
+| 🧩 |  Fazer lógica do botão salvar   | Grupo 2 (Barranha, Iago, João) | 20:50 |
+| 🧩 |  Página de erro + botão de voltar | Grupo 4 (Miguel, Evelyn, Pedro Crus) | 21:00 |
+| 🧩 |  Criar página de perfil (dados da conta)| Grupo 6 (Leonardo, Richard, Charles) | 21:00 |
+| 🧩 |  Criar página de editar dados da conta | Grupo 5 (Maicon, GustavoC, Gregory) | 21:00 |
 | 🧩 | Página Sobre | Grupo 7 (Tiago, Facchin, Gustavo) | 🔴 Corrigindo estilização da página Sobre |
 
 ---
@@ -85,11 +89,11 @@
 | Grupo | Integrantes | Status Atual | Disponibilidade |
 |:------|:-------------|:--------------|:----------------|
 | **1** | Pedro Oliveira, Guilherme, Icaro | Criar Logo | 🔴 DEADLINE |
-| **2** | Barranha, Iago, João | Criação do botão | ✅ Disponivel |
+| **2** | Barranha, Iago, João | Criação do botão | 🚧 Em desenvolvimento |
 | **3** | Camilo, Carlos, Laura | Criação página de detalhes | 🔴 DEADLINE |
-| **4** | Miguel, Evelyn, Pedro Crus | Estilização botão salvar| ✅ Disponivel |
-| **5** | Maicon, GustavoC, Gregory | Estilização sobre | ✅ Disponivel |
-| **6** | Leonardo, Richard, Charles | Criação card dos integrantes   | 🔴 DEADLINE |
+| **4** | Miguel, Evelyn, Pedro Crus | Estilização botão salvar| 🚧 Em desenvolvimento  |
+| **5** | Maicon, GustavoC, Gregory | Estilização sobre | 🚧 Em desenvolvimento |
+| **6** | Leonardo, Richard, Charles | Criação card dos integrantes   | 🚧 Em desenvolvimento |
 | **7** | Tiago, Facchin, Gustavo | Testes e validações gerais | 🚧 Em desenvolvimento |
 
 ---
