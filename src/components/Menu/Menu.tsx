@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLogado } from "../../hooks/useLogado";
+import { FaUserCircle } from "react-icons/fa";
 
 export default function Menu() {
   const { userIsLogged, userEmail } = useLogado();
@@ -38,7 +39,12 @@ export default function Menu() {
 
       <div>
         {userIsLogged ? (
-          <p className="text-white">{userEmail}</p>
+          <div className="flex items-center gap-x-2">
+            <FaUserCircle className="text-white text-3xl"/>
+            <p className="text-white">{userEmail}</p>
+          </div>
+          
+          
         ) : (
           <Link
             to="/login"
