@@ -67,7 +67,8 @@
 | 🚧 | Estilizar página de cadastro | Grupo 1 (Pedro Oliveira, Guilherme, Icaro) | Em homologação |
 | 🚧 | Adicionar botão “Salvar notícia” na página de detalhes | Grupo 2 (Barranha, Iago, João) | Implementando lógicas | 
 | 🚧 | Estilizar botão salvar + layout da página de detalhes | Grupo 4 (Miguel, Pedro, Evelyn) | Em homologação | 
-| 🚧 | Estilizar página de sobre | Grupo 5 (Maicon, GustavoC, Gregory) | G7 precisa arrumar o commit certo
+| 🚧 | Estilizar página de sobre | Grupo 5 (Maicon, GustavoC, Gregory) | Ajustando estilização
+| 🚧 | Criação página de detalhes | Grupo 3 (Camilo, Carlos, Laura) |  Em homologação
 
 
 ---
@@ -90,7 +91,7 @@
 |:------|:-------------|:--------------|:----------------|
 | **1** | Pedro Oliveira, Guilherme, Icaro | Criar Logo | 🔴 DEADLINE |
 | **2** | Barranha, Iago, João | Criação do botão | 🚧 Em desenvolvimento |
-| **3** | Camilo, Carlos, Laura | Criação página de detalhes | 🔴 DEADLINE |
+| **3** | Camilo, Carlos, Laura | Criação página de detalhes | ✅ Disponivel |
 | **4** | Miguel, Evelyn, Pedro Crus | Estilização botão salvar| 🚧 Em desenvolvimento  |
 | **5** | Maicon, GustavoC, Gregory | Estilização sobre | 🚧 Em desenvolvimento |
 | **6** | Leonardo, Richard, Charles | Criação card dos integrantes   | 🚧 Em desenvolvimento |
@@ -112,9 +113,8 @@
 ## ⏰ DEADLINES
 | Feature | Grupo | Prazo Final | Status |
 |----------|--------|-----------------|---------|
-| Criação card dos integrantes | Grupo 6 (Leonardo, Richard, Charles) | 🔴 <span style="color:red">DEADLINE 20:00</span> | Ajustando git
-| Criar logo | Grupo 1 (Pedro Oliveira, Guilherme, Icaro) | 🔴 <span style="color:red">DEADLINE 20:00</span> | Finalizando
-| Criação página de detalhes | Grupo 3 (Camilo, Carlos, Laura) | 🔴 <span style="color:red">DEADLINE 20:00</span> |  Finalizando
+| Criação card dos integrantes | Grupo 6 (Leonardo, Richard, Charles) | 🔴 <span style="color:red">DEADLINE 20:00</span> | Esperar integrantes mandarem as fotos |
+| Criar logo | Grupo 1 (Pedro Oliveira, Guilherme, Icaro) | 🔴 <span style="color:red">DEADLINE 20:00</span> | Finalizando |
 
 
 ---
