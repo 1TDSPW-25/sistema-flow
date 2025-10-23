@@ -1,9 +1,25 @@
 import { Link } from "react-router-dom";
 import { useLogado } from "../../hooks/useLogado";
 import { FaUserCircle } from "react-icons/fa";
+import { useEffect, useState, useRef } from "react";
 
 export default function Menu() {
   const { userIsLogged, userEmail } = useLogado();
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   
   const linkClasses =
@@ -37,9 +53,9 @@ export default function Menu() {
         </Link>
       </div>
 
-      <div>
+      <div className="relative" ref={menuRef}>
         {userIsLogged ? (
-          <div className="flex items-center gap-x-2">
+          <div className="flex items-center gap-x-2 cursor-pointer" onClick={() => setMenuOpen(!menuOpen)}>
             <FaUserCircle className="text-white text-3xl"/>
             <p className="text-white">{userEmail}</p>
           </div>
@@ -52,6 +68,19 @@ export default function Menu() {
           >
             Entrar
           </Link>
+        )}
+
+        {menuOpen && userIsLogged && (
+          <div  className="absolute right-0 mt-2 w-40   bg-white rounded-md shadow-lg   py-2 z-20  ">
+            <Link to="/perfil" className="block px-4 py-2 text-gray-800 hover:bg-gray-100" onClick={() => setMenuOpen}> 
+            Perfil
+            </Link>
+
+            <Link to="/salvos" className="block px-4 py-2 text-gray-800 hover:bg-gray-100" onClick={() => setMenuOpen(false)}>
+            Salvos
+            </Link>
+
+          </div>
         )}
       </div>
     </nav>
