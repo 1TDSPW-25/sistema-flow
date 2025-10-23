@@ -17,4 +17,31 @@ export default function Sobre() {
           </p>
         </section>
 
+        {/* Seção: Missão */}
+        <section className="mb-10">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-3">Missão</h2>
+          <p className="text-gray-700 leading-relaxed">
+            Informar com responsabilidade, transparência e compromisso com o interesse público.
+          </p>
+        </section>
+
+         {/* Seção: Visão */}
+        <section className="mb-10">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-3">Visão</h2>
+          <p className="text-gray-700 leading-relaxed">
+            Ser referência em jornalismo digital, combinando reportagem, dados e participação da audiência.
+          </p>
+        </section>
+
+          {/* Seção: Valores */}
+        <section className="mb-10">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-3">Valores</h2>
+          <ul className="list-disc list-inside text-gray-700 space-y-1 leading-relaxed">
+            <li>Independência editorial</li>
+            <li>Transparência</li>
+            <li>Proteção de fontes</li>
+            <li>Diversidade e inclusão</li>
+          </ul>
+        </section>
+
         
