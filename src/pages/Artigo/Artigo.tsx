@@ -45,7 +45,8 @@ function Artigo() {
               <strong>Fonte:</strong> {filteredNews.source.name}
             </small>
           </div>
- 
+          
+          {/*Botão ainda não funcional pois não há um link para salvamento */}
           <input type="button" onClick={handleSaveNews} value="Salvar Notícia"></input>
  
           <hr className="border-gray-300 my-6" />
