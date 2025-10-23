@@ -1,7 +1,9 @@
-// src/pages/EditarCadastro/index.tsx
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { FormEvent } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import type { UsuarioType } from "../../types/usuario";
+
+const API_URL = "http://localhost:3001";
 
 export default function EditarCadastro() {
   const navigate = useNavigate();
@@ -10,14 +12,120 @@ export default function EditarCadastro() {
   const [nome, setNome] = useState("");
   const [nomeUser, setNomeUser] = useState("");
   const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
+  const [senha, setSenha] = useState(""); 
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isLoading] = useState(false); 
+  const [isLoading, setIsLoading] = useState(true);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  
+  useEffect(() => {
+    let isMounted = true;
+    async function fetchUser() {
+      try {
+        setError(null);
+        setIsLoading(true);
+
+        if (!id) {
+          throw new Error("ID do usuário não informado.");
+        }
+
+        const res = await fetch(`${API_URL}/usuarios/${id}`);
+        if (!res.ok) {
+          throw new Error("Falha ao carregar dados do usuário.");
+        }
+        const user: UsuarioType = await res.json();
+
+        if (!isMounted) return;
+        setNome(user.nome ?? "");
+        setNomeUser(user.nomeUser ?? "");
+        setEmail(user.email ?? "");
+        
+      } catch (e) {
+        const message = e instanceof Error ? e.message : "Erro ao carregar dados.";
+        if (isMounted) setError(message);
+      } finally {
+        if (isMounted) setIsLoading(false);
+      }
+    }
+    fetchUser();
+    return () => {
+      isMounted = false;
+    };
+  }, [id]);
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setError(null);
+    setIsSubmitting(true);
+
+    try {
+      if (!id) {
+        throw new Error("ID do usuário não informado.");
+      }
+
+      
+      const responseGet = await fetch(`${API_URL}/usuarios`);
+      if (!responseGet.ok) {
+        throw new Error("Falha ao conectar com o servidor. Tente novamente.");
+      }
+      const usuarios: UsuarioType[] = await responseGet.json();
+
+      const meId = Number(id);
+      const emailExists = usuarios.some(
+        (u) => u.email === email && Number(u.id) !== meId
+      );
+      if (emailExists) {
+        setError("Este e-mail já está em uso por outro usuário.");
+        setIsSubmitting(false);
+        return;
+      }
+
+      const userExists = usuarios.some(
+        (u) => u.nomeUser === nomeUser && Number(u.id) !== meId
+      );
+      if (userExists) {
+        setError("Este nome de usuário já está em uso por outro usuário.");
+        setIsSubmitting(false);
+        return;
+      }
+
+      
+      const payload: Partial<UsuarioType> & {
+        senha?: string;
+        nome?: string;
+        nomeUser?: string;
+        email?: string;
+      } = {
+        nome,
+        nomeUser,
+        email,
+      };
+      if (senha.trim().length > 0) {
+        payload.senha = senha;
+      }
+
     
+      const responseUpdate = await fetch(`${API_URL}/usuarios/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!responseUpdate.ok) {
+        throw new Error("Não foi possível atualizar o cadastro.");
+      }
+
+      
+      navigate("/login"); 
+    } catch (submitError) {
+      const message =
+        submitError instanceof Error
+          ? submitError.message
+          : "Falha ao atualizar cadastro.";
+      setError(message);
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -118,7 +226,33 @@ export default function EditarCadastro() {
                 disabled={isSubmitting}
                 className="w-1/2 flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-lg font-semibold text-white bg-[#1C3546] hover:bg-[#30576b] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FFFFFF] disabled:bg-gray-400 transition duration-150 ease-in-out"
               >
-                Salvar alterações
+                {isSubmitting ? (
+                  <span className="flex items-center">
+                    <svg
+                      className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      ></path>
+                    </svg>
+                    Salvando...
+                  </span>
+                ) : (
+                  "Salvar alterações"
+                )}
               </button>
             </div>
 
@@ -135,114 +269,4 @@ export default function EditarCadastro() {
       </section>
     </main>
   );
-}
-
-import { useEffect } from "react"; 
-
-
-const [isLoading, setIsLoading] = useState(true); 
-
-
-useEffect(() => {
-  let isMounted = true;
-
-  async function fetchUser() {
-    try {
-      setError(null);
-      setIsLoading(true);
-
-      if (!id) {
-        throw new Error("ID do usuário não informado.");
-      }
-
-      const res = await fetch(`http://localhost:3001/usuarios/${id}`);
-      if (!res.ok) {
-        throw new Error("Falha ao carregar dados do usuário.");
-      }
-      const user = await res.json();
-
-      if (!isMounted) return;
-      setNome(user?.nome ?? "");
-      setNomeUser(user?.nomeUser ?? "");
-      setEmail(user?.email ?? "");
-    } catch (e) {
-      const message = e instanceof Error ? e.message : "Erro ao carregar dados.";
-      if (isMounted) setError(message);
-    } finally {
-      if (isMounted) setIsLoading(false);
-    }
-  }
-
-  fetchUser();
-  return () => {
-    isMounted = false;
-  };
-}, [id]);
-
-async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-  event.preventDefault();
-  setError(null);
-  setIsSubmitting(true);
-
-  try {
-    if (!id) {
-      throw new Error("ID do usuário não informado.");
-    }
-
-    const responseGet = await fetch(`http://localhost:3001/usuarios`);
-    if (!responseGet.ok) {
-      throw new Error("Falha ao conectar com o servidor. Tente novamente.");
-    }
-    const usuarios: Array<{ id: number | string; email: string; nomeUser: string }> =
-      await responseGet.json();
-
-    const meId = Number(id);
-
-    const emailExists = usuarios.some(
-      (u) => u.email === email && Number(u.id) !== meId
-    );
-    if (emailExists) {
-      setError("Este e-mail já está em uso por outro usuário.");
-      setIsSubmitting(false);
-      return;
-    }
-
-    const userExists = usuarios.some(
-      (u) => u.nomeUser === nomeUser && Number(u.id) !== meId
-    );
-    if (userExists) {
-      setError("Este nome de usuário já está em uso por outro usuário.");
-      setIsSubmitting(false);
-      return;
-    }
-
-    const payload: Record<string, unknown> = {
-      nome,
-      nomeUser,
-      email,
-    };
-    if (senha.trim().length > 0) {
-      payload.senha = senha;
-    }
-
-    const responseUpdate = await fetch(`http://localhost:3001/usuarios/${id}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-
-    if (!responseUpdate.ok) {
-      throw new Error("Não foi possível atualizar o cadastro.");
-    }
-
-    navigate("/login");
-  } catch (submitError) {
-    const message =
-      submitError instanceof Error
-        ? submitError.message
-        : "Falha ao atualizar cadastro.";
-    setError(message);
-  } finally {
-    setIsSubmitting(false);
-  }
 }
