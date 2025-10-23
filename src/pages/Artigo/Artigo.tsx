@@ -1,14 +1,18 @@
 import { useParams, useSearchParams } from "react-router-dom";
 import { useNoticia } from "../../context/useNoticia";
-
+ 
 function Artigo() {
   const news = useNoticia();
   const [searchParams] = useSearchParams();
   const { id } = useParams();
   const paramId = id || searchParams.get("artigo");
-
+ 
+  const handleSaveNews = () => {
+    console.log("Notícia salva!");
+  }
+ 
   const filteredNews = news[Number(paramId) - 1] || null;
-
+ 
   return (
     <article className="max-w-5xl mx-auto py-10 px-4 text-gray-800">
       {filteredNews ? (
@@ -21,12 +25,12 @@ function Artigo() {
               className="w-full h-96 object-cover rounded-lg shadow-md mb-8"
             />
           )}
-
+ 
           {/* Título */}
           <h1 className="text-3xl font-bold text-gray-900 mb-3 leading-tight">
             {filteredNews.title}
           </h1>
-
+ 
           {/* Autor e data */}
           <p className="text-gray-600 mb-1">
             <span className="font-medium">{filteredNews.author}</span>
@@ -41,16 +45,18 @@ function Artigo() {
               <strong>Fonte:</strong> {filteredNews.source.name}
             </small>
           </div>
-
+ 
+          <input type="button" onClick={handleSaveNews} value="Salvar Notícia"></input>
+ 
           <hr className="border-gray-300 my-6" />
-
+ 
           {/* Conteúdo */}
           <p className="text-lg leading-relaxed mb-8">
             {filteredNews?.content
               ? filteredNews.content.replace(/\[\+\d{1,3} chars\]/g, "")
               : "Conteúdo não disponível."}
           </p>
-
+ 
           {/* Link para artigo completo */}
           <a
             href={filteredNews.url}
@@ -69,5 +75,5 @@ function Artigo() {
     </article>
   );
 }
-
+ 
 export { Artigo };
