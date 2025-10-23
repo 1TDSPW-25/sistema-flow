@@ -48,7 +48,8 @@ function Artigo() {
           
           {/*Botão ainda não funcional pois não há um link para salvamento */}
           <input type="button" onClick={handleSaveNews} value="Salvar Notícia"
-          className="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-md shadow hover:bg-blue-700 transition cursor-pointer mb-4"/>
+          className="inline-block bg-[#0a1a2f] text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-[#081524] transition cursor-pointer mb-4"/>
+          
 
  
           <hr className="border-gray-300 my-6" />
