@@ -1,5 +1,4 @@
 import { Outlet } from "react-router-dom";
-import Menu from "./components/Menu/Menu"
 import Rodape from "./components/Rodape/Rodape";
 import ApiTester from "./TesterApi";
 import Cabecalho from "./components/Cabecalho/Cabecalho";

@@ -104,6 +104,13 @@
       "nomeUser": "bob",
       "email": "bob@bob",
       "senha": "bob"
+    },
+    {
+      "id": "61cc",
+      "nome": "Leo",
+      "nomeUser": "leo1234",
+      "email": "leofiap@fiap.com.br",
+      "senha": "12345"
     }
   ]
 }
