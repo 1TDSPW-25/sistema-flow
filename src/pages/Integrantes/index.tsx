@@ -11,13 +11,34 @@ type Membro = {
 export default function Integrantes() {
   const TURMA = "1TDSPW";
   const membros: Membro[] = [
+     {
+      nome: "Anna Clara Russo Luca",
+      turma: "TechLead",
+      linkedin: "https://linkedin.com/in/annaclararussoluca/",
+      github: "https://github.com/annaclrl",
+    },
     {
-      nome: "Laura Lopes Cruz",
+      nome: "Gabriel Duarte",
+      turma: "Homolog",
+      linkedin: "https://linkedin.com/in/gabriel-duarte1010",
+      github: "https://github.com/duartegdm",
+    },
+    { nome: "Richard Freitas",
       turma: TURMA,
-      linkedin:
-        "https://www.linkedin.com/in/laura-lopes-a5937a353?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      linkedin: "https://www.linkedin.com/in/richard-freitas",
+      github: "https://github.com/vlonerickk"
+    },
+    {
+      nome: "Carlos André Silva",
+      turma: TURMA,
+      linkedin: "https://www.linkedin.com/in/ukarlito?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+      github: "https://github.com/uKarlito",
+    },
+    {
+      nome: "Laura Lopes",
+      turma: TURMA,
+      linkedin: "https://www.linkedin.com/in/laura-lopes-a5937a353?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       github: "https://github.com/Laura853",
-      foto: "/integrantes/laura.jpg",
     },
     {
       nome: "Pedro Henrique de Oliveira",
@@ -33,23 +54,71 @@ export default function Integrantes() {
       github: "https://github.com/leojp04",
       foto: "/integrantes/leonardo.jpg",
     },
-    { nome: "Integrante 4", turma: TURMA },
-    { nome: "Integrante 5", turma: TURMA, linkedin: "#", github: "#" },
-    { nome: "Integrante 6", turma: TURMA, linkedin: "#", github: "#" },
-    { nome: "Integrante 7", turma: TURMA, linkedin: "#", github: "#" },
-    { nome: "Integrante 8", turma: TURMA, linkedin: "#", github: "#" },
-    { nome: "Integrante 9", turma: TURMA, linkedin: "#", github: "#" },
-    { nome: "Integrante 10", turma: TURMA, linkedin: "#", github: "#" },
-    { nome: "Integrante 11", turma: TURMA, linkedin: "#", github: "#" },
-    { nome: "Integrante 12", turma: TURMA, linkedin: "#", github: "#" },
-    { nome: "Integrante 13", turma: TURMA, linkedin: "#", github: "#" },
-    { nome: "Integrante 14", turma: TURMA, linkedin: "#", github: "#" },
-    { nome: "Integrante 15", turma: TURMA, linkedin: "#", github: "#" },
-    { nome: "Integrante 16", turma: TURMA, linkedin: "#", github: "#" },
-    { nome: "Integrante 17", turma: TURMA, linkedin: "#", github: "#" },
-    { nome: "Integrante 18", turma: TURMA, linkedin: "#", github: "#" },
-    { nome: "Integrante 19", turma: TURMA, linkedin: "#", github: "#" },
-    { nome: "Integrante 20", turma: TURMA, linkedin: "#", github: "#" },
+    {
+      nome: "Fernando Charlles Faustino Fernandes",
+      turma: TURMA,
+      linkedin: "https://www.linkedin.com/in/charlles-fernandes-540713359?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      github: "https://github.com/Sigmachr",
+    },
+    {
+      nome: "Camilo Micheletto",
+      turma: TURMA,
+      linkedin: "https://linkedin.com/in/camilo-micheletto",
+      github: "https://github.com/allyhere",
+    },
+    {
+      nome: "Gustavo Aress",
+      turma: TURMA,
+      github: "https://github.com/gustavaress",
+    },
+    {
+      nome: "Iago D. Ainette",
+      turma: TURMA,
+      linkedin: "https://www.linkedin.com/in/iago-ainette-ba8294363?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      github: "https://github.com/IagoDAinette",
+    },
+    {
+      nome: "Gustavo Casimiro",
+      turma: TURMA,
+      linkedin: "https://www.linkedin.com/in/gustavo-casimiro/",
+      github: "https://github.com/Gustavo-Casimiro",
+    },
+    {
+      nome: "Guilherme Lisboa Silva",
+      turma: TURMA,
+      linkedin: "https://www.linkedin.com/in/guilhermelisboasilva?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+      github: "https://github.com/guilisbooa",
+    },
+    {
+      nome: "João Victor Gomes",
+      turma: TURMA,
+      linkedin: "https://www.linkedin.com/in/jo%C3%A3o-victor-gomes-de-souza-419432324/",
+      github: "https://github.com/Jounaxis",
+    },
+    {
+      nome: "Lucas Barranha Giannini",
+      turma: TURMA,
+      linkedin: "https://www.linkedin.com/in/lucas-giannini-67832b2b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      github: "https://github.com/Lucas06-ux",
+    },
+    {
+      nome: "Pedro Crus",
+      turma: TURMA,
+      linkedin: "https://www.linkedin.com/in/pedro-crus-0707b7360/",
+      github: "https://github.com/PedroCLH2",
+    },
+    {
+      nome: "Tiago Guedes",
+      turma: TURMA,
+      linkedin: "https://www.linkedin.com/in/tiago-guedes-7225a5276",
+      github: "https://github.com/Tiagozguedes",
+    },
+    {
+      nome: "Maicon Douglas",
+      turma: TURMA,
+      linkedin: "https://www.linkedin.com/in/maicon-douglas-b244571b5",
+      github: "https://github.com/MaiconDouglas-dev",
+    },
   ];
 
   return (
