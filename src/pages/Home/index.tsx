@@ -2,22 +2,22 @@ import { useState } from "react";
 import { Card } from "../../components/Card/Card";
 import Modal from "../../components/Modal/Modal";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { useNoticia } from "../../context/useNoticia";
+import { useNoticia } from "../../hooks/useNoticia";
+import { useLogado } from "../../hooks/useLogado";
 
 export default function Home() {
   const news = useNoticia();
   const [showModal, setShowModal] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
+  const { userIsLogged } = useLogado();
 
   const handleProtectedAction = (id: number) => {
-    const usuarioLogado = localStorage.getItem("userToken") || null;
-
     const newSearchParams = new URLSearchParams(searchParams);
     newSearchParams.set("article", String(id));
     setSearchParams(newSearchParams);
 
-    if (!usuarioLogado) {
+    if (!userIsLogged) {
       setShowModal(true);
     } else {
       navigate(`/artigo/${id}`);
