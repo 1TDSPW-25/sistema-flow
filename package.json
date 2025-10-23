@@ -1,5 +1,5 @@
 {
-  "homepage": "",
+  "homepage": "https://1tdspw-25.github.io/sistema-flow/",
   "name": "sistema-flow",
   "private": true,
   "version": "0.0.0",
@@ -12,7 +12,8 @@
     "api": "npm run json-server:usuarios",
     "json-server:usuarios": "json-server --watch db.json --port 3001",
     "redeploy": "tsc -b && vite build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "postbuild": "shx cp dist/index.html dist/404.html"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",
@@ -21,6 +22,7 @@
     "react-hook-form": "^7.64.0",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.9.4",
+    "shx": "^0.4.0",
     "tailwindcss": "^4.1.14"
   },
   "devDependencies": {
