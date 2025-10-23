@@ -13,13 +13,13 @@ export const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      { path: "/", element: <Home /> },
-      { path: "/cadastro", element: <Cadastro /> },
-      { path: "/home", element: <Home /> },
-      { path: "/artigo/:id", element: <Artigo /> },
-      { path: "/sobre", element: <Sobre /> },
-      { path: "/contato", element: <Contato /> },
-      { path: "/login", element: <Login /> },
+      { path: "", element: <Home /> },
+      { path: "cadastro", element: <Cadastro /> },
+      { path: "home", element: <Home /> },
+      { path: "artigo/:id", element: <Artigo /> },
+      { path: "sobre", element: <Sobre /> },
+      { path: "contato", element: <Contato /> },
+      { path: "login", element: <Login /> },
     ],
   },
-]);
+], {basename:"/sistema-flow/"} );
