@@ -62,5 +62,5 @@ Data | Página | Grupo | Status | Responsável pelo Bugfix | Observação |
 |:-------|:--------|:-----------|:--------------|:--------------|:--------------|
 22/10/2025 | Cadastro | G1 | Corrigido | Gustavo Tavares | Página de cadastro permitindo dualidade no cadastro de user e email.|
 22/10/2025 | Todas | N/A | Corrigido | Gabriel Fachin | Ajustando layout de todas a paginas, alterando o App.tsx.|
-
+23/10/2025 | Rodapé | N/A | Corrigido | Gabriel Fachin | Adicionado botão "integrantes" no rodapé sob o título "nossa equipe"|
 ---
