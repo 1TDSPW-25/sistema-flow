@@ -1,6 +1,4 @@
 import { useParams, useSearchParams } from "react-router-dom";
-import { useNoticia } from "../../context/useNoticia";
- 
 import { useNoticia } from "../../hooks/useNoticia";
 
 function Artigo() {
