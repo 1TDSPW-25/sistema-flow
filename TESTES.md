@@ -58,11 +58,9 @@ Esta seção está aqui para manter um registro claro, no qual todo bug encontra
 
 Siga o seguinte modelo:
 
-# Data
-Página | Grupo | Status | Responsável pelo Bugfix | Observação |
-
----
-
-Cadastro | Grupo | Corrigido | Gustavo Tavares | Página de cadastro permitindo dualidade no cadastro de user e email.
+Data | Página | Grupo | Status | Responsável pelo Bugfix | Observação |
+|:-------|:--------|:-----------|:--------------|:--------------|:--------------|
+22/10/2025 | Cadastro | G1 | Corrigido | Gustavo Tavares | Página de cadastro permitindo dualidade no cadastro de user e email.|
+22/10/2025 | Todas | N/A | Corrigido | Gabriel Fachin | Ajustando layout de todas a paginas, alterando o App.tsx.|
 
 ---
