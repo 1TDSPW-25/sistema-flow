@@ -136,3 +136,45 @@ export default function EditarCadastro() {
     </main>
   );
 }
+
+import { useEffect } from "react"; 
+
+
+const [isLoading, setIsLoading] = useState(true); 
+
+
+useEffect(() => {
+  let isMounted = true;
+
+  async function fetchUser() {
+    try {
+      setError(null);
+      setIsLoading(true);
+
+      if (!id) {
+        throw new Error("ID do usuário não informado.");
+      }
+
+      const res = await fetch(`http://localhost:3001/usuarios/${id}`);
+      if (!res.ok) {
+        throw new Error("Falha ao carregar dados do usuário.");
+      }
+      const user = await res.json();
+
+      if (!isMounted) return;
+      setNome(user?.nome ?? "");
+      setNomeUser(user?.nomeUser ?? "");
+      setEmail(user?.email ?? "");
+    } catch (e) {
+      const message = e instanceof Error ? e.message : "Erro ao carregar dados.";
+      if (isMounted) setError(message);
+    } finally {
+      if (isMounted) setIsLoading(false);
+    }
+  }
+
+  fetchUser();
+  return () => {
+    isMounted = false;
+  };
+}, [id]);
