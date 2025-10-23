@@ -178,3 +178,71 @@ useEffect(() => {
     isMounted = false;
   };
 }, [id]);
+
+async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  event.preventDefault();
+  setError(null);
+  setIsSubmitting(true);
+
+  try {
+    if (!id) {
+      throw new Error("ID do usuário não informado.");
+    }
+
+    const responseGet = await fetch(`http://localhost:3001/usuarios`);
+    if (!responseGet.ok) {
+      throw new Error("Falha ao conectar com o servidor. Tente novamente.");
+    }
+    const usuarios: Array<{ id: number | string; email: string; nomeUser: string }> =
+      await responseGet.json();
+
+    const meId = Number(id);
+
+    const emailExists = usuarios.some(
+      (u) => u.email === email && Number(u.id) !== meId
+    );
+    if (emailExists) {
+      setError("Este e-mail já está em uso por outro usuário.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    const userExists = usuarios.some(
+      (u) => u.nomeUser === nomeUser && Number(u.id) !== meId
+    );
+    if (userExists) {
+      setError("Este nome de usuário já está em uso por outro usuário.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    const payload: Record<string, unknown> = {
+      nome,
+      nomeUser,
+      email,
+    };
+    if (senha.trim().length > 0) {
+      payload.senha = senha;
+    }
+
+    const responseUpdate = await fetch(`http://localhost:3001/usuarios/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    if (!responseUpdate.ok) {
+      throw new Error("Não foi possível atualizar o cadastro.");
+    }
+
+    navigate("/login");
+  } catch (submitError) {
+    const message =
+      submitError instanceof Error
+        ? submitError.message
+        : "Falha ao atualizar cadastro.";
+    setError(message);
+  } finally {
+    setIsSubmitting(false);
+  }
+}
