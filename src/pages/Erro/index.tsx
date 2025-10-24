@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Erro() {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white text-center px-6">
       <h1 className="text-9xl font-extrabold text-green-500 tracking-widest">
@@ -11,12 +13,12 @@ export default function Erro() {
         A página que você está tentando acessar não existe ou foi movida.
       </p>
 
-      <Link
-        to="/"
-        className="mt-8 px-6 py-3 bg-green-500 hover:bg-green-600 text-black font-semibold rounded-lg transition duration-200"
+      <button
+        onClick={() => navigate(-1)}
+        className="mt-4 text-sm font-semibold text-gray-800 bg-white border border-gray-800 rounded-md px-3 py-1 hover:bg-gray-800 hover:text-white transition-colors cursor-pointer"
       >
-        Voltar para a Home
-      </Link>
+        Voltar
+      </button>
     </div>
   );
 }
