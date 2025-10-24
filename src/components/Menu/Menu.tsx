@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useLogado } from "../../hooks/useLogado";
 import { FaUserCircle } from "react-icons/fa";
 import { useEffect, useState, useRef } from "react";
 
 export default function Menu() {
-  const { userIsLogged, userEmail } = useLogado();
+  const navigate = useNavigate();
+  const { userIsLogged, userEmail, clearLogin } = useLogado();
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -24,6 +25,13 @@ export default function Menu() {
   
   const linkClasses =
     "text-white font-medium text-sm hover:text-gray-400 transition duration-150";
+
+  function handleLogout() {
+    clearLogin("userToken");
+    setMenuOpen(false);
+    navigate("/login");
+    window.location.reload();
+  }
 
   return (
     <nav
@@ -72,7 +80,7 @@ export default function Menu() {
 
         {menuOpen && userIsLogged && (
           <div  className="absolute right-0 mt-2 w-40   bg-white rounded-md shadow-lg   py-2 z-20  ">
-            <Link to="/perfil" className="block px-4 py-2 text-gray-800 hover:bg-gray-100" onClick={() => setMenuOpen}> 
+            <Link to="/perfil" className="block px-4 py-2 text-gray-800 hover:bg-gray-100" onClick={() => setMenuOpen(false)}> 
             Perfil
             </Link>
 
@@ -80,6 +88,13 @@ export default function Menu() {
             Salvos
             </Link>
 
+            <button
+              type="button"
+              className="block w-full px-4 py-2 text-left text-gray-800 hover:bg-gray-100"
+              onClick={handleLogout}
+            >
+              Sair
+            </button>
           </div>
         )}
       </div>

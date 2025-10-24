@@ -7,6 +7,7 @@ import Sobre from "../pages/Sobre/index.tsx";
 import Integrantes from "../pages/Integrantes/index.tsx";
 import Contato from "../pages/Contato/index.tsx";
 import { Artigo } from "../pages/Artigo/Artigo.tsx";
+import Perfil from "../pages/Perfil/index.tsx";
 import "../main.css";
 
 export const router = createBrowserRouter([
@@ -22,7 +23,6 @@ export const router = createBrowserRouter([
       { path: "/integrantes", element: <Integrantes /> },
       { path: "/contato", element: <Contato /> },
       { path: "/login", element: <Login /> },
-      { path: "/editar-cadastro/:id", element: <Cadastro /> }
     ],
   },
 ], {basename:"/sistema-flow"} );

@@ -58,9 +58,13 @@ Esta seção está aqui para manter um registro claro, no qual todo bug encontra
 
 Siga o seguinte modelo:
 
-Data | Página | Grupo | Status | Responsável pelo Bugfix | Observação |
-|:-------|:--------|:-----------|:--------------|:--------------|:--------------|
-22/10/2025 | Cadastro | G1 | Corrigido | Gustavo Tavares | Página de cadastro permitindo dualidade no cadastro de user e email.|
-22/10/2025 | Todas | N/A | Corrigido | Gabriel Fachin | Ajustando layout de todas a paginas, alterando o App.tsx.|
-
+Data | Página | Status | Responsável pelo Bugfix | Observação |
+|:-------|:-----------|:--------------|:--------------|:--------------|
+22/10/2025 | Cadastro | Corrigido | Gustavo Tavares | Página de cadastro permitindo dualidade no cadastro de user e email.|
+22/10/2025 | Todas | Corrigido | Gabriel Fachin | Ajustando layout de todas a paginas, alterando o App.tsx.|
+22/10/2025 | Sobre | Corrigido | Thiago Guedes | Pagina sobre duplicada no projeto |
+23/10/2025 | Rodapé | Corrigido | Gabriel Fachin | Adicionado botão "integrantes" no rodapé sob o título "nossa equipe" |
+23/10/2025 | Todas | Corrigido | Thiago Guedes | Correção no app.tsx, com a importaçao do cabecalho ao inves do menu |
+23/10/2025 | Home | Corrigido | Gustavo Tavares | Validação de informações null nos cards de noticia |
+23/10/2025 | Home | Corrigido | Gustavo Tavares | Correçao do nome do integrante Gustavo Tavares |
 ---

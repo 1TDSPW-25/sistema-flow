@@ -53,7 +53,7 @@ function Card(props: CardProps) {
         {description}
       </p>
       <small className="w-full mt-auto text-xs text-black-400 text-right font-bold">
-        Por {author}
+        Por {author || "Autor desconhecido"}
       </small>  
 
       <button onClick={onVerMais}  
@@ -66,4 +66,3 @@ function Card(props: CardProps) {
 }
 
 export { Card };
-
