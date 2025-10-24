@@ -31,7 +31,7 @@ export const integrantes: Integrante[] = [
     foto: "",
   },
   {
-    nome: "Carlos AndrǸ Silva",
+    nome: "Carlos André Silva",
     turma: TURMA_PADRAO,
     linkedin:
       "https://www.linkedin.com/in/ukarlito?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
@@ -55,7 +55,7 @@ export const integrantes: Integrante[] = [
     foto: "/integrantes/pedro.jpg",
   },
   {
-    nome: "Leonardo JosǸ Pereira",
+    nome: "Leonardo José Pereira",
     turma: TURMA_PADRAO,
     linkedin: "https://www.linkedin.com/in/leonardo-pereira-adm/",
     github: "https://github.com/leojp04",
