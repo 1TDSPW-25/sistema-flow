@@ -69,6 +69,7 @@
 | 🚧 | Estilizar botão salvar + layout da página de detalhes | Grupo 4 (Miguel, Pedro, Evelyn) | Em homologação | 
 | 🚧 | Estilizar página de sobre | Grupo 5 (Maicon, GustavoC, Gregory) | Ajustando estilização
 | 🚧 | Criação página de detalhes | Grupo 3 (Camilo, Carlos, Laura) |  Em homologação
+| 🚧 | Criar logo | Grupo 1 (Pedro Oliveira, Guilherme, Icaro) | Em homologação |
 
 
 ---
@@ -82,7 +83,7 @@
 | 🧩 |  Página de erro + botão de voltar | Grupo 4 (Miguel, Evelyn, Pedro Crus) | 21:00 |
 | 🧩 |  Criar página de perfil (dados da conta)| Grupo 6 (Leonardo, Richard, Charles) | 21:00 |
 | 🧩 |  Criar página de editar dados da conta | Grupo 5 (Maicon, GustavoC, Gregory) | 21:00 |
-| 🧩 | Página Sobre | Grupo 7 (Tiago, Facchin, Gustavo) | 🔴 Corrigindo estilização da página Sobre |
+| 🧩 |  Página Sobre | Grupo 7 (Tiago, Facchin, Gustavo) | 🔴 Corrigindo estilização da página Sobre |
 
 ---
 
@@ -90,7 +91,7 @@
 
 | Grupo | Integrantes | Status Atual | Disponibilidade |
 |:------|:-------------|:--------------|:----------------|
-| **1** | Pedro Oliveira, Guilherme, Icaro | Criar Logo | 🔴 DEADLINE |
+| **1** | Pedro Oliveira, Guilherme, Icaro | Criar Logo | ✅ Disponivel |
 | **2** | Barranha, Iago, João | Criação do botão | 🚧 Em desenvolvimento |
 | **3** | Camilo, Carlos, Laura | Criação página de detalhes | 🚧 Em desenvolvimento |
 | **4** | Miguel, Evelyn, Pedro Crus | Estilização botão salvar| 🚧 Em desenvolvimento  |
@@ -115,7 +116,6 @@
 | Feature | Grupo | Prazo Final | Status |
 |----------|--------|-----------------|---------|
 | Criação card dos integrantes | Grupo 6 (Leonardo, Richard, Charles) | 🔴 <span style="color:red">DEADLINE 20:00</span> | Esperar integrantes mandarem as fotos |
-| Criar logo | Grupo 1 (Pedro Oliveira, Guilherme, Icaro) | 🔴 <span style="color:red">DEADLINE 20:00</span> | Finalizando |
 
 
 ---
