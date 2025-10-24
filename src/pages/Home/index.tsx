@@ -40,13 +40,15 @@ export default function Home() {
         </p>
       </div>
       <section className="card-gallery px-4 py-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {news.map((post, index) => (
-          <Card
-            key={index}
-            {...post}
-            onVerMais={() => handleProtectedAction(index + 1)}
-          />
-        ))}
+        {news
+          .filter((post) => post.title && post.description && post.urlToImage)
+          .map((post, index) => (
+            <Card
+              key={index}
+              {...post}
+              onVerMais={() => handleProtectedAction(index + 1)}
+            />
+          ))}
       </section>
 
       <Modal

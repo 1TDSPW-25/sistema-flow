@@ -1,18 +1,54 @@
 import { useParams, useSearchParams } from "react-router-dom";
 import { useNoticia } from "../../hooks/useNoticia";
+import type { UsuarioType } from "../../types/usuario";
+import { useLogado } from "../../hooks/useLogado";
+const API_URL = "http://localhost:3001";
 
 function Artigo() {
   const news = useNoticia();
+  const { userEmail } = useLogado();
   const [searchParams] = useSearchParams();
   const { id } = useParams();
   const paramId = id || searchParams.get("artigo");
- 
-  const handleSaveNews = () => {
+
+  const handleSaveNews = async () => {
     console.log("Notícia salva!");
+    const response = await fetch(`${API_URL}/usuarios`);
+
+    if (!response.ok) return
+
+    const data: UsuarioType[] = await response.json();
+    const currentUser = data.find(user => user.email === userEmail)
+
+    if (currentUser?.artigosSalvos?.find(artigo => artigo.nomeArtigo === filteredNews.title)) return
+    if (currentUser && "artigosSalvos" in currentUser) {
+
+      currentUser.artigosSalvos?.push({
+        url: filteredNews.url,
+        nomeArtigo: filteredNews.title
+      })
+    }
+    else if (currentUser) {
+      currentUser.artigosSalvos = [{
+        url: filteredNews.url,
+        nomeArtigo: filteredNews.title
+      }]
+    }
+
+    const responsePut = await fetch(`${API_URL}/usuarios/${currentUser?.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(currentUser),
+    });
+
+    console.log(responsePut);
+    return data;
   }
- 
+
   const filteredNews = news[Number(paramId) - 1] || null;
- 
+
   return (
     <div className="min-h-screen flex flex-col">
       <article className="flex-1 w-full max-w-4xl mx-auto py-6 sm:py-8 px-4 sm:px-6 lg:px-8 text-gray-800">
@@ -98,5 +134,5 @@ function Artigo() {
     </div>
   );
 }
- 
+
 export { Artigo };
