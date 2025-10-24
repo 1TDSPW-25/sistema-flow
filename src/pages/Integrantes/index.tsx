@@ -1,12 +1,5 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-
-type Membro = {
-  nome: string;
-  turma: string;
-  linkedin?: string;
-  github?: string;
-  foto?: string; // caminho dentro de /public ou URL
-};
+import { integrantes } from "../../data/integrantes";
 
 export default function Integrantes() {
   const TURMA = "1TDSPW";
@@ -127,56 +120,56 @@ export default function Integrantes() {
       <section className="max-w-5xl mx-auto px-4">
         <h1 className="text-3xl font-bold mb-6">Integrantes</h1>
         <p className="text-gray-700 mb-8">
-          Conheça a equipe responsável por este projeto.
+          Conheca a equipe responsavel por este projeto.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {membros.map((m, i) => (
+          {integrantes.map((membro, index) => (
             <div
-              key={i}
+              key={index}
               className="bg-white rounded-lg shadow p-5 flex flex-col items-start"
             >
               <div className="relative w-16 h-16 rounded-full bg-gray-200 mb-4 overflow-hidden flex items-center justify-center text-sm font-semibold text-gray-600 select-none">
-                {m.foto && (
+                {membro.foto && (
                   <img
-                    src={m.foto}
-                    alt={`Foto de ${m.nome}`}
+                    src={membro.foto}
+                    alt={`Foto de ${membro.nome}`}
                     className="absolute inset-0 w-full h-full object-cover rounded-full"
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).style.display = "none";
+                    onError={(event) => {
+                      event.currentTarget.style.display = "none";
                     }}
                   />
                 )}
                 <span>
-                  {m.nome
+                  {membro.nome
                     .split(" ")
                     .filter(Boolean)
                     .slice(0, 2)
-                    .map((p) => p[0])
+                    .map((parte) => parte[0])
                     .join("")}
                 </span>
               </div>
-              <h3 className="text-lg font-semibold">{m.nome}</h3>
-              <span className="text-sm text-gray-600 mb-3">{m.turma}</span>
+              <h3 className="text-lg font-semibold">{membro.nome}</h3>
+              <span className="text-sm text-gray-600 mb-3">{membro.turma}</span>
               <div className="flex items-center gap-3 mt-auto">
-                {m.linkedin && m.linkedin !== "#" && (
+                {membro.linkedin && membro.linkedin !== "#" && (
                   <a
-                    href={m.linkedin}
+                    href={membro.linkedin}
                     target="_blank"
                     rel="noreferrer noopener"
                     className="text-blue-600 hover:text-blue-700"
-                    aria-label={`LinkedIn de ${m.nome}`}
+                    aria-label={`LinkedIn de ${membro.nome}`}
                   >
                     <FaLinkedin size={20} />
                   </a>
                 )}
-                {m.github && m.github !== "#" && (
+                {membro.github && membro.github !== "#" && (
                   <a
-                    href={m.github}
+                    href={membro.github}
                     target="_blank"
                     rel="noreferrer noopener"
                     className="text-gray-800 hover:text-black"
-                    aria-label={`GitHub de ${m.nome}`}
+                    aria-label={`GitHub de ${membro.nome}`}
                   >
                     <FaGithub size={20} />
                   </a>

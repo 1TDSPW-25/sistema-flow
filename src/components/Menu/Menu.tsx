@@ -56,6 +56,9 @@ export default function Menu() {
         <Link to="/sobre" className={linkClasses}>
           Sobre
         </Link>
+        <Link to="/integrantes" className={linkClasses}>
+          Integrantes
+        </Link>
         <Link to="/contato" className={linkClasses}>
           Contato
         </Link>
