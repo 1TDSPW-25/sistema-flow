@@ -23,6 +23,7 @@ export const router = createBrowserRouter([
       { path: "/integrantes", element: <Integrantes /> },
       { path: "/contato", element: <Contato /> },
       { path: "/login", element: <Login /> },
+      { path: "/editar-cadastro/:id", element: <Cadastro /> },
       { path: "/perfil", element: <Perfil /> },
     ],
   },
