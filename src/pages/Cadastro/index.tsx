@@ -82,16 +82,16 @@ export default function Cadastro() {
     }
 
     return (
-        <main className="min-h-screen bg-[#EFEFEF] flex items-center justify-center p-4">
-            <section className="w-full max-w-md bg-gray-900 shadow-xl rounded-lg p-8 space-y-6 border border-gray-200">
+        <main className="min-h-screen flex flex-col justify-center items-center bg-[#EFEFEF] px-4 sm:px-6 lg-px-8">
+            <section className="w-full max-w-md sm:max-w-lg md:max-w-xl bg-gray-900 shadow-xl rounded-lg p-6 sm:p-8 md:p-10 space-y-6 border border-gray-200">
                 <div className="text-center space-y-2">
-                    <h2 className="text-3xl font-black tracking-tight text-[#FFFFFF]">Cadastro</h2>
-                    <p className="text-[#FFFFFF] font-sans">Crie sua conta para continuar</p>
+                    <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-white">Cadastro</h2>
+                    <p className="text-gray-300 text-sm sm:text-base font-sans">Crie sua conta para continuar</p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
                     <div>
-                        <label htmlFor="nome" className="block text-sm font-medium text-[#FFFFFF] mb-1">
+                        <label htmlFor="nome" className="block text-sm font-medium text-white mb-1">
                             Nome
                         </label>
                         <input
@@ -102,12 +102,12 @@ export default function Cadastro() {
                             required
                             disabled={isSubmitting}
                             placeholder="Seu nome completo"
-                            className="w-full px-3 py-2 border border-[#cacaca] rounded-md focus:outline-none focus:ring-2 focus:ring-[#FFFFFF] disabled:bg-gray-100 disabled:text-gray-500 placeholder:text-[#bbbbbb] text-white"
+                            className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-white disabled:bg-gray-100 disabled:text-gray-500 placeholder:text-gray-400 text-white bg-transparent"
                         />
                     </div>
 
                     <div>
-                        <label htmlFor="nomeUser" className="block text-sm font-medium text-[#FFFFFF] mb-1">
+                        <label htmlFor="nomeUser" className="block text-sm font-medium text-white mb-1">
                             Nome de usuário
                         </label>
                         <input
@@ -118,12 +118,12 @@ export default function Cadastro() {
                             required
                             disabled={isSubmitting}
                             placeholder="Seu nome de usuário"
-                            className="w-full px-3 py-2 border border-[#cacaca] rounded-md focus:outline-none focus:ring-2 focus:ring-[#FFFFFF] disabled:bg-gray-100 disabled:text-gray-500 placeholder:text-[#bbbbbb] text-white"
+                            className="w-full px-3 py-2 sm:px-4 sm:py-3  border border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-white disabled:bg-gray-100 disabled:text-gray-500 placeholder:text-gray-400 text-white bg-transparent"
                         />
                     </div>
 
                     <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-[#FFFFFF] mb-1">
+                        <label htmlFor="email" className="block text-sm font-medium text-white mb-1">
                             E-mail
                         </label>
                         <input
@@ -135,12 +135,12 @@ export default function Cadastro() {
                             required
                             disabled={isSubmitting}
                             placeholder="seu.email@exemplo.com"
-                            className="w-full px-3 py-2 border border-[#cacaca] rounded-md focus:outline-none focus:ring-2 focus:ring-[#FFFFFF] disabled:bg-gray-100 disabled:text-gray-500 placeholder:text-[#bbbbbb] text-white"
+                            className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-400  rounded-md focus:outline-none focus:ring-2 focus:ring-white disabled:bg-gray-100 disabled:text-gray-500 placeholder:text-gray-400 text-white bg-transparent"
                         />
                     </div>
 
                     <div>
-                        <label htmlFor="senha" className="block text-sm font-medium text-[#FFFFFF] mb-1">
+                        <label htmlFor="senha" className="block text-sm font-medium text-white mb-1">
                             Senha
                         </label>
                         <input
@@ -152,7 +152,7 @@ export default function Cadastro() {
                             required
                             disabled={isSubmitting}
                             placeholder="Digite sua senha"
-                            className="w-full px-3 py-2 border border-[#cacaca] rounded-md focus:outline-none focus:ring-2 focus:ring-[#FFFFFF] disabled:bg-gray-100 disabled:text-gray-500 placeholder:text-[#bbbbbb] text-white"
+                            className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-white disabled:bg-gray-100 disabled:text-gray-500 placeholder:text-gray-400 text-white bg-transparent"
                         />
                     </div>
 
@@ -170,7 +170,7 @@ export default function Cadastro() {
                     <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-lg font-semibold text-white bg-[#1C3546] hover:bg-[#30576b] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FFFFFF] disabled:bg-gray-400 transition duration-150 ease-in-out"
+                        className="w-full flex justify-center items-center py-2 sm:py-3 border border-transparent rounded-md text-base sm:text-lg font-semibold text-white bg-[#1C3546] hover:bg-[#30576b] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white disabled:bg-gray-400 transition duration-150 ease-in-out"
                     >
                         {isSubmitting ? (
                             <span className="flex items-center">
@@ -202,10 +202,10 @@ export default function Cadastro() {
                     </button>
                 </form>
 
-                <div className="text-center pt-4 border-t border-gray-100">
-                    <p className="text-sm text-[#FFFFFF]">
+                <div className="text-center pt-6 sm:pt-8 border-t border-gray-700 mt-4 sm:mt-6">
+                    <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
                         Já tem uma conta?{" "}
-                        <Link to="/login" className="font-medium text-[#ffffff] hover:text-gray-400">
+                        <Link to="/login" className="font-medium text-white hover:text-gray-400 transition-colors">
                             Fazer login
                         </Link>
                     </p>
