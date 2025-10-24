@@ -1,5 +1,4 @@
 import { useParams, useSearchParams } from "react-router-dom";
-
 import { useNoticia } from "../../hooks/useNoticia";
 import type { UsuarioType } from "../../types/usuario";
 import { useLogado } from "../../hooks/useLogado";

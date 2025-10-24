@@ -67,8 +67,9 @@ export default function Integrantes() {
       github: "https://github.com/allyhere",
     },
     {
-      nome: "Gustavo Aress",
+      nome: "Gustavo Tavares",
       turma: TURMA,
+      linkedin: "https://www.linkedin.com/in/gustavo-tavares-da-silva-b6180a220/",
       github: "https://github.com/gustavaress",
     },
     {

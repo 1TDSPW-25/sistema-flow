@@ -132,6 +132,14 @@
           "nomeArtigo": "U.S. debt tops $38 trillion for the first time, worsened by government shutdown - CBS News"
         }
       ]
+    },
+    {
+      "id": "61cc",
+      "nome": "Leo",
+      "nomeUser": "leo1234",
+      "email": "leofiap@fiap.com.br",
+      "senha": "12345",
+      "avatar": "https://i.pravatar.cc/150?u=19"
     }
   ]
 }
