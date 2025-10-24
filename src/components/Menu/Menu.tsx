@@ -2,6 +2,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useLogado } from "../../hooks/useLogado";
 import { FaUserCircle } from "react-icons/fa";
 import { useEffect, useState, useRef } from "react";
+import '../Cabecalho/Cabecalho.css';
+import logo from '../../assets/img/news_icon.png';
+
 
 export default function Menu() {
   const navigate = useNavigate();
@@ -45,9 +48,10 @@ export default function Menu() {
         items-center 
       "
     >
-      <h2 className="text-green-400 font-extrabold text-xl tracking-widest">
-        NOTÍCIAS
-      </h2>
+      <div className="logo-container">
+        <img src={logo} alt="NewsLab logo" className="logo" />
+        <h1 className="titulo">NewsLab</h1>
+      </div>
 
       <div className="grow flex justify-center space-x-6">
         <Link to="/" className={linkClasses}>
