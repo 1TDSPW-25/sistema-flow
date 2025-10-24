@@ -82,7 +82,6 @@ function Artigo() {
             </small>
           </div>
 
-          {/*Botão ainda não funcional pois não há um link para salvamento */}
           <button onClick={handleSaveNews}
             className="inline-block bg-[#0a1a2f] text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-[#081524] transition cursor-pointer mb-4"> Salvar Notícia </button>
 
