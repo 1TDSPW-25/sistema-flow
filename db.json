@@ -96,21 +96,50 @@
       "nome": "jacare dos palmares",
       "nomeUser": "jacareinformado",
       "email": "jacare@gmail.com",
-      "senha": "lacosteinformado"
+      "senha": "lacosteinformado",
+      "artigosSalvos": [
+        {
+          "url": "https://abcnews.go.com/US/earth-moons-orbiting-astronomers-explain-quasi-moon/story?id\\\\u003d126770774",
+          "nomeArtigo": "Will Earth have two moons orbiting it? Astronomers explain the 'quasi-moon' - ABC News - Breaking News, Latest News and Videos"
+        },
+        {
+          "url": "https://www.ksl.com/article/51393293/openai-launches-atlas-browser-to-compete-with-google-chrome",
+          "nomeArtigo": "OpenAI launches Atlas browser to compete with Google Chrome - KSL.com"
+        },
+        {
+          "url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/nfl-wont-reconsider-its-bad-bunny-super-bowl-halftime-decision",
+          "nomeArtigo": "NFL won’t reconsider its Bad Bunny Super Bowl halftime decision - NBC Sports"
+        },
+        {
+          "url": "https://www.npr.org/2025/10/22/nx-s1-5582748/iceland-mosquitoes-first-time",
+          "nomeArtigo": "Iceland reports the presence of mosquitoes for the first time, as climate warms - NPR"
+        }
+      ]
     },
     {
       "id": "93c1",
       "nome": "bob",
       "nomeUser": "bob",
       "email": "bob@bob",
-      "senha": "bob"
+      "senha": "bob",
+      "artigosSalvos": [
+        {
+          "url": "http://www.billboard.com/music/music-news/demi-lovato-eating-substance-issues-responsibility-1236095458/",
+          "nomeArtigo": "Demi Lovato Says She Felt a ‘Responsibility’ Not to ‘Sweep It Under the Rug’ When She Struggled With Eating Disorder - Yahoo"
+        },
+        {
+          "url": "https://www.cbsnews.com/news/us-debt-38-trillion-government-shutdown-2025/",
+          "nomeArtigo": "U.S. debt tops $38 trillion for the first time, worsened by government shutdown - CBS News"
+        }
+      ]
     },
     {
       "id": "61cc",
       "nome": "Leo",
       "nomeUser": "leo1234",
       "email": "leofiap@fiap.com.br",
-      "senha": "12345"
+      "senha": "12345",
+      "avatar": "https://i.pravatar.cc/150?u=19"
     }
   ]
 }

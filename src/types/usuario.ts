@@ -4,4 +4,5 @@ export type UsuarioType = {
     nomeUser: string;
     email: string;
     senha: string;
+    artigosSalvos?: Array<{ url: string, nomeArtigo: string }>
 };
