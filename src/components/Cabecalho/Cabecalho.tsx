@@ -2,7 +2,7 @@ import './Cabecalho.css';
 import logo from '../../assets/img/news_icon.png'; 
 
 
-export const Cabecalho = () => {
+const Cabecalho = () => {
   return (
     <header className="cabecalho">
       <div className="logo-container">
@@ -14,3 +14,6 @@ export const Cabecalho = () => {
     </header>
   );
 };
+
+export default Cabecalho;
+
