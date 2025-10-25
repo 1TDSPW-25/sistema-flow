@@ -2,11 +2,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useLogado } from "../../hooks/useLogado";
 import { FaUserCircle } from "react-icons/fa";
 import { useEffect, useState, useRef } from "react";
-import '../Cabecalho/Cabecalho.css';
-import logo from '../../assets/img/news_icon.png';
+import logo from "../../assets/img/news_icon.png";
 
-
-export default function Menu() {
+export default function Cabecalho() {
   const navigate = useNavigate();
   const { userIsLogged, userEmail, clearLogin } = useLogado();
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
@@ -25,7 +23,6 @@ export default function Menu() {
     };
   }, []);
 
-  
   const linkClasses =
     "text-white font-medium text-sm hover:text-gray-400 transition duration-150";
 
@@ -37,23 +34,13 @@ export default function Menu() {
   }
 
   return (
-    <nav
-      className="
-        w-full 
-        bg-gray-800 
-        py-6 
-        px-8 
-        shadow-md 
-        flex 
-        items-center 
-      "
-    >
-      <div className="logo-container">
-        <img src={logo} alt="NewsLab logo" className="logo" />
-        <h1 className="titulo">NewsLab</h1>
+    <nav className="w-full bg-gray-800 py-4 px-6 shadow-md flex items-center justify-between">
+      <div className="flex items-center gap-3">
+        <img src={logo} alt="NewsLab logo" className="h-10 w-auto drop-shadow-md" />
+        <h1 className="text-2xl font-bold text-white tracking-wide">NewsLab</h1>
       </div>
 
-      <div className="grow flex justify-center space-x-6">
+      <div className="flex justify-center grow space-x-6">
         <Link to="/" className={linkClasses}>
           Home
         </Link>
@@ -67,12 +54,13 @@ export default function Menu() {
 
       <div className="relative" ref={menuRef}>
         {userIsLogged ? (
-          <div className="flex items-center gap-x-2 cursor-pointer" onClick={() => setMenuOpen(!menuOpen)}>
-            <FaUserCircle className="text-white text-3xl"/>
+          <div
+            className="flex items-center gap-x-2 cursor-pointer"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <FaUserCircle className="text-white text-3xl" />
             <p className="text-white">{userEmail}</p>
           </div>
-          
-          
         ) : (
           <Link
             to="/login"
@@ -83,13 +71,21 @@ export default function Menu() {
         )}
 
         {menuOpen && userIsLogged && (
-          <div  className="absolute right-0 mt-2 w-40   bg-white rounded-md shadow-lg   py-2 z-20  ">
-            <Link to="/perfil" className="block px-4 py-2 text-gray-800 hover:bg-gray-100" onClick={() => setMenuOpen(false)}> 
-            Perfil
+          <div className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg py-2 z-20">
+            <Link
+              to="/perfil"
+              className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+              onClick={() => setMenuOpen(false)}
+            >
+              Perfil
             </Link>
 
-            <Link to="/salvos" className="block px-4 py-2 text-gray-800 hover:bg-gray-100" onClick={() => setMenuOpen(false)}>
-            Salvos
+            <Link
+              to="/salvos"
+              className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+              onClick={() => setMenuOpen(false)}
+            >
+              Salvos
             </Link>
 
             <button

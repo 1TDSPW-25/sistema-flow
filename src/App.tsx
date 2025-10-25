@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Rodape from "./components/Rodape/Rodape";
-import Menu from "./components/Menu/Menu.tsx";
+import Cabecalho from "./components/Cabecalho";
 
 export default function App() {
 
@@ -8,7 +8,7 @@ export default function App() {
     
     <div className="mx-auto">
 
-        <Menu />
+        <Cabecalho />
         <Outlet />
         <Rodape />
     </div>
