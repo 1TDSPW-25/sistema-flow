@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLogado } from "../../hooks/useLogado";
 import type { UsuarioType } from "../../types/usuario";
+import { useNoticia } from "../../hooks/useNoticia";
 
 const API_URL = "http://localhost:3001";
 
@@ -10,6 +11,7 @@ type ArtigoSalvo = NonNullable<UsuarioType["artigosSalvos"]>[number];
 export default function Salvos() {
   const navigate = useNavigate();
   const { userIsLogged, userEmail, clearLogin } = useLogado();
+  const news = useNoticia();
 
   const [usuario, setUsuario] = useState<UsuarioType | null>(null);
   const [salvos, setSalvos] = useState<ArtigoSalvo[]>([]);
@@ -65,6 +67,26 @@ export default function Salvos() {
   }, [clearLogin, navigate, userEmail, userIsLogged]);
 
   const temSalvos = useMemo(() => salvos && salvos.length > 0, [salvos]);
+
+  function getInternalIndex(art: ArtigoSalvo): number | null {
+    if (!news || news.length === 0) return null;
+    const byTitle = news.findIndex((n) => n.title === art.nomeArtigo);
+    if (byTitle >= 0) return byTitle;
+    const byUrl = news.findIndex((n) => n.url === art.url);
+    if (byUrl >= 0) return byUrl;
+    return null;
+  }
+
+  function handleAbrirInterno(art: ArtigoSalvo) {
+    const idx = getInternalIndex(art);
+    if (idx !== null) {
+      navigate(`/artigo/${idx + 1}`);
+    } else {
+      setErrorMessage(
+        "Não foi possível abrir internamente. A notícia pode não estar no feed atual."
+      );
+    }
+  }
 
   async function handleRemover(urlParaRemover: string) {
     if (!usuario) return;
@@ -140,26 +162,24 @@ export default function Salvos() {
                 className="bg-white rounded-lg shadow p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
               >
                 <div className="min-w-0">
-                  <a
-                    href={art.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-700 hover:text-blue-900 font-semibold break-words"
+                  <button
+                    type="button"
+                    onClick={() => handleAbrirInterno(art)}
+                    className="text-left text-blue-700 hover:text-blue-900 font-semibold break-words cursor-pointer"
                     title={art.nomeArtigo}
                   >
                     {art.nomeArtigo}
-                  </a>
+                  </button>
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <a
-                    href={art.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    type="button"
+                    onClick={() => handleAbrirInterno(art)}
                     className="px-3 py-2 text-sm bg-gray-800 text-white rounded-md hover:bg-gray-900 transition cursor-pointer"
                   >
                     Abrir
-                  </a>
+                  </button>
                   <button
                     type="button"
                     onClick={() => handleRemover(art.url)}
@@ -176,4 +196,3 @@ export default function Salvos() {
     </main>
   );
 }
-
