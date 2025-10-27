@@ -6,7 +6,7 @@ import fotoLaura from "../assets/img/laura.jpeg";
 import fotoPedro from "../assets/img/pedroH.jpeg";
 import fotoLeonardo from "../assets/img/leonardo.jpeg";
 import fotoCamilo from "../assets/img/camilo.png";
-import fotoGustavo from "../assets/img/gustavoT.png";
+import fotoGustavoT from "../assets/img/gustavoT.png";
 import fotoIago from "../assets/img/iago.png";
 import fotoGuilherme from "../assets/img/guilherme.jpeg";
 import fotoJoao from "../assets/img/joao.jpeg";
@@ -99,7 +99,7 @@ export const integrantes: Integrante[] = [
     turma: TURMA_PADRAO,
     linkedin: "https://www.linkedin.com/in/gustavo-tavares-da-silva-b6180a220/",
     github: "https://github.com/gustavaress",
-    foto: "",
+    foto: fotoGustavoT,
   },
   {
     nome: "Iago D. Ainette",
