@@ -146,7 +146,7 @@ Qualquer solicitação de alteração deve ser encaminhada a um dos dois, garant
 🗂️ LEGENDA DE EMOJIS
 | Emoji | Significado               | Uso no README                                                  |
 | :---: | ------------------------- | -------------------------------------------------------------- |
-|   ✅   | **Implementado**          | Feature finalizada, testada e integrada à develop              |
+|   ✅   | **Implementado**          | Feature finalizada, testada e integrada à develop             |
 |   🚧  | **Em Homologação**        | Feature pronta, aguardando validação pelo grupo de homologação |
 |   🧪  | **Em Desenvolvimento**    | Feature em andamento pelos grupos de desenvolvimento           |
 |   🐛  | **Bug Encontrado**        | Indica problema reportado em alguma feature                    |
@@ -155,7 +155,7 @@ Qualquer solicitação de alteração deve ser encaminhada a um dos dois, garant
 |   🧩  | **Dependência**           | Requer outra feature antes de continuar                        |
 |   📦  | **Release**               | Versão estável do sistema pronta para merge na `main`          |
 |   🚀  | **Deploy**                | Aplicação publicada em produção                                |
-| 🧑‍💻 | **Responsáveis**          | Mostra os integrantes do grupo responsáveis pela feature       |
-|   ⏰   | **Deadline**              | Prazo de entrega definido pelo professor ou homologadores      |
+|   🧑‍💻  | **Responsáveis**          | Mostra os integrantes do grupo responsáveis pela feature       |
+|   ⏰  | **Deadline**              | Prazo de entrega definido pelo professor ou homologadores      |
 |   📝  | **Observação**            | Comentário adicional sobre o status de uma tarefa              |
 |   🔒  | **Restrito**              | Somente Anna e Gabriel podem alterar esta seção                |
