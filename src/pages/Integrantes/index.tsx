@@ -1,6 +1,5 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { integrantes, type Integrante } from "../../data/integrantes";
-
+import { type Integrante } from "../../data/integrantes";
 export default function Integrantes() {
   const TURMA = "1TDSPW";
 
