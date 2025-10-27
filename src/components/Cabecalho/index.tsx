@@ -40,7 +40,7 @@ export default function Cabecalho() {
         <h1 className="text-2xl font-bold text-white tracking-wide">NewsLab</h1>
       </div>
 
-      <div className="flex justify-center grow space-x-6">
+      <div className="sm:flex justify-center sm:grow space-x-6">
         <Link to="/" className={linkClasses}>
           Home
         </Link>
