@@ -14,7 +14,9 @@ const handleLogout = (key: string) => {
 };
 
 const useLogado = (): UseLogadoType => {
-  const usuarioLogado = localStorage.getItem("userToken") || null;
+  const usuarioLogado = localStorage.getItem("userLogado");
+  const isUserLogado =
+    typeof usuarioLogado === "string" ? JSON.parse(usuarioLogado) : null;
 
   const loginResponse: UseLogadoType = {
     userIsLogged: Boolean(usuarioLogado),
@@ -22,8 +24,8 @@ const useLogado = (): UseLogadoType => {
     clearLogin: handleLogout,
   };
 
-  if (usuarioLogado) {
-    loginResponse.userEmail = usuarioLogado;
+  if (isUserLogado) {
+    loginResponse.userEmail = isUserLogado.email;
   }
 
   return loginResponse;
