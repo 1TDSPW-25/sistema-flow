@@ -130,7 +130,7 @@ export const integrantes: Integrante[] = [
     linkedin:
       "https://www.linkedin.com/in/jo%C3%A3o-victor-gomes-de-souza-419432324/",
     github: "https://github.com/Jounaxis",
-    foto: "",
+    foto: fotoJoao,
   },
   {
     nome: "Lucas Barranha Giannini",
