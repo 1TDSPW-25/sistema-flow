@@ -1,3 +1,22 @@
+import fotoAnna from "../assets/img/anna.jpeg";
+import fotoDuarte from "../assets/img/duarte.jpeg";
+import fotoRichard from "../assets/img/richard.jpg";
+import fotoCarlos from "../assets/img/carlos.jpg";
+import fotoLaura from "../assets/img/laura.jpg";
+import fotoPedro from "../assets/img/pedro.jpg";
+import fotoLeonardo from "../assets/img/leonardo.jpg";
+import fotoFernando from "../assets/img/fernando.jpg";
+import fotoCamilo from "../assets/img/camilo.jpg";
+import fotoGustavo from "../assets/img/gustavo.jpg";
+import fotoIago from "../assets/img/iago.jpg";
+import fotoGuilherme from "../assets/img/guilherme.jpg";
+import fotoJoao from "../assets/img/joao.jpg";
+import fotoLucas from "../assets/img/lucas.jpg";
+import fotoPedroCrus from "../assets/img/pedro-crus.jpg";
+import fotoTiago from "../assets/img/tiago.jpg";
+import fotoMaicon from "../assets/img/maicon.jpg";
+
+
 export type Integrante = {
   nome: string;
   turma: string;
@@ -52,14 +71,14 @@ export const integrantes: Integrante[] = [
     linkedin:
       "https://www.linkedin.com/in/pedro-henrique-oliveira-484336261/",
     github: "https://github.com/pedrinzz10",
-    foto: "/integrantes/pedro.jpg",
+    foto: "",
   },
   {
     nome: "Leonardo José Pereira",
     turma: TURMA_PADRAO,
     linkedin: "https://www.linkedin.com/in/leonardo-pereira-adm/",
     github: "https://github.com/leojp04",
-    foto: "/integrantes/leonardo.jpg",
+    foto: "",
   },
   {
     nome: "Fernando Charlles Faustino Fernandes",
