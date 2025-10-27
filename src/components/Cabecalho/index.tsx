@@ -34,13 +34,17 @@ export default function Cabecalho() {
   }
 
   return (
-    <nav className="w-full bg-gray-800 py-4 px-6 shadow-md flex items-center justify-between">
+    <nav className="w-full bg-gray-800 gap-3 py-4 px-6 shadow-md grid grid-cols-3 max-md:grid-cols-2 items-center justify-between">
       <div className="flex items-center gap-3">
-        <img src={logo} alt="NewsLab logo" className="h-10 w-auto drop-shadow-md" />
+        <img
+          src={logo}
+          alt="NewsLab logo"
+          className="h-10 w-auto drop-shadow-md"
+        />
         <h1 className="text-2xl font-bold text-white tracking-wide">NewsLab</h1>
       </div>
 
-      <div className="flex justify-center grow space-x-6">
+      <div className="flex justify-center sm:grow space-x-6 max-md:col-span-full">
         <Link to="/" className={linkClasses}>
           Home
         </Link>
@@ -52,7 +56,7 @@ export default function Cabecalho() {
         </Link>
       </div>
 
-      <div className="relative" ref={menuRef}>
+      <div className="relative justify-self-end max-md:col-start-2 max-md:row-start-1" ref={menuRef}>
         {userIsLogged ? (
           <div
             className="flex items-center gap-x-2 cursor-pointer"
