@@ -33,7 +33,7 @@ export const integrantes: Integrante[] = [
     turma: "TechLead",
     linkedin: "https://linkedin.com/in/annaclararussoluca/",
     github: "https://github.com/annaclrl",
-    foto: "",
+    foto: fotoAnna,
   },
   {
     nome: "Gabriel Duarte Maciel",
