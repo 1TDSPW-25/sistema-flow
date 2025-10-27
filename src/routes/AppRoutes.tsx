@@ -6,14 +6,17 @@ import Home from "../pages/Home/index.tsx";
 import Sobre from "../pages/Sobre/index.tsx";
 import Integrantes from "../pages/Integrantes/index.tsx";
 import Contato from "../pages/Contato/index.tsx";
+import Erro from "../pages/Erro/index.tsx";
 import { Artigo } from "../pages/Artigo/Artigo.tsx";
 import Perfil from "../pages/Perfil/index.tsx";
 import "../main.css";
+
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement:<Erro/>,
     children: [
       { path: "/", element: <Home /> },
       { path: "/cadastro", element: <Cadastro /> },
