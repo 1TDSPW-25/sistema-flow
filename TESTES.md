@@ -67,4 +67,5 @@ Data | Página | Status | Responsável pelo Bugfix | Observação |
 23/10/2025 | Todas | Corrigido | Thiago Guedes | Correção no app.tsx, com a importaçao do cabecalho ao inves do menu |
 23/10/2025 | Home | Corrigido | Gustavo Tavares | Validação de informações null nos cards de noticia |
 23/10/2025 | Home | Corrigido | Gustavo Tavares | Correçao do nome do integrante Gustavo Tavares |
+27/10/2025 | AppRoutes/Erro | Corrigido | Gabriel Fachin | Redirecionamento correto para a página de erro | 
 ---
