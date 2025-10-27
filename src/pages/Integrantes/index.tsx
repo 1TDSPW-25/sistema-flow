@@ -1,6 +1,8 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { type Integrante } from "../../data/integrantes";
-export default function Integrantes() {
+export default function Integrantes() 
+
+{
   const TURMA = "1TDSPW";
 
   const integrantes: Integrante[] = [
@@ -132,7 +134,6 @@ export default function Integrantes() {
       foto: ""
     },
   ];
-
   return (
     <main className="min-h-screen bg-gray-50 py-10">
       <section className="max-w-6xl mx-auto px-4 text-center">

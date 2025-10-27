@@ -17,7 +17,7 @@ export const integrantes: Integrante[] = [
     foto: "",
   },
   {
-    nome: "Gabriel Duarte",
+    nome: "Gabriel Duarte Maciel",
     turma: "Homolog",
     linkedin: "https://linkedin.com/in/gabriel-duarte1010",
     github: "https://github.com/duartegdm",
@@ -77,17 +77,16 @@ export const integrantes: Integrante[] = [
     foto: "",
   },
   {
-    nome: "Gustavo Aress",
+    nome: "Gustavo Tavares",
     turma: TURMA_PADRAO,
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/gustavo-tavares-da-silva-b6180a220/",
     github: "https://github.com/gustavaress",
     foto: "",
   },
   {
     nome: "Iago D. Ainette",
     turma: TURMA_PADRAO,
-    linkedin:
-      "https://www.linkedin.com/in/iago-ainette-ba8294363?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    linkedin:"https://www.linkedin.com/in/iago-ainette-ba8294363?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     github: "https://github.com/IagoDAinette",
     foto: "",
   },
@@ -107,7 +106,7 @@ export const integrantes: Integrante[] = [
     foto: "",
   },
   {
-    nome: "Joǜo Victor Gomes",
+    nome: "João Victor Gomes",
     turma: TURMA_PADRAO,
     linkedin:
       "https://www.linkedin.com/in/jo%C3%A3o-victor-gomes-de-souza-419432324/",
@@ -117,13 +116,12 @@ export const integrantes: Integrante[] = [
   {
     nome: "Lucas Barranha Giannini",
     turma: TURMA_PADRAO,
-    linkedin:
-      "https://www.linkedin.com/in/lucas-giannini-67832b2b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    linkedin: "https://www.linkedin.com/in/lucas-giannini-67832b2b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     github: "https://github.com/Lucas06-ux",
     foto: "",
   },
   {
-    nome: "Pedro Crus",
+    nome: "Pedro Crus Lemos",
     turma: TURMA_PADRAO,
     linkedin: "https://www.linkedin.com/in/pedro-crus-0707b7360/",
     github: "https://github.com/PedroCLH2",
@@ -137,7 +135,7 @@ export const integrantes: Integrante[] = [
     foto: "",
   },
   {
-    nome: "Maicon Douglas",
+    nome: "Maicon Douglas Timoteo",
     turma: TURMA_PADRAO,
     linkedin: "https://www.linkedin.com/in/maicon-douglas-b244571b5",
     github: "https://github.com/MaiconDouglas-dev",
