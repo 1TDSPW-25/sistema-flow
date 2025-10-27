@@ -158,6 +158,6 @@ export const integrantes: Integrante[] = [
     turma: TURMA_PADRAO,
     linkedin: "https://www.linkedin.com/in/maicon-douglas-b244571b5",
     github: "https://github.com/MaiconDouglas-dev",
-    foto: "",
+    foto: fotoMaicon,
   },
 ];
