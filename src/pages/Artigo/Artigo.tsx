@@ -1,7 +1,9 @@
 import { useParams, useSearchParams } from "react-router-dom";
+import { useState } from "react";
 import { useNoticia } from "../../hooks/useNoticia";
 import type { UsuarioType } from "../../types/usuario";
 import { useLogado } from "../../hooks/useLogado";
+import Modal from "../../components/Modal/Modal";
 const API_URL = "http://localhost:3001";
 
 function Artigo() {
@@ -10,6 +12,8 @@ function Artigo() {
   const [searchParams] = useSearchParams();
   const { id } = useParams();
   const paramId = id || searchParams.get("artigo");
+  const [showSavedModal, setShowSavedModal] = useState(false);
+  const [savedMessage, setSavedMessage] = useState<string>("");
 
   const handleSaveNews = async () => {
     console.log("Notícia salva!");
@@ -20,7 +24,16 @@ function Artigo() {
     const data: UsuarioType[] = await response.json();
     const currentUser = data.find(user => user.email === userEmail)
 
-    if (currentUser?.artigosSalvos?.find(artigo => artigo.nomeArtigo === filteredNews.title)) return
+    if (
+      currentUser?.artigosSalvos?.find(
+        (artigo) =>
+          artigo.nomeArtigo === filteredNews.title || artigo.url === filteredNews.url,
+      )
+    ) {
+      setSavedMessage("Esta noticia ja foi salva.");
+      setShowSavedModal(true);
+      return;
+    }
     if (currentUser && "artigosSalvos" in currentUser) {
 
       currentUser.artigosSalvos?.push({
@@ -44,6 +57,8 @@ function Artigo() {
     });
 
     console.log(responsePut);
+    setSavedMessage("Noticia salva com sucesso.");
+    setShowSavedModal(true);
     return data;
   }
 
@@ -131,6 +146,12 @@ function Artigo() {
           </div>
         )}
       </article>
+      <Modal
+        mostrar={showSavedModal}
+        titulo="Tudo certo"
+        mensagem={savedMessage}
+        onClose={() => setShowSavedModal(false)}
+      />
     </div>
   );
 }
