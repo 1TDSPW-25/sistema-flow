@@ -1,20 +1,19 @@
 import fotoAnna from "../assets/img/anna.jpeg";
 import fotoDuarte from "../assets/img/duarte.jpeg";
 import fotoRichard from "../assets/img/richard.jpg";
-import fotoCarlos from "../assets/img/carlos.jpg";
-import fotoLaura from "../assets/img/laura.jpg";
-import fotoPedro from "../assets/img/pedro.jpg";
-import fotoLeonardo from "../assets/img/leonardo.jpg";
-import fotoFernando from "../assets/img/fernando.jpg";
-import fotoCamilo from "../assets/img/camilo.jpg";
-import fotoGustavo from "../assets/img/gustavo.jpg";
-import fotoIago from "../assets/img/iago.jpg";
-import fotoGuilherme from "../assets/img/guilherme.jpg";
-import fotoJoao from "../assets/img/joao.jpg";
-import fotoLucas from "../assets/img/lucas.jpg";
-import fotoPedroCrus from "../assets/img/pedro-crus.jpg";
-import fotoTiago from "../assets/img/tiago.jpg";
-import fotoMaicon from "../assets/img/maicon.jpg";
+import fotoCarlos from "../assets/img/carlos.jpeg";
+import fotoLaura from "../assets/img/laura.jpeg";
+import fotoPedro from "../assets/img/pedroH.jpeg";
+import fotoLeonardo from "../assets/img/leonardo.jpeg";
+import fotoCamilo from "../assets/img/camilo.png";
+import fotoGustavo from "../assets/img/gustavoT.png";
+import fotoIago from "../assets/img/iago.png";
+import fotoGuilherme from "../assets/img/guilherme.jpeg";
+import fotoJoao from "../assets/img/joao.jpeg";
+import fotoLucas from "../assets/img/lucas.jpeg";
+import fotoPedroCrus from "../assets/img/pedroC.jpeg";
+import fotoTiago from "../assets/img/tiago.jpeg";
+import fotoMaicon from "../assets/img/maicon.jpeg";
 
 
 export type Integrante = {
@@ -63,7 +62,7 @@ export const integrantes: Integrante[] = [
     linkedin:
       "https://www.linkedin.com/in/laura-lopes-a5937a353?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     github: "https://github.com/Laura853",
-    foto: "",
+    foto: fotoLaura,
   },
   {
     nome: "Pedro Henrique de Oliveira",
