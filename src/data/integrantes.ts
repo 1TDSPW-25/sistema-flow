@@ -92,7 +92,7 @@ export const integrantes: Integrante[] = [
     turma: TURMA_PADRAO,
     linkedin: "https://linkedin.com/in/camilo-micheletto",
     github: "https://github.com/allyhere",
-    foto: "",
+    foto: fotoCamilo,
   },
   {
     nome: "Gustavo Tavares",
