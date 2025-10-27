@@ -27,7 +27,7 @@ export default function Cabecalho() {
     "text-white font-medium text-sm hover:text-gray-400 transition duration-150";
 
   function handleLogout() {
-    clearLogin("userToken");
+    clearLogin("userLogado");
     setMenuOpen(false);
     navigate("/login");
     window.location.reload();
