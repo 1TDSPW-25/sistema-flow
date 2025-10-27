@@ -30,7 +30,7 @@ export default function Contato() {
   }
 
   return (
-    <main className="min-h-screen bg-[#EFEFEF] py-10 sm:py-14 lg:py-20 px-4 sm:px-6 lg-px-8 flex items-center justify-center">
+    <main className="min-h-screen bg-gray-50 dark:bg-gray-700 py-10 sm:py-14 lg:py-20 px-4 sm:px-6 lg-px-8 flex items-center justify-center">
       <section className="mx-auto w-full max-w-6xl flex flex-col gap-10 lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-stretch lg:gap-12">
         <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-gray-900 via-gray-800 to-gray-900 p-8 sm:p-10 md:p-12 text-white shadow-2xl">
           <div className="absolute -left-20 -top-24 h-48 w-48 rounded-full bg-[#1C3546]/50 blur-2xl" />
@@ -102,13 +102,13 @@ export default function Contato() {
         <form
           onSubmit={handleSubmit}
           noValidate
-          className="h-full rounded-3xl border border-gray-200/80 bg-white/95 p-6 sm:p-8 md:p-10 shadow-2xl shadow-gray-900/10 backdrop-blur flex flex-col justify-between"
+          className="h-full rounded-3xl border border-gray-200/80 dark:border-gray-800 bg-white/95 dark:bg-gray-900 p-6 sm:p-8 md:p-10 shadow-2xl shadow-gray-900/10 backdrop-blur flex flex-col justify-between"
         >
           <div className="space-y-5 sm:space-y-6">
             <div className="space-y-2">
               <label
                 htmlFor="nome"
-                className="text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-gray-600"
+                className="text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-gray-600 dark:text-gray-200"
               >
                 Nome completo
               </label>
@@ -127,7 +127,7 @@ export default function Contato() {
             <div className="space-y-2">
               <label
                 htmlFor="email"
-                className="text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-gray-600"
+                className="text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-gray-600 dark:text-gray-200"
               >
                 E-mail
               </label>
@@ -147,7 +147,7 @@ export default function Contato() {
             <div className="space-y-2">
               <label
                 htmlFor="mensagem"
-                className="text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-gray-600"
+                className="text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-gray-600 dark:text-gray-200"
               >
                 Mensagem
               </label>
