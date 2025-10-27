@@ -36,10 +36,8 @@ export default function Login() {
         return;
       }
 
-      // Salvar o usuário logado (exemplo simples, pode ajustar conforme hook de autenticação)
       localStorage.setItem("userLogado", JSON.stringify(usuario));
 
-      // Se veio da tentativa de acessar um artigo protegido, redirecionar de volta
       const articleId = searchParams.get("article");
       if (articleId) {
         navigate(`/artigo/${articleId}`);
@@ -58,8 +56,8 @@ export default function Login() {
   }
 
   return (
-    <main className="min-h-screen flex flex-col justify-center items-center bg-[#EFEFEF] px-4 sm:px-6 lg:px-8">
-      <section className="w-full max-w-md sm:max-w-lg md:max-w-xl bg-gray-900 shadow-xl rounded-lg p-6 sm:p-8 md:p-10 space-y-6 border border-gray-200">
+    <main className="min-h-screen flex flex-col justify-center items-center bg-gray-50 dark:bg-gray-700 px-4 sm:px-6 lg:px-8">
+      <section className="w-full max-w-md sm:max-w-lg md:max-w-xl bg-gray-900 shadow-xl rounded-lg p-6 sm:p-8 md:p-10 space-y-6 border-2 border-gray-200 dark:border-gray-950">
         <div className="text-center space-y-2">
           <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
             Login
