@@ -25,21 +25,28 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen pb-16 bg-gray-50 max-w-7xl mx-auto">
-      <div className="w-full pt-8 pb-6 mb-8">
-        <p
-          className="
-            text-center 
-            text-lg
-            font-normal /* Tornando um pouco mais visível */
-            text-gray-700 /* Escurecendo para ser lido sem a faixa de fundo */
-            tracking-widest
-          "
-        >
+    <main className="min-h-screen bg-gray-50 flex flex-col items-center px-4 sm:px-6 lg:px-8 pb-20">
+      {/* Cabeçalho */}
+      <header className="w-full text-center pt-10 pb-6">
+        <p className="text-base sm:text-lg md:text-xl font-semibold text-gray-700 tracking-widest">
           O QUE ESTÁ ACONTECENDO NO MUNDO?
         </p>
-      </div>
-      <section className="card-gallery px-4 py-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      </header>
+
+      {/* Galeria de Cards */}
+      <section
+        className="
+          w-full
+          grid
+          grid-cols-1
+          sm:grid-cols-2
+          lg:grid-cols-3
+          xl:grid-cols-4
+          gap-6
+          justify-items-center
+          max-w-7xl
+        "
+      >
         {news
           .filter((post) => post.title && post.description && post.urlToImage)
           .map((post, index) => (
@@ -47,10 +54,12 @@ export default function Home() {
               key={index}
               {...post}
               onVerMais={() => handleProtectedAction(index + 1)}
+              className="w-full sm:w-[90%] md:w-full"
             />
           ))}
       </section>
 
+      {/* Modal de Login */}
       <Modal
         mostrar={showModal}
         titulo="Atenção"
