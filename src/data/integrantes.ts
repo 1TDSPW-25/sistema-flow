@@ -122,7 +122,7 @@ export const integrantes: Integrante[] = [
     linkedin:
       "https://www.linkedin.com/in/guilhermelisboasilva?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     github: "https://github.com/guilisbooa",
-    foto: "",
+    foto: fotoGuilherme,
   },
   {
     nome: "João Victor Gomes",
