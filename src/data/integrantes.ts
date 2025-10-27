@@ -137,7 +137,7 @@ export const integrantes: Integrante[] = [
     turma: TURMA_PADRAO,
     linkedin: "https://www.linkedin.com/in/lucas-giannini-67832b2b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     github: "https://github.com/Lucas06-ux",
-    foto: "",
+    foto: fotoLucas,
   },
   {
     nome: "Pedro Crus Lemos",
