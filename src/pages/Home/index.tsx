@@ -54,7 +54,6 @@ export default function Home() {
               key={index}
               {...post}
               onVerMais={() => handleProtectedAction(index + 1)}
-              className="w-full sm:w-[90%] md:w-full"
             />
           ))}
       </section>
