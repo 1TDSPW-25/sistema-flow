@@ -14,6 +14,7 @@ import fotoLucas from "../assets/img/lucas.jpeg";
 import fotoPedroCrus from "../assets/img/pedroC.jpeg";
 import fotoTiago from "../assets/img/tiago.jpeg";
 import fotoMaicon from "../assets/img/maicon.jpeg";
+import fotoGustavoC from "../assets/img/gustavoC.jpeg";
 
 
 export type Integrante = {
@@ -113,7 +114,7 @@ export const integrantes: Integrante[] = [
     turma: TURMA_PADRAO,
     linkedin: "https://www.linkedin.com/in/gustavo-casimiro/",
     github: "https://github.com/Gustavo-Casimiro",
-    foto: "",
+    foto: fotoGustavoC,
   },
   {
     nome: "Guilherme Lisboa Silva",
