@@ -106,7 +106,7 @@ export const integrantes: Integrante[] = [
     turma: TURMA_PADRAO,
     linkedin:"https://www.linkedin.com/in/iago-ainette-ba8294363?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     github: "https://github.com/IagoDAinette",
-    foto: "",
+    foto: fotoIago,
   },
   {
     nome: "Gustavo Casimiro",
