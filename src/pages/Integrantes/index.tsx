@@ -10,32 +10,35 @@ export default function Integrantes() {
       turma: "TechLead",
       linkedin: "https://linkedin.com/in/annaclararussoluca/",
       github: "https://github.com/annaclrl",
+      foto: ""
     },
     {
       nome: "Gabriel Duarte",
       turma: "Homolog",
       linkedin: "https://linkedin.com/in/gabriel-duarte1010",
       github: "https://github.com/duartegdm",
+      foto: ""
     },
     {
       nome: "Richard Freitas",
       turma: TURMA,
       linkedin: "https://www.linkedin.com/in/richard-freitas",
       github: "https://github.com/vlonerickk",
+      foto: ""
     },
     {
       nome: "Carlos André Silva",
       turma: TURMA,
-      linkedin:
-        "https://www.linkedin.com/in/ukarlito?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+      linkedin: "https://www.linkedin.com/in/ukarlito?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
       github: "https://github.com/uKarlito",
+      foto: ""
     },
     {
       nome: "Laura Lopes",
       turma: TURMA,
-      linkedin:
-        "https://www.linkedin.com/in/laura-lopes-a5937a353?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      linkedin: "https://www.linkedin.com/in/laura-lopes-a5937a353?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       github: "https://github.com/Laura853",
+      foto: ""
     },
     {
       nome: "Pedro Henrique de Oliveira",
@@ -55,74 +58,79 @@ export default function Integrantes() {
     {
       nome: "Fernando Charlles Faustino Fernandes",
       turma: TURMA,
-      linkedin:
-        "https://www.linkedin.com/in/charlles-fernandes-540713359?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      linkedin: "https://www.linkedin.com/in/charlles-fernandes-540713359?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       github: "https://github.com/Sigmachr",
+      foto: ""
     },
     {
       nome: "Camilo Micheletto",
       turma: TURMA,
       linkedin: "https://linkedin.com/in/camilo-micheletto",
       github: "https://github.com/allyhere",
+      foto: ""
     },
     {
       nome: "Gustavo Tavares",
       turma: TURMA,
-      linkedin:
-        "https://www.linkedin.com/in/gustavo-tavares-da-silva-b6180a220/",
+      linkedin: "https://www.linkedin.com/in/gustavo-tavares-da-silva-b6180a220/",
       github: "https://github.com/gustavaress",
+      foto: ""
     },
     {
       nome: "Iago D. Ainette",
       turma: TURMA,
-      linkedin:
-        "https://www.linkedin.com/in/iago-ainette-ba8294363?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      linkedin: "https://www.linkedin.com/in/iago-ainette-ba8294363?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       github: "https://github.com/IagoDAinette",
+      foto: ""
     },
     {
       nome: "Gustavo Casimiro",
       turma: TURMA,
       linkedin: "https://www.linkedin.com/in/gustavo-casimiro/",
       github: "https://github.com/Gustavo-Casimiro",
+      foto: ""
     },
     {
       nome: "Guilherme Lisboa Silva",
       turma: TURMA,
-      linkedin:
-        "https://www.linkedin.com/in/guilhermelisboasilva?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+      linkedin: "https://www.linkedin.com/in/guilhermelisboasilva?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
       github: "https://github.com/guilisbooa",
+      foto: ""
     },
     {
       nome: "João Victor Gomes",
       turma: TURMA,
-      linkedin:
-        "https://www.linkedin.com/in/jo%C3%A3o-victor-gomes-de-souza-419432324/",
+      linkedin: "https://www.linkedin.com/in/jo%C3%A3o-victor-gomes-de-souza-419432324/",
       github: "https://github.com/Jounaxis",
+      foto: ""
     },
     {
       nome: "Lucas Barranha Giannini",
       turma: TURMA,
-      linkedin:
-        "https://www.linkedin.com/in/lucas-giannini-67832b2b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      linkedin: "https://www.linkedin.com/in/lucas-giannini-67832b2b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       github: "https://github.com/Lucas06-ux",
+      foto: ""
     },
     {
       nome: "Pedro Crus",
       turma: TURMA,
       linkedin: "https://www.linkedin.com/in/pedro-crus-0707b7360/",
       github: "https://github.com/PedroCLH2",
+      foto: ""
     },
     {
       nome: "Tiago Guedes",
       turma: TURMA,
       linkedin: "https://www.linkedin.com/in/tiago-guedes-7225a5276",
       github: "https://github.com/Tiagozguedes",
+      foto: ""
     },
     {
       nome: "Maicon Douglas",
       turma: TURMA,
       linkedin: "https://www.linkedin.com/in/maicon-douglas-b244571b5",
       github: "https://github.com/MaiconDouglas-dev",
+      foto: ""
     },
   ];
 
