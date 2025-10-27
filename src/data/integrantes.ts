@@ -151,7 +151,7 @@ export const integrantes: Integrante[] = [
     turma: TURMA_PADRAO,
     linkedin: "https://www.linkedin.com/in/tiago-guedes-7225a5276",
     github: "https://github.com/Tiagozguedes",
-    foto: "",
+    foto: fotoTiago,
   },
   {
     nome: "Maicon Douglas Timoteo",
