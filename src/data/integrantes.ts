@@ -77,7 +77,7 @@ export const integrantes: Integrante[] = [
     turma: TURMA_PADRAO,
     linkedin: "https://www.linkedin.com/in/leonardo-pereira-adm/",
     github: "https://github.com/leojp04",
-    foto: "",
+    foto: fotoLeonardo,
   },
   {
     nome: "Fernando Charlles Faustino Fernandes",
