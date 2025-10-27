@@ -25,15 +25,13 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-50 flex flex-col items-center px-4 sm:px-6 lg:px-8 pb-20">
-      {/* Cabeçalho */}
+    <main className="min-h-screen bg-gray-50 dark:bg-gray-700 flex flex-col items-center px-4 sm:px-6 lg:px-8 pb-20">
       <header className="w-full text-center pt-10 pb-6">
-        <p className="text-base sm:text-lg md:text-xl font-semibold text-gray-700 tracking-widest">
+        <p className="text-base sm:text-lg md:text-xl font-semibold text-gray-700 dark:text-gray-50 tracking-widest">
           O QUE ESTÁ ACONTECENDO NO MUNDO?
         </p>
       </header>
 
-      {/* Galeria de Cards */}
       <section
         className="
           w-full
@@ -58,7 +56,6 @@ export default function Home() {
           ))}
       </section>
 
-      {/* Modal de Login */}
       <Modal
         mostrar={showModal}
         titulo="Atenção"
