@@ -70,7 +70,7 @@ export const integrantes: Integrante[] = [
     linkedin:
       "https://www.linkedin.com/in/pedro-henrique-oliveira-484336261/",
     github: "https://github.com/pedrinzz10",
-    foto: "",
+    foto: fotoPedro,
   },
   {
     nome: "Leonardo José Pereira",
