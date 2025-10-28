@@ -18,6 +18,8 @@ export default function Salvos() {
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [page, setPage] = useState(1);
+  const pageSize = 5;
 
   useEffect(() => {
     document.title = "Salvos";
@@ -67,6 +69,19 @@ export default function Salvos() {
   }, [clearLogin, navigate, userEmail, userIsLogged]);
 
   const temSalvos = useMemo(() => salvos && salvos.length > 0, [salvos]);
+  const totalPages = useMemo(
+    () => Math.max(1, Math.ceil((salvos?.length || 0) / pageSize)),
+    [salvos]
+  );
+  const paginated = useMemo(() => {
+    const start = (page - 1) * pageSize;
+    return salvos.slice(start, start + pageSize);
+  }, [salvos, page]);
+
+  useEffect(() => {
+    const tp = Math.max(1, Math.ceil((salvos?.length || 0) / pageSize));
+    if (page > tp) setPage(tp);
+  }, [salvos]);
 
   function getInternalIndex(art: ArtigoSalvo): number | null {
     if (!news || news.length === 0) return null;
@@ -156,7 +171,7 @@ export default function Salvos() {
           </div>
         ) : (
           <ul className="space-y-4">
-            {salvos.map((art) => (
+            {paginated.map((art) => (
               <li
                 key={art.url}
                 className="bg-white rounded-lg shadow p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
@@ -191,6 +206,39 @@ export default function Salvos() {
               </li>
             ))}
           </ul>
+
+          {/* Paginação */}
+          <div className="mt-6 flex items-center justify-between gap-3">
+            <div className="text-sm text-gray-600">
+              Página {page} de {totalPages}
+            </div>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                disabled={page <= 1}
+                onClick={() => setPage((p) => Math.max(1, p - 1))}
+                className={`px-3 py-2 text-sm rounded-md border transition ${
+                  page <= 1
+                    ? "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed"
+                    : "bg-white text-gray-800 border-gray-300 hover:bg-gray-50 cursor-pointer"
+                }`}
+              >
+                Anterior
+              </button>
+              <button
+                type="button"
+                disabled={page >= totalPages}
+                onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+                className={`px-3 py-2 text-sm rounded-md border transition ${
+                  page >= totalPages
+                    ? "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed"
+                    : "bg-white text-gray-800 border-gray-300 hover:bg-gray-50 cursor-pointer"
+                }`}
+              >
+                Próxima
+              </button>
+            </div>
+          </div>
         )}
       </section>
     </main>
