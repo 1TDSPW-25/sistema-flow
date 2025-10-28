@@ -36,12 +36,9 @@ export default function Cabecalho() {
   return (
     <nav className="w-full bg-gray-800 gap-3 py-4 px-6 shadow-md grid grid-cols-3 max-sm:grid-cols-2 items-center justify-between">
       <div className="flex items-center gap-3">
-        <img
-          src={logo}
-          alt="NewsLab logo"
-          className="h-10 w-auto drop-shadow-md"
-        />
-        <h1 className="text-2xl font-bold text-white tracking-wide">NewsLab</h1>
+        <h1 className="text-2xl font-bold tracking-wide text-white">
+          News<span className="text-green-600">Lab</span>
+        </h1>
       </div>
 
       <div className="flex justify-center sm:grow space-x-6 max-sm:col-span-full">
