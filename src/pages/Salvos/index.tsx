@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useLogado } from "../../hooks/useLogado";
 import { useNoticia } from "../../hooks/useNoticia";
 import type { UsuarioType } from "../../types/usuario";
+import { FaSpinner } from "react-icons/fa";
 
 const API_URL = "http://localhost:3001";
 
@@ -249,11 +250,13 @@ export default function Salvos() {
       setErrorMessage("Nao foi possivel remover. Tente novamente.");
     }
   }
-
+  
   if (isLoading) {
     return (
-      <main className="min-h-screen flex items-center justify-center">
-        <p className="text-gray-700">Carregando seus salvos...</p>
+      <main className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-4">
+        <FaSpinner className="h-10 w-10 text-blue-600 animate-spin" />
+        <h2 className="mt-4 text-xl font-semibold text-gray-800">Carregando seus salvos...</h2>
+        <p className="text-gray-600">Por favor, aguarde um momento.</p>
       </main>
     );
   }
