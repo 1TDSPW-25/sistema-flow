@@ -4,6 +4,7 @@ import { useLogado } from "../../hooks/useLogado";
 import { useNoticia } from "../../hooks/useNoticia";
 import type { UsuarioType } from "../../types/usuario";
 import { FaSpinner } from "react-icons/fa";
+import { FaSpinner, FaExclamationCircle, FaCheckCircle } from "react-icons/fa";
 
 const API_URL = "http://localhost:3001";
 
@@ -320,16 +321,17 @@ export default function Salvos() {
           </div>
         </div>
         {errorMessage && (
-          <div className="mb-4 p-3 rounded bg-red-50 text-red-700 border border-red-200">
-            {errorMessage}
+          <div className="mb-4 p-4 rounded-lg bg-red-50 text-red-800 border border-red-200 flex items-center gap-3">
+            <FaExclamationCircle className="h-5 w-5 text-red-600 flex-shrink-0" />
+            <span className="font-medium">{errorMessage}</span>
           </div>
         )}
-        {successMessage && (
-          <div className="mb-4 p-3 rounded bg-green-50 text-green-700 border border-green-200">
-            {successMessage}
+            {successMessage && (
+          <div className="mb-4 p-4 rounded-lg bg-green-50 text-green-800 border border-green-200 flex items-center gap-3">
+            <FaCheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
+            <span className="font-medium">{successMessage}</span>
           </div>
         )}
-
         {!temSalvos ? (
           <div className="text-center py-16 bg-white rounded-lg shadow">
             <p className="text-gray-700 mb-4">Voce ainda nao salvou nenhuma noticia.</p>
