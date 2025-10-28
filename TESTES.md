@@ -70,4 +70,6 @@ Data | Página | Status | Responsável pelo Bugfix | Observação |
 27/10/2025 | AppRoutes/Erro | Corrigido | Gabriel Fachin | Redirecionamento correto para a página de erro | 
 27/10/2025 | Cabeçalho | Corrigido | Gabriel Fachin | Melhoria de responsividade no menu
 27/10/2025 | Cabecalho | Corrigido | Tiago Guedes | Melhoria do Logo
+27/10/2025 | Cabecalho | Corrigido | Tiago Guedes | Melhoria da identificação dos links e botões da página com houver
+27/10/2025 | Cabecalho | Corrigido | Tiago Guedes | Melhoria na identificação de links em cadastro e login com houver
 ---
