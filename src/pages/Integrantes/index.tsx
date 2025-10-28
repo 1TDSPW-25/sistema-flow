@@ -140,6 +140,14 @@ export default function Integrantes() {
       github: "https://github.com/MaiconDouglas-dev",
       foto: "",
     },
+        {
+      nome: "Gabriel Fachin",
+      turma: TURMA,
+      linkedin: "https://www.linkedin.com/in/gabriel-fachin-de-oliveira-9a0616240",
+      github: "https://github.com/GabrielFachin",
+      foto: ""
+    }
+
   ];
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-gray-700 dark:text-white py-10">
