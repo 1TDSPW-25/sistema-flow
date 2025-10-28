@@ -60,7 +60,13 @@ function Card(props: CardProps) {
 
       <button
         onClick={onVerMais}
-        className="mt-4 text-sm font-semibold text-gray-800 bg-white border border-gray-800 rounded-md px-3 py-1 hover:bg-gray-800 dark:bg-transparent dark:border dark:border-white dark:text-white dark:hover:bg-gray-950 hover:text-white transition-colors cursor-pointer"
+        className="
+    mt-4 text-sm font-semibold text-gray-800 bg-white 
+    border-2 border-gray-800 rounded-md px-3 py-1 
+    hover:bg-green-600 hover:text-white hover:border-green-600 
+    dark:bg-transparent dark:border-2 dark:border-white dark:text-white 
+    dark:hover:bg-green-600 transition-colors cursor-pointer
+  "
       >
         Ver mais
       </button>
