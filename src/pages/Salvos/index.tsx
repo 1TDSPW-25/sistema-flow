@@ -19,6 +19,8 @@ export default function Salvos() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [search, setSearch] = useState("");
+  const [sourceFilter, setSourceFilter] = useState("");
+  const [sortKey, setSortKey] = useState<"title_asc" | "title_desc" | "source_asc" | "source_desc">("title_asc");
   const [page, setPage] = useState(1);
   const pageSize = 5;
 
@@ -72,30 +74,70 @@ export default function Salvos() {
   const normalize = (s: string) =>
     (s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 
+  const getDomain = (url: string) => {
+    try {
+      const u = new URL(url);
+      return u.hostname.replace(/^www\./, "");
+    } catch {
+      return "";
+    }
+  };
+
+  const uniqueSources = useMemo(() => {
+    const set = new Set<string>();
+    salvos.forEach((a) => {
+      const d = getDomain(a.url);
+      if (d) set.add(d);
+    });
+    return Array.from(set).sort((a, b) => a.localeCompare(b));
+  }, [salvos]);
+
   const filtrados = useMemo(() => {
-    if (!search) return salvos;
+    const base = salvos.filter((a) =>
+      sourceFilter ? getDomain(a.url) === sourceFilter : true,
+    );
+    if (!search) return base;
     const q = normalize(search);
-    return salvos.filter(
+    return base.filter(
       (a) => normalize(a.nomeArtigo).includes(q) || normalize(a.url).includes(q),
     );
-  }, [salvos, search]);
+  }, [salvos, search, sourceFilter]);
+
+  const sorted = useMemo(() => {
+    const list = [...filtrados];
+    const byTitle = (a: ArtigoSalvo, b: ArtigoSalvo) =>
+      normalize(a.nomeArtigo).localeCompare(normalize(b.nomeArtigo));
+    const bySource = (a: ArtigoSalvo, b: ArtigoSalvo) =>
+      getDomain(a.url).localeCompare(getDomain(b.url));
+    switch (sortKey) {
+      case "title_desc":
+        return list.sort((a, b) => -byTitle(a, b));
+      case "source_asc":
+        return list.sort(bySource);
+      case "source_desc":
+        return list.sort((a, b) => -bySource(a, b));
+      case "title_asc":
+      default:
+        return list.sort(byTitle);
+    }
+  }, [filtrados, sortKey]);
   const totalPages = useMemo(
-    () => Math.max(1, Math.ceil(filtrados.length / pageSize)),
-    [filtrados],
+    () => Math.max(1, Math.ceil(sorted.length / pageSize)),
+    [sorted],
   );
   const paginated = useMemo(() => {
     const start = (page - 1) * pageSize;
-    return filtrados.slice(start, start + pageSize);
-  }, [filtrados, page]);
+    return sorted.slice(start, start + pageSize);
+  }, [sorted, page]);
 
   useEffect(() => {
-    const tp = Math.max(1, Math.ceil(filtrados.length / pageSize));
+    const tp = Math.max(1, Math.ceil(sorted.length / pageSize));
     if (page > tp) setPage(tp);
-  }, [filtrados, pageSize, page]);
+  }, [sorted, pageSize, page]);
 
   useEffect(() => {
     setPage(1);
-  }, [search]);
+  }, [search, sourceFilter, sortKey]);
 
   function getInternalIndex(art: ArtigoSalvo): number | null {
     if (!news || news.length === 0) return null;
@@ -163,8 +205,9 @@ export default function Salvos() {
       </header>
 
       <section className="max-w-5xl mx-auto">
-        {/* Busca */}
-        <div className="mb-4 flex items-center gap-2">
+        {/* Busca, filtros e ordenacao */}
+        <div className="mb-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-center gap-2">
           <input
             type="text"
             value={search}
@@ -172,15 +215,45 @@ export default function Salvos() {
             placeholder="Pesquisar salvos..."
             className="w-full max-w-md px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          {search && (
+          {(search || sourceFilter) && (
             <button
               type="button"
-              onClick={() => setSearch("")}
+              onClick={() => {
+                setSearch("");
+                setSourceFilter("");
+              }}
               className="px-3 py-2 text-sm bg-gray-100 border border-gray-300 rounded-md hover:bg-gray-200 cursor-pointer"
             >
               Limpar
             </button>
           )}
+          </div>
+
+          <div className="flex items-center gap-3">
+            <select
+              value={sourceFilter}
+              onChange={(e) => setSourceFilter(e.target.value)}
+              className="px-3 py-2 border border-gray-300 rounded-md bg-white"
+            >
+              <option value="">Todas as fontes</option>
+              {uniqueSources.map((src) => (
+                <option key={src} value={src}>
+                  {src}
+                </option>
+              ))}
+            </select>
+
+            <select
+              value={sortKey}
+              onChange={(e) => setSortKey(e.target.value as any)}
+              className="px-3 py-2 border border-gray-300 rounded-md bg-white"
+            >
+              <option value="title_asc">Titulo A-Z</option>
+              <option value="title_desc">Titulo Z-A</option>
+              <option value="source_asc">Fonte A-Z</option>
+              <option value="source_desc">Fonte Z-A</option>
+            </select>
+          </div>
         </div>
         {errorMessage && (
           <div className="mb-4 p-3 rounded bg-red-50 text-red-700 border border-red-200">
