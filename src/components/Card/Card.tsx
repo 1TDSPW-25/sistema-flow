@@ -13,14 +13,16 @@ function Card(props: CardProps) {
         max-w-80 
         grid justify-items-center gap-y-4 
         grid-rows-[repeat(3,max-content)_1fr]
-        bg-stone-50
+        bg-stone-50 dark:bg-gray-800
+        text-stone-950  dark:text-white
+        border-gray-900
+        border-2
         backdrop-blur-sm
         shadow-md hover:shadow-xl 
         rounded-2xl 
         overflow-hidden
         transition-all duration-300
         hover:-translate-y-1
-        border-black-300 border-4
         p-4
       "
     >
@@ -42,7 +44,7 @@ function Card(props: CardProps) {
           text-2xl 
           font-extrabold
           text-align: left 
-          text-stone-950  
+          
           line-clamp-2
           tracking-tighter
           "
@@ -54,10 +56,11 @@ function Card(props: CardProps) {
       </p>
       <small className="w-full mt-auto text-xs text-black-400 text-right font-bold">
         Por {author || "Autor desconhecido"}
-      </small>  
+      </small>
 
-      <button onClick={onVerMais}  
-      className="mt-4 text-sm font-semibold text-gray-800 bg-white border border-gray-800 rounded-md px-3 py-1 hover:bg-gray-800 hover:text-white transition-colors cursor-pointer"
+      <button
+        onClick={onVerMais}
+        className="mt-4 text-sm font-semibold text-gray-800 bg-white border border-gray-800 rounded-md px-3 py-1 hover:bg-gray-800 dark:bg-transparent dark:border dark:border-white dark:text-white dark:hover:bg-gray-950 hover:text-white transition-colors cursor-pointer"
       >
         Ver mais
       </button>

@@ -1,8 +1,7 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { type Integrante } from "../../data/integrantes";
-export default function Integrantes() 
 
-{
+export default function Integrantes() {
   const TURMA = "1TDSPW";
 
   const integrantes: Integrante[] = [
@@ -11,35 +10,37 @@ export default function Integrantes()
       turma: "TechLead",
       linkedin: "https://linkedin.com/in/annaclararussoluca/",
       github: "https://github.com/annaclrl",
-      foto: ""
+      foto: "",
     },
     {
       nome: "Gabriel Duarte",
       turma: "Homolog",
       linkedin: "https://linkedin.com/in/gabriel-duarte1010",
       github: "https://github.com/duartegdm",
-      foto: ""
+      foto: "",
     },
     {
       nome: "Richard Freitas",
       turma: TURMA,
       linkedin: "https://www.linkedin.com/in/richard-freitas",
       github: "https://github.com/vlonerickk",
-      foto: ""
+      foto: "",
     },
     {
       nome: "Carlos André Silva",
       turma: TURMA,
-      linkedin: "https://www.linkedin.com/in/ukarlito?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+      linkedin:
+        "https://www.linkedin.com/in/ukarlito?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
       github: "https://github.com/uKarlito",
-      foto: ""
+      foto: "",
     },
     {
       nome: "Laura Lopes",
       turma: TURMA,
-      linkedin: "https://www.linkedin.com/in/laura-lopes-a5937a353?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      linkedin:
+        "https://www.linkedin.com/in/laura-lopes-a5937a353?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       github: "https://github.com/Laura853",
-      foto: ""
+      foto: "",
     },
     {
       nome: "Pedro Henrique de Oliveira",
@@ -59,83 +60,89 @@ export default function Integrantes()
     {
       nome: "Fernando Charlles Faustino Fernandes",
       turma: TURMA,
-      linkedin: "https://www.linkedin.com/in/charlles-fernandes-540713359?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      linkedin:
+        "https://www.linkedin.com/in/charlles-fernandes-540713359?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       github: "https://github.com/Sigmachr",
-      foto: ""
+      foto: "",
     },
     {
       nome: "Camilo Micheletto",
       turma: TURMA,
       linkedin: "https://linkedin.com/in/camilo-micheletto",
       github: "https://github.com/allyhere",
-      foto: ""
+      foto: "",
     },
     {
       nome: "Gustavo Tavares",
       turma: TURMA,
-      linkedin: "https://www.linkedin.com/in/gustavo-tavares-da-silva-b6180a220/",
+      linkedin:
+        "https://www.linkedin.com/in/gustavo-tavares-da-silva-b6180a220/",
       github: "https://github.com/gustavaress",
-      foto: ""
+      foto: "",
     },
     {
       nome: "Iago D. Ainette",
       turma: TURMA,
-      linkedin: "https://www.linkedin.com/in/iago-ainette-ba8294363?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      linkedin:
+        "https://www.linkedin.com/in/iago-ainette-ba8294363?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       github: "https://github.com/IagoDAinette",
-      foto: ""
+      foto: "",
     },
     {
       nome: "Gustavo Casimiro",
       turma: TURMA,
       linkedin: "https://www.linkedin.com/in/gustavo-casimiro/",
       github: "https://github.com/Gustavo-Casimiro",
-      foto: ""
+      foto: "",
     },
     {
       nome: "Guilherme Lisboa Silva",
       turma: TURMA,
-      linkedin: "https://www.linkedin.com/in/guilhermelisboasilva?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+      linkedin:
+        "https://www.linkedin.com/in/guilhermelisboasilva?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
       github: "https://github.com/guilisbooa",
-      foto: ""
+      foto: "",
     },
     {
       nome: "João Victor Gomes",
       turma: TURMA,
-      linkedin: "https://www.linkedin.com/in/jo%C3%A3o-victor-gomes-de-souza-419432324/",
+      linkedin:
+        "https://www.linkedin.com/in/jo%C3%A3o-victor-gomes-de-souza-419432324/",
       github: "https://github.com/Jounaxis",
-      foto: ""
+      foto: "",
     },
     {
       nome: "Lucas Barranha Giannini",
       turma: TURMA,
-      linkedin: "https://www.linkedin.com/in/lucas-giannini-67832b2b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      linkedin:
+        "https://www.linkedin.com/in/lucas-giannini-67832b2b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       github: "https://github.com/Lucas06-ux",
-      foto: ""
+      foto: "",
     },
     {
       nome: "Pedro Crus",
       turma: TURMA,
       linkedin: "https://www.linkedin.com/in/pedro-crus-0707b7360/",
       github: "https://github.com/PedroCLH2",
-      foto: ""
+      foto: "",
     },
     {
       nome: "Tiago Guedes",
       turma: TURMA,
       linkedin: "https://www.linkedin.com/in/tiago-guedes-7225a5276",
       github: "https://github.com/Tiagozguedes",
-      foto: ""
+      foto: "",
     },
     {
       nome: "Maicon Douglas",
       turma: TURMA,
       linkedin: "https://www.linkedin.com/in/maicon-douglas-b244571b5",
       github: "https://github.com/MaiconDouglas-dev",
-      foto: ""
+      foto: "",
     },
   ];
   return (
-    <main className="min-h-screen bg-gray-50 py-10">
+    <main className="min-h-screen bg-gray-50 dark:bg-gray-700 dark:text-white py-10">
       <section className="max-w-6xl mx-auto px-4 text-center">
         <h1 className="text-3xl md:text-4xl font-bold mb-4">Integrantes</h1>
         <p className="text-gray-700 mb-10 text-base md:text-lg">
@@ -146,7 +153,7 @@ export default function Integrantes()
           {integrantes.map((membro, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-200 p-6 flex flex-col items-center text-center"
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg transition-all duration-200 p-6 flex flex-col items-center text-center"
             >
               <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-full bg-gray-200 mb-4 overflow-hidden flex items-center justify-center text-lg font-semibold text-gray-600 select-none">
                 {membro.foto && (
@@ -173,7 +180,9 @@ export default function Integrantes()
               <h3 className="text-base md:text-lg font-semibold">
                 {membro.nome}
               </h3>
-              <span className="text-sm text-gray-600 mb-3">{membro.turma}</span>
+              <span className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                {membro.turma}
+              </span>
               <div className="flex items-center justify-center gap-4 mt-auto">
                 {membro.linkedin && (
                   <a
@@ -191,7 +200,7 @@ export default function Integrantes()
                     href={membro.github}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="text-gray-800 hover:text-black transition-colors"
+                    className="text-gray-800 dark:text-gray-400 hover:text-black transition-colors"
                     aria-label={`GitHub de ${membro.nome}`}
                   >
                     <FaGithub size={22} />

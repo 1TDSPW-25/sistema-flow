@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 .grail {
   display: grid;
   grid-template-columns: 1fr min(1080px, 100%) 1fr;
