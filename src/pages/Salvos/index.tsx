@@ -250,7 +250,7 @@ export default function Salvos() {
       setErrorMessage("Nao foi possivel remover. Tente novamente.");
     }
   }
-  
+
   if (isLoading) {
     return (
       <main className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-4">
@@ -263,10 +263,10 @@ export default function Salvos() {
 
   return (
     <main className="min-h-screen bg-gray-50 px-4 sm:px-6 lg:px-8 py-8">
-      <header className="max-w-5xl mx-auto mb-6">
-        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Artigos Salvos</h1>
-        <p className="text-gray-600 mt-1">Acompanhe aqui as noticias que voce salvou.</p>
-      </header>
+    <header className="max-w-5xl mx-auto mb-8 text-center">
+      <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">Artigos Salvos</h1>
+      <p className="text-gray-600 mt-2 text-lg">Acompanhe aqui as notícias que você salvou.</p>
+    </header>
 
       <section className="max-w-5xl mx-auto">
         {/* Busca, filtros e ordenacao */}
