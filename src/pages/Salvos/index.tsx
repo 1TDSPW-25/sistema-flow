@@ -23,6 +23,7 @@ export default function Salvos() {
   const [sortKey, setSortKey] = useState<"title_asc" | "title_desc" | "source_asc" | "source_desc">("title_asc");
   const [page, setPage] = useState(1);
   const pageSize = 5;
+  const [selected, setSelected] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     document.title = "Salvos";
@@ -138,6 +139,66 @@ export default function Salvos() {
   useEffect(() => {
     setPage(1);
   }, [search, sourceFilter, sortKey]);
+
+  useEffect(() => {
+    // Remove selecao de itens que nao estao mais presentes
+    setSelected((prev) => {
+      const urls = new Set(sorted.map((a) => a.url));
+      const next = new Set<string>();
+      prev.forEach((u) => {
+        if (urls.has(u)) next.add(u);
+      });
+      return next;
+    });
+  }, [sorted]);
+
+  const isSelected = (url: string) => selected.has(url);
+  const toggleSelect = (url: string) => {
+    setSelected((prev) => {
+      const next = new Set(prev);
+      if (next.has(url)) next.delete(url); else next.add(url);
+      return next;
+    });
+  };
+  const pageAllSelected = useMemo(() => paginated.every((a) => selected.has(a.url)) && paginated.length > 0, [paginated, selected]);
+  const toggleSelectPage = () => {
+    setSelected((prev) => {
+      const next = new Set(prev);
+      if (pageAllSelected) {
+        paginated.forEach((a) => next.delete(a.url));
+      } else {
+        paginated.forEach((a) => next.add(a.url));
+      }
+      return next;
+    });
+  };
+  const selectAllFiltered = () => setSelected(new Set(sorted.map((a) => a.url)));
+  const clearSelection = () => setSelected(new Set());
+
+  async function handleRemoveSelected() {
+    if (!usuario || selected.size === 0) return;
+    const confirmar = window.confirm(`Remover ${selected.size} item(ns) dos salvos?`);
+    if (!confirmar) return;
+    try {
+      setErrorMessage(null);
+      setSuccessMessage(null);
+      const removeSet = new Set(selected);
+      const novosSalvos = (usuario.artigosSalvos ?? []).filter((a) => !removeSet.has(a.url));
+      const usuarioAtualizado: UsuarioType = { ...usuario, artigosSalvos: novosSalvos };
+      const response = await fetch(`${API_URL}/usuarios/${usuario.id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(usuarioAtualizado),
+      });
+      if (!response.ok) throw new Error("Falha ao remover selecionados.");
+      setUsuario(usuarioAtualizado);
+      setSalvos(novosSalvos);
+      clearSelection();
+      setSuccessMessage("Itens removidos com sucesso.");
+    } catch (e) {
+      setErrorMessage("Nao foi possivel remover selecionados. Tente novamente.");
+    }
+  }
 
   function getInternalIndex(art: ArtigoSalvo): number | null {
     if (!news || news.length === 0) return null;
@@ -279,13 +340,63 @@ export default function Salvos() {
           </div>
         ) : (
           <>
+            {/* Controles de selecao em massa */}
+            <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex items-center gap-2">
+                <input
+                  id="select-page"
+                  type="checkbox"
+                  checked={pageAllSelected}
+                  onChange={toggleSelectPage}
+                />
+                <label htmlFor="select-page" className="text-sm text-gray-700">
+                  Selecionar pagina ({paginated.length})
+                </label>
+                <button
+                  type="button"
+                  onClick={selectAllFiltered}
+                  className="text-sm px-3 py-1 border border-gray-300 rounded-md bg-white hover:bg-gray-50 cursor-pointer"
+                >
+                  Selecionar todos ({sorted.length})
+                </button>
+                {selected.size > 0 && (
+                  <button
+                    type="button"
+                    onClick={clearSelection}
+                    className="text-sm px-3 py-1 border border-gray-300 rounded-md bg-white hover:bg-gray-50 cursor-pointer"
+                  >
+                    Limpar selecao
+                  </button>
+                )}
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-gray-600">{selected.size} selecionado(s)</span>
+                <button
+                  type="button"
+                  disabled={selected.size === 0}
+                  onClick={handleRemoveSelected}
+                  className={`px-3 py-2 text-sm rounded-md border transition ${
+                    selected.size === 0
+                      ? "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed"
+                      : "bg-red-600 text-white border-red-600 hover:bg-red-700 cursor-pointer"
+                  }`}
+                >
+                  Remover selecionados
+                </button>
+              </div>
+            </div>
             <ul className="space-y-4">
               {paginated.map((art) => (
                 <li
                   key={art.url}
                   className="bg-white rounded-lg shadow p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
                 >
-                  <div className="min-w-0">
+                  <div className="min-w-0 flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      checked={isSelected(art.url)}
+                      onChange={() => toggleSelect(art.url)}
+                    />
                     <button
                       type="button"
                       onClick={() => handleAbrirInterno(art)}
