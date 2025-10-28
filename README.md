@@ -66,10 +66,13 @@
 | 🚧 | Criar página de detalhes da notícia | Grupo 3 (Camilo, Carlos, Laura) | Em homologação |
 | 🚧 | Estilizar página de cadastro | Grupo 1 (Pedro Oliveira, Guilherme, Icaro) | Em homologação |
 | 🚧 | Adicionar botão “Salvar notícia” na página de detalhes | Grupo 2 (Barranha, Iago, João) | Implementando lógicas e adicionando animação de salvo com sucesso | 
+| 🚧 | Fazer responsividade de todas as páginas  | Grupo 3 (Camilo, Carlos, Laura) | Em homologação|
 | 🚧 | Estilizar botão salvar + layout da página de detalhes | Grupo 4 (Miguel, Pedro, Evelyn) | Em homologação | 
 | 🚧 | Estilizar página de sobre | Grupo 5 (Maicon, GustavoC, Gregory) | Em homologação |
 | 🚧 | Criar logo | Grupo 1 (Pedro Oliveira, Guilherme, Icaro) | Alteração de estilização pendente |
-| 🚧 |  Modo escuro / claro | Grupo 3 (Camilo, Carlos, Laura) | Em homologação |
+| 🚧 | Criar página de perfil (dados da conta)| Grupo 6 (Leonardo, Richard, Charles) | Em homologação |
+| 🚧 | Criar página de editar dados da conta | Grupo 5 (Maicon, GustavoC, Gregory) | Em homologação |
+| 🚧 | Modo escuro / claro | Grupo 3 (Camilo, Carlos, Laura) | Em homologação |
 
 
 ---
@@ -78,12 +81,13 @@
 
 | Status | Feature | Grupo / Responsáveis | Observação |
 |:-------|:---------|:----------------------|:------------|
-| 🧩 |  Criar página "Salvos" com as notícias, sem estilização | Grupo 1 (Pedro Oliveira, Guilherme, Icaro) | 22:30 |
-| 🧩 |  Estilizar página de salvos  | Grupo 2 (Barranha, Iago, João) | 22:00 |
-| 🧩 |  Validação de estado do botão(mostrar visualmente se a notícia já está salva) | Grupo 4 (Miguel, Evelyn, Pedro Crus) | 22:00 |
-| 🧩 |  Remover o cabeçalho da página de login e cadastro | Grupo 5 (Maicon, GustavoC, Gregory) | 22:00 |
-| 🧩 |  Busca de notícias (um campo de pesquisa com filtro por palavra-chave) | Grupo 6 (Leonardo,Charles) | 19:10 |
-| 🧩 |  Sistema de upload de imagens  | Richard  | 22:30 |
+| 🧩 |  Criar página "Salvos" com as notícias, sem estilização | Grupo 1 (Pedro Oliveira, Guilherme, Icaro) | Até o começo da próxima aula |
+| 🧩 |  Estilizar página de salvos  | Grupo 2 (Barranha, Iago, João) | Até o começo da próxima aula |
+| 🧩 |  Paginação (exibir 8 notícias por página) | Grupo 3 (Camilo, Carlos, Laura) | Até o começo da próxima aula|
+| 🧩 |  Validação de estado do botão(mostrar visualmente se a notícia já está salva) | Grupo 4 (Miguel, Evelyn, Pedro Crus) | Até o começo da próxima aula |
+| 🧩 |  Remover o cabeçalho da página de login e cadastro | Grupo 5 (Maicon, GustavoC, Gregory) | Até o começo da próxima aula |
+| 🧩 |  Busca de notícias (um campo de pesquisa com filtro por palavra-chave) | Grupo 6 (Leonardo,Charles) | Até o começo da próxima aula |
+| 🧩 |  Sistema de upload de imagens  | Richard  | Até o começo da próxima aula |
 | 🧩 |  Logo e Cabecalho | Grupo 7 (Tiago, Facchin, Gustavo) | 🔴 Corrigindo estilização do logo e aprimorando animações do cabeçalho |
 
 ---
@@ -94,7 +98,7 @@
 |:------|:-------------|:--------------|:----------------|
 | **1** | Pedro Oliveira, Guilherme, Icaro |Estilizar página de salvos| 🚧 Em desenvolvimento |
 | **2** | Barranha, Iago, João | Criação página de salvos| 🚧 Em desenvolvimento |
-| **3** | Camilo, Carlos, Laura | Criar botão de modo escuro/claro | ✅ Disponivel |
+| **3** | Camilo, Carlos, Laura | Criar botão de modo escuro/claro | 🚧 Em desenvolvimento  |
 | **4** | Miguel, Evelyn, Pedro Crus | Estilização botão salvar| 🚧 Em desenvolvimento  |
 | **5** | Maicon, GustavoC, Gregory | Remoção do cabeçalho da página de login e cadastro| 🚧 Em desenvolvimento |
 | **6** | Leonardo, Richard, Charles | Campo de pesqusia por palavra-chave  | 🚧 Em desenvolvimento |
