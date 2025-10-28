@@ -229,9 +229,10 @@ export default function Cadastro() {
             Já tem uma conta?{" "}
             <Link
               to="/login"
-              className="font-medium text-white hover:text-gray-400 transition-colors"
+              className="font-medium text-white underline-offset-4 hover:underline hover:text-green-500 focus-visible:text-green-500 transition-colors"
+              aria-label="Ir para a página de login"
             >
-              Fazer login
+              Faça seu login
             </Link>
           </p>
         </div>
