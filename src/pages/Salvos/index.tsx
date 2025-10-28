@@ -18,6 +18,7 @@ export default function Salvos() {
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const pageSize = 5;
 
@@ -67,19 +68,34 @@ export default function Salvos() {
   }, [clearLogin, navigate, userEmail, userIsLogged]);
 
   const temSalvos = useMemo(() => salvos.length > 0, [salvos]);
+
+  const normalize = (s: string) =>
+    (s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+  const filtrados = useMemo(() => {
+    if (!search) return salvos;
+    const q = normalize(search);
+    return salvos.filter(
+      (a) => normalize(a.nomeArtigo).includes(q) || normalize(a.url).includes(q),
+    );
+  }, [salvos, search]);
   const totalPages = useMemo(
-    () => Math.max(1, Math.ceil(salvos.length / pageSize)),
-    [salvos],
+    () => Math.max(1, Math.ceil(filtrados.length / pageSize)),
+    [filtrados],
   );
   const paginated = useMemo(() => {
     const start = (page - 1) * pageSize;
-    return salvos.slice(start, start + pageSize);
-  }, [salvos, page]);
+    return filtrados.slice(start, start + pageSize);
+  }, [filtrados, page]);
 
   useEffect(() => {
-    const tp = Math.max(1, Math.ceil(salvos.length / pageSize));
+    const tp = Math.max(1, Math.ceil(filtrados.length / pageSize));
     if (page > tp) setPage(tp);
-  }, [salvos, pageSize, page]);
+  }, [filtrados, pageSize, page]);
+
+  useEffect(() => {
+    setPage(1);
+  }, [search]);
 
   function getInternalIndex(art: ArtigoSalvo): number | null {
     if (!news || news.length === 0) return null;
@@ -147,6 +163,25 @@ export default function Salvos() {
       </header>
 
       <section className="max-w-5xl mx-auto">
+        {/* Busca */}
+        <div className="mb-4 flex items-center gap-2">
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Pesquisar salvos..."
+            className="w-full max-w-md px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          {search && (
+            <button
+              type="button"
+              onClick={() => setSearch("")}
+              className="px-3 py-2 text-sm bg-gray-100 border border-gray-300 rounded-md hover:bg-gray-200 cursor-pointer"
+            >
+              Limpar
+            </button>
+          )}
+        </div>
         {errorMessage && (
           <div className="mb-4 p-3 rounded bg-red-50 text-red-700 border border-red-200">
             {errorMessage}
@@ -207,7 +242,9 @@ export default function Salvos() {
                 </li>
               ))}
             </ul>
-
+            {!filtrados.length && (
+              <div className="mt-6 text-sm text-gray-600">Nenhuma noticia encontrada.</div>
+            )}
             <div className="mt-6 flex items-center justify-between gap-3">
               <div className="text-sm text-gray-600">Pagina {page} de {totalPages}</div>
               <div className="flex items-center gap-2">
@@ -243,4 +280,3 @@ export default function Salvos() {
     </main>
   );
 }
-
