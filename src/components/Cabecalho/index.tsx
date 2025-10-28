@@ -2,7 +2,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useLogado } from "../../hooks/useLogado";
 import { FaUserCircle } from "react-icons/fa";
 import { useEffect, useState, useRef } from "react";
-import logo from "../../assets/img/news_icon.png";
 
 export default function Cabecalho() {
   const navigate = useNavigate();
