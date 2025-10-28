@@ -3,11 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { useLogado } from "../../hooks/useLogado";
 import { useNoticia } from "../../hooks/useNoticia";
 import type { UsuarioType } from "../../types/usuario";
-import { FaSpinner } from "react-icons/fa";
-import { FaSpinner, FaExclamationCircle, FaCheckCircle } from "react-icons/fa";
-import { FaRegBookmark } from "react-icons/fa";
-
-
+import { 
+  FaSpinner, 
+  FaExclamationCircle, 
+  FaCheckCircle, 
+  FaRegBookmark 
+} from "react-icons/fa";
 
 const API_URL = "http://localhost:3001";
 
