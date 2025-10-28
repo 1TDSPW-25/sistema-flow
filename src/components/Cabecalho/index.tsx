@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useLogado } from "../../hooks/useLogado";
 import { FaUserCircle } from "react-icons/fa";
 import { useEffect, useState, useRef } from "react";
+import logo from "../../assets/img/news_icon.png";
 
 export default function Cabecalho() {
   const navigate = useNavigate();
@@ -22,8 +23,9 @@ export default function Cabecalho() {
     };
   }, []);
 
+  // Links do cabeçalho com hover verde
   const linkClasses =
-    "text-white font-medium text-sm hover:text-gray-400 transition duration-150";
+    "text-white font-medium text-sm transition duration-150 hover:text-green-500 focus-visible:text-green-500";
 
   function handleLogout() {
     clearLogin("userLogado");
@@ -41,40 +43,41 @@ export default function Cabecalho() {
       </div>
 
       <div className="flex justify-center sm:grow space-x-6 max-sm:col-span-full">
-        <Link to="/" className={linkClasses}>
-          Home
-        </Link>
-        <Link to="/sobre" className={linkClasses}>
-          Sobre
-        </Link>
-        <Link to="/contato" className={linkClasses}>
-          Contato
-        </Link>
+        <Link to="/" className={linkClasses}>Home</Link>
+        <Link to="/sobre" className={linkClasses}>Sobre</Link>
+        <Link to="/contato" className={linkClasses}>Contato</Link>
       </div>
 
-      <div className="relative justify-self-end max-sm:col-start-2 max-sm:row-start-1" ref={menuRef}>
+      <div
+        className="relative justify-self-end max-sm:col-start-2 max-sm:row-start-1"
+        ref={menuRef}
+      >
         {userIsLogged ? (
+          // Usando group para propagar hover ao ícone e email
           <div
-            className="flex items-center gap-x-2 cursor-pointer"
+            className="group flex items-center gap-x-2 cursor-pointer select-none"
             onClick={() => setMenuOpen(!menuOpen)}
+            title="Abrir menu do perfil"
           >
-            <FaUserCircle className="text-white text-3xl" />
-            <p className="text-white">{userEmail}</p>
+            <FaUserCircle className="text-white text-3xl transition group-hover:text-green-500" />
+            <p className="text-white transition group-hover:text-green-500">
+              {userEmail}
+            </p>
           </div>
         ) : (
           <Link
             to="/login"
-            className="text-white font-semibold text-lg hover:text-gray-400 transition duration-150"
+            className="text-white font-semibold text-lg transition duration-150 hover:text-green-500 focus-visible:text-green-500"
           >
             Entrar
           </Link>
         )}
 
         {menuOpen && userIsLogged && (
-          <div className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg py-2 z-20">
+          <div className="absolute right-0 mt-2 w-44 bg-white rounded-md shadow-lg py-2 z-20">
             <Link
               to="/perfil"
-              className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+              className="block px-4 py-2 text-gray-800 transition hover:text-green-600 hover:bg-green-50"
               onClick={() => setMenuOpen(false)}
             >
               Perfil
@@ -82,7 +85,7 @@ export default function Cabecalho() {
 
             <Link
               to="/salvos"
-              className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+              className="block px-4 py-2 text-gray-800 transition hover:text-green-600 hover:bg-green-50"
               onClick={() => setMenuOpen(false)}
             >
               Salvos
@@ -90,7 +93,7 @@ export default function Cabecalho() {
 
             <button
               type="button"
-              className="block w-full px-4 py-2 text-left text-gray-800 hover:bg-gray-100"
+              className="block w-full px-4 py-2 text-left text-gray-800 transition hover:text-green-600 hover:bg-green-50"
               onClick={handleLogout}
             >
               Sair
