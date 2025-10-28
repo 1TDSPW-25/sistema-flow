@@ -154,7 +154,7 @@ export default function Login() {
             Não tem uma conta?{" "}
             <Link
               to="/cadastro"
-              className="font-medium text-white hover:text-gray-400 transition-colors"
+              className="font-medium text-white underline-offset-4 hover:underline hover:text-green-500 focus-visible:text-green-500 transition-colors"
             >
               Criar conta
             </Link>
