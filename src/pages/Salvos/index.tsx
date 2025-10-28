@@ -5,6 +5,9 @@ import { useNoticia } from "../../hooks/useNoticia";
 import type { UsuarioType } from "../../types/usuario";
 import { FaSpinner } from "react-icons/fa";
 import { FaSpinner, FaExclamationCircle, FaCheckCircle } from "react-icons/fa";
+import { FaRegBookmark } from "react-icons/fa";
+
+
 
 const API_URL = "http://localhost:3001";
 
@@ -333,17 +336,19 @@ export default function Salvos() {
           </div>
         )}
         {!temSalvos ? (
-          <div className="text-center py-16 bg-white rounded-lg shadow">
-            <p className="text-gray-700 mb-4">Voce ainda nao salvou nenhuma noticia.</p>
-            <button
-              type="button"
-              className="bg-blue-600 text-white px-5 py-2 rounded-md shadow hover:bg-blue-700 transition cursor-pointer"
-              onClick={() => navigate("/")}
-            >
-              Explorar noticias
+          <div className="text-center py-20 px-6 bg-gray-50 rounded-lg border-2 border-dashed border-gray-300">
+              <FaRegBookmark className="mx-auto h-12 w-12 text-gray-400" />
+              <h3 className="mt-4 text-xl font-semibold text-gray-900">Nenhum artigo salvo</h3>
+              <p className="text-gray-500 mt-2 mb-6">Voce ainda nao salvou nenhuma noticia. Comece a explorar!</p>
+              <button
+                type="button"
+                className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md font-medium hover:bg-blue-700 transition-all transform hover:scale-105 cursor-pointer"
+                onClick={() => navigate("/")}
+              >
+                Explorar notícias
             </button>
           </div>
-        ) : (
+          ) : (
           <>
             {/* Controles de selecao em massa */}
             <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
