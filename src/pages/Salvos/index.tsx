@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLogado } from "../../hooks/useLogado";
-import type { UsuarioType } from "../../types/usuario";
 import { useNoticia } from "../../hooks/useNoticia";
+import type { UsuarioType } from "../../types/usuario";
 
 const API_URL = "http://localhost:3001";
 
@@ -31,7 +31,7 @@ export default function Salvos() {
       return;
     }
 
-    const email = userEmail!;
+    const email = userEmail;
     const controller = new AbortController();
 
     async function carregarUsuario() {
@@ -40,16 +40,14 @@ export default function Salvos() {
         setErrorMessage(null);
 
         const response = await fetch(
-          `${API_URL}/usuarios?email=${encodeURIComponent(email)}`,
-          { signal: controller.signal }
+          `${API_URL}/usuarios?email=${encodeURIComponent(email!)}`,
+          { signal: controller.signal },
         );
-
-        if (!response.ok) throw new Error("Falha ao buscar o usuário.");
+        if (!response.ok) throw new Error("Falha ao buscar o usuario.");
 
         const [user] = (await response.json()) as UsuarioType[];
-
         if (!user) {
-          setErrorMessage("Não encontramos seus dados. Faça login novamente.");
+          setErrorMessage("Nao encontramos seus dados. Faca login novamente.");
           clearLogin("userToken");
           return;
         }
@@ -58,7 +56,7 @@ export default function Salvos() {
         setSalvos(user.artigosSalvos ?? []);
       } catch (error) {
         if (error instanceof DOMException && error.name === "AbortError") return;
-        setErrorMessage("Não foi possível carregar seus salvos. Tente novamente.");
+        setErrorMessage("Nao foi possivel carregar seus salvos. Tente novamente.");
       } finally {
         setIsLoading(false);
       }
@@ -68,10 +66,10 @@ export default function Salvos() {
     return () => controller.abort();
   }, [clearLogin, navigate, userEmail, userIsLogged]);
 
-  const temSalvos = useMemo(() => salvos && salvos.length > 0, [salvos]);
+  const temSalvos = useMemo(() => salvos.length > 0, [salvos]);
   const totalPages = useMemo(
-    () => Math.max(1, Math.ceil((salvos?.length || 0) / pageSize)),
-    [salvos]
+    () => Math.max(1, Math.ceil(salvos.length / pageSize)),
+    [salvos],
   );
   const paginated = useMemo(() => {
     const start = (page - 1) * pageSize;
@@ -79,9 +77,9 @@ export default function Salvos() {
   }, [salvos, page]);
 
   useEffect(() => {
-    const tp = Math.max(1, Math.ceil((salvos?.length || 0) / pageSize));
+    const tp = Math.max(1, Math.ceil(salvos.length / pageSize));
     if (page > tp) setPage(tp);
-  }, [salvos]);
+  }, [salvos, pageSize, page]);
 
   function getInternalIndex(art: ArtigoSalvo): number | null {
     if (!news || news.length === 0) return null;
@@ -98,7 +96,7 @@ export default function Salvos() {
       navigate(`/artigo/${idx + 1}`);
     } else {
       setErrorMessage(
-        "Não foi possível abrir internamente. A notícia pode não estar no feed atual."
+        "Nao foi possivel abrir internamente. A noticia pode nao estar no feed atual.",
       );
     }
   }
@@ -110,24 +108,26 @@ export default function Salvos() {
       setSuccessMessage(null);
 
       const novosSalvos = (usuario.artigosSalvos ?? []).filter(
-        (a) => a.url !== urlParaRemover
+        (a) => a.url !== urlParaRemover,
       );
 
-      const usuarioAtualizado: UsuarioType = { ...usuario, artigosSalvos: novosSalvos };
+      const usuarioAtualizado: UsuarioType = {
+        ...usuario,
+        artigosSalvos: novosSalvos,
+      };
 
       const response = await fetch(`${API_URL}/usuarios/${usuario.id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(usuarioAtualizado),
       });
-
       if (!response.ok) throw new Error("Falha ao remover artigo salvo.");
 
       setUsuario(usuarioAtualizado);
       setSalvos(novosSalvos);
       setSuccessMessage("Artigo removido dos salvos.");
     } catch (e) {
-      setErrorMessage("Não foi possível remover. Tente novamente.");
+      setErrorMessage("Nao foi possivel remover. Tente novamente.");
     }
   }
 
@@ -143,7 +143,7 @@ export default function Salvos() {
     <main className="min-h-screen bg-gray-50 px-4 sm:px-6 lg:px-8 py-8">
       <header className="max-w-5xl mx-auto mb-6">
         <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Artigos Salvos</h1>
-        <p className="text-gray-600 mt-1">Acompanhe aqui as notícias que você salvou.</p>
+        <p className="text-gray-600 mt-1">Acompanhe aqui as noticias que voce salvou.</p>
       </header>
 
       <section className="max-w-5xl mx-auto">
@@ -160,87 +160,87 @@ export default function Salvos() {
 
         {!temSalvos ? (
           <div className="text-center py-16 bg-white rounded-lg shadow">
-            <p className="text-gray-700 mb-4">Você ainda não salvou nenhuma notícia.</p>
+            <p className="text-gray-700 mb-4">Voce ainda nao salvou nenhuma noticia.</p>
             <button
               type="button"
               className="bg-blue-600 text-white px-5 py-2 rounded-md shadow hover:bg-blue-700 transition cursor-pointer"
               onClick={() => navigate("/")}
             >
-              Explorar notícias
+              Explorar noticias
             </button>
           </div>
         ) : (
-          <ul className="space-y-4">
-            {paginated.map((art) => (
-              <li
-                key={art.url}
-                className="bg-white rounded-lg shadow p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
-              >
-                <div className="min-w-0">
-                  <button
-                    type="button"
-                    onClick={() => handleAbrirInterno(art)}
-                    className="text-left text-blue-700 hover:text-blue-900 font-semibold break-words cursor-pointer"
-                    title={art.nomeArtigo}
-                  >
-                    {art.nomeArtigo}
-                  </button>
-                </div>
+          <>
+            <ul className="space-y-4">
+              {paginated.map((art) => (
+                <li
+                  key={art.url}
+                  className="bg-white rounded-lg shadow p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
+                >
+                  <div className="min-w-0">
+                    <button
+                      type="button"
+                      onClick={() => handleAbrirInterno(art)}
+                      className="text-left text-blue-700 hover:text-blue-900 font-semibold break-words cursor-pointer"
+                      title={art.nomeArtigo}
+                    >
+                      {art.nomeArtigo}
+                    </button>
+                  </div>
 
-                <div className="flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={() => handleAbrirInterno(art)}
-                    className="px-3 py-2 text-sm bg-gray-800 text-white rounded-md hover:bg-gray-900 transition cursor-pointer"
-                  >
-                    Abrir
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => handleRemover(art.url)}
-                    className="px-3 py-2 text-sm bg-red-600 text-white rounded-md hover:bg-red-700 transition cursor-pointer"
-                  >
-                    Remover
-                  </button>
-                </div>
-              </li>
-            ))}
-          </ul>
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={() => handleAbrirInterno(art)}
+                      className="px-3 py-2 text-sm bg-gray-800 text-white rounded-md hover:bg-gray-900 transition cursor-pointer"
+                    >
+                      Abrir
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleRemover(art.url)}
+                      className="px-3 py-2 text-sm bg-red-600 text-white rounded-md hover:bg-red-700 transition cursor-pointer"
+                    >
+                      Remover
+                    </button>
+                  </div>
+                </li>
+              ))}
+            </ul>
 
-          {/* Paginação */}
-          <div className="mt-6 flex items-center justify-between gap-3">
-            <div className="text-sm text-gray-600">
-              Página {page} de {totalPages}
+            <div className="mt-6 flex items-center justify-between gap-3">
+              <div className="text-sm text-gray-600">Pagina {page} de {totalPages}</div>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  disabled={page <= 1}
+                  onClick={() => setPage((p) => Math.max(1, p - 1))}
+                  className={`px-3 py-2 text-sm rounded-md border transition ${
+                    page <= 1
+                      ? "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed"
+                      : "bg-white text-gray-800 border-gray-300 hover:bg-gray-50 cursor-pointer"
+                  }`}
+                >
+                  Anterior
+                </button>
+                <button
+                  type="button"
+                  disabled={page >= totalPages}
+                  onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+                  className={`px-3 py-2 text-sm rounded-md border transition ${
+                    page >= totalPages
+                      ? "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed"
+                      : "bg-white text-gray-800 border-gray-300 hover:bg-gray-50 cursor-pointer"
+                  }`}
+                >
+                  Proxima
+                </button>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                disabled={page <= 1}
-                onClick={() => setPage((p) => Math.max(1, p - 1))}
-                className={`px-3 py-2 text-sm rounded-md border transition ${
-                  page <= 1
-                    ? "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed"
-                    : "bg-white text-gray-800 border-gray-300 hover:bg-gray-50 cursor-pointer"
-                }`}
-              >
-                Anterior
-              </button>
-              <button
-                type="button"
-                disabled={page >= totalPages}
-                onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
-                className={`px-3 py-2 text-sm rounded-md border transition ${
-                  page >= totalPages
-                    ? "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed"
-                    : "bg-white text-gray-800 border-gray-300 hover:bg-gray-50 cursor-pointer"
-                }`}
-              >
-                Próxima
-              </button>
-            </div>
-          </div>
+          </>
         )}
       </section>
     </main>
   );
 }
+
