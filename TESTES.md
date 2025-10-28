@@ -62,11 +62,12 @@ Data | Página | Status | Responsável pelo Bugfix | Observação |
 |:-------|:-----------|:--------------|:--------------|:--------------|
 22/10/2025 | Cadastro | Corrigido | Gustavo Tavares | Página de cadastro permitindo dualidade no cadastro de user e email.|
 22/10/2025 | Todas | Corrigido | Gabriel Fachin | Ajustando layout de todas a paginas, alterando o App.tsx.|
-22/10/2025 | Sobre | Corrigido | Thiago Guedes | Pagina sobre duplicada no projeto |
+22/10/2025 | Sobre | Corrigido | Tiago Guedes | Pagina sobre duplicada no projeto |
 23/10/2025 | Rodapé | Corrigido | Gabriel Fachin | Adicionado botão "integrantes" no rodapé sob o título "nossa equipe" |
-23/10/2025 | Todas | Corrigido | Thiago Guedes | Correção no app.tsx, com a importaçao do cabecalho ao inves do menu |
+23/10/2025 | Todas | Corrigido | Tiago Guedes | Correção no app.tsx, com a importaçao do cabecalho ao inves do menu |
 23/10/2025 | Home | Corrigido | Gustavo Tavares | Validação de informações null nos cards de noticia |
 23/10/2025 | Home | Corrigido | Gustavo Tavares | Correçao do nome do integrante Gustavo Tavares |
 27/10/2025 | AppRoutes/Erro | Corrigido | Gabriel Fachin | Redirecionamento correto para a página de erro | 
 27/10/2025 | Cabeçalho | Corrigido | Gabriel Fachin | Melhoria de responsividade no menu
+27/10/2025 | Cabecalho | Corrigido | Tiago Guedes | Melhoria do Logo
 ---
