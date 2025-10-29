@@ -87,6 +87,18 @@ export default function Cadastro() {
   return (
     <main className="min-h-screen flex flex-col justify-center items-center bg-gray-50 dark:bg-gray-700 px-4 sm:px-6 lg-px-8">
       <section className="w-full max-w-md sm:max-w-lg md:max-w-xl bg-gray-900 shadow-xl rounded-lg p-6 sm:p-8 md:p-10 space-y-6 border-2 border-gray-200 dark:border-gray-950">
+        {/* Logo NewsLab clicável */}
+        <div className="text-center">
+          <Link 
+            to="/" 
+            className="inline-block transition-transform hover:scale-105 active:scale-95"
+          >
+            <span className="text-3xl sm:text-4xl font-black tracking-tight text-white">
+              News<span className="text-green-500">Lab</span>
+            </span>
+          </Link>
+        </div>
+
         <div className="text-center space-y-2">
           <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
             Cadastro
@@ -190,9 +202,9 @@ export default function Cadastro() {
           )}
 
           <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full flex justify-center items-center py-2 sm:py-3 border border-transparent rounded-md text-base sm:text-lg font-semibold text-white bg-[#1C3546] hover:bg-[#30576b] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white disabled:bg-gray-400 transition duration-150 ease-in-out"
+          type="submit"
+          disabled={isSubmitting}
+          className="w-full flex justify-center items-center py-2 sm:py-3 border border-transparent rounded-md text-base sm:text-lg font-semibold text-white bg-[#1C3546] hover:bg-[#30576b] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white disabled:bg-gray-400 transition duration-150 ease-in-out cursor-pointer disabled:cursor-not-allowed"
           >
             {isSubmitting ? (
               <span className="flex items-center">
