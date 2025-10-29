@@ -2,6 +2,7 @@ import { useParams, useSearchParams } from "react-router-dom";
 import { useNoticia } from "../../hooks/useNoticia";
 import type { UsuarioType } from "../../types/usuario";
 import { useLogado } from "../../hooks/useLogado";
+import { useState } from 'react'
 const API_URL = "http://localhost:3001";
 
 function Artigo() {
@@ -10,9 +11,17 @@ function Artigo() {
   const [searchParams] = useSearchParams();
   const { id } = useParams();
   const paramId = id || searchParams.get("artigo");
+   
 
-  const handleSaveNews = async () => {
-    console.log("Notícia salva!");
+  const isArticleSaved = async () => {
+    const currentUser = await getCurrentUser();
+
+    return currentUser?.artigosSalvos?.find(
+      (artigo) => artigo.nomeArtigo === filteredNews.title
+    );
+  };
+
+  const getCurrentUser = async () => {
     const response = await fetch(`${API_URL}/usuarios`);
 
     if (!response.ok) return;
@@ -20,12 +29,18 @@ function Artigo() {
     const data: UsuarioType[] = await response.json();
     const currentUser = data.find((user) => user.email === userEmail);
 
-    if (
-      currentUser?.artigosSalvos?.find(
-        (artigo) => artigo.nomeArtigo === filteredNews.title
-      )
-    )
-      return;
+    return currentUser;
+  };
+
+  const [isSaved, setIsSaved] = useState(false);
+
+  const handleSaveNews = async () => {
+    setIsSaved(true)
+    console.log("Notícia salva!");
+    
+    const currentUser = await getCurrentUser();
+
+    if (await isArticleSaved()) return;
     if (currentUser && "artigosSalvos" in currentUser) {
       currentUser.artigosSalvos?.push({
         url: filteredNews.url,
@@ -47,10 +62,8 @@ function Artigo() {
       },
       body: JSON.stringify(currentUser),
     });
-
-    console.log(responsePut);
-    return data;
-  };
+     return responsePut
+    };
 
   const filteredNews = news[Number(paramId) - 1] || null;
 
@@ -95,13 +108,21 @@ function Artigo() {
             </div>
 
             <div className="mb-6">
-              <button
-                onClick={handleSaveNews}
-                className="w-full sm:w-auto bg-[#0a1a2f] text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-[#081524] transition cursor-pointer text-sm sm:text-base text-center"
-              >
-                Salvar Notícia
-              </button>
-            </div>
+            <button
+              onClick={handleSaveNews}
+              disabled={isSaved}
+              className={`w-full sm:w-auto text-white font-semibold px-6 py-3 rounded-full shadow text-sm sm:text-base text-center
+                transition-colors duration-300 ease-in-out
+                ${
+                  isSaved
+                    ? 'bg-green-600 cursor-not-allowed'
+                    : 'bg-[#0a1a2f] hover:bg-[#081524] cursor-pointer'
+                }
+              `}
+            >
+              {isSaved ? 'Notícia Salva' : 'Salvar Notícia'}
+            </button>
+          </div>
 
             <hr className="border-gray-300 my-6" />
 
