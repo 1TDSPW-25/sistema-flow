@@ -63,13 +63,16 @@
 
 | Status | Feature | Grupo / Responsáveis | Observação |
 |:-------|:---------|:----------------------|:------------|
-| 🚧 | Criar página de detalhes da notícia | Grupo 3 (Camilo, Carlos, Laura) | Tratar exceção de notícia inexistente, abrir link em outra página e mudar a tag <a> |
+| 🚧 | Criar página de detalhes da notícia | Grupo 3 (Camilo, Carlos, Laura) | Em homologação |
 | 🚧 | Estilizar página de cadastro | Grupo 1 (Pedro Oliveira, Guilherme, Icaro) | Em homologação |
-| 🚧 | Adicionar botão “Salvar notícia” na página de detalhes | Grupo 2 (Barranha, Iago, João) | Implementando lógicas | 
+| 🚧 | Adicionar botão “Salvar notícia” na página de detalhes | Grupo 2 (Barranha, Iago, João) | Implementando lógicas e adicionando animação de salvo com sucesso | 
+| 🚧 | Fazer responsividade de todas as páginas  | Grupo 3 (Camilo, Carlos, Laura) | Em homologação|
 | 🚧 | Estilizar botão salvar + layout da página de detalhes | Grupo 4 (Miguel, Pedro, Evelyn) | Em homologação | 
-| 🚧 | Estilizar página de sobre | Grupo 5 (Maicon, GustavoC, Gregory) | Ajustando estilização
-| 🚧 | Criação página de detalhes | Grupo 3 (Camilo, Carlos, Laura) |  Em homologação
-| 🚧 | Criar logo | Grupo 1 (Pedro Oliveira, Guilherme, Icaro) | Em homologação |
+| 🚧 | Estilizar página de sobre | Grupo 5 (Maicon, GustavoC, Gregory) | Em homologação |
+| 🚧 | Criar logo | Grupo 1 (Pedro Oliveira, Guilherme, Icaro) | Alteração de estilização pendente |
+| 🚧 | Criar página de perfil (dados da conta)| Grupo 6 (Leonardo, Richard, Charles) | Em homologação |
+| 🚧 | Criar página de editar dados da conta | Grupo 5 (Maicon, GustavoC, Gregory) | Em homologação |
+| 🚧 | Modo escuro / claro | Grupo 3 (Camilo, Carlos, Laura) | Em homologação |
 
 
 ---
@@ -78,14 +81,14 @@
 
 | Status | Feature | Grupo / Responsáveis | Observação |
 |:-------|:---------|:----------------------|:------------|
-| 🧩 |  Estilizar página de salvos | Grupo 1 (Pedro Oliveira, Guilherme, Icaro) | 22:30 |
-| 🧩 |  Criar página "Salvos" com as notícias, sem estilização  | Grupo 2 (Barranha, Iago, João) | 22:00 |
-| 🧩 |  Modo escuro / claro | Grupo 3 (Camilo, Carlos, Laura) | 22:30 |
-| 🧩 |  Validação de estado do botão(mostrar visualmente se a notícia já está salva) | Grupo 4 (Miguel, Evelyn, Pedro Crus) | 22:00 |
-| 🧩 |  Remover o cabeçalho da página de login e cadastro | Grupo 5 (Maicon, GustavoC, Gregory) | 22:00 |
-| 🧩 |  Busca de notícias (um campo de pesquisa com filtro por palavra-chave) | Grupo 6 (Leonardo,Charles) | 19:10 |
-| 🧩 |  Sistema de upload de imagens  | Richard  | 22:30 |
-| 🧩 |  Página Sobre | Grupo 7 (Tiago, Facchin, Gustavo) | 🔴 Corrigindo estilização da página Sobre |
+| 🧩 |  Criar página "Salvos" com as notícias, sem estilização | Grupo 1 (Pedro Oliveira, Guilherme, Icaro) | Até o começo da próxima aula |
+| 🧩 |  Estilizar página de salvos  | Grupo 2 (Barranha, Iago, João) | Até o começo da próxima aula |
+| 🧩 |  Paginação (exibir 8 notícias por página) | Grupo 3 (Camilo, Carlos, Laura) | Até o começo da próxima aula|
+| 🧩 |  Validação de estado do botão(mostrar visualmente se a notícia já está salva) | Grupo 4 (Miguel, Evelyn, Pedro Crus) | Até o começo da próxima aula |
+| 🧩 |  Remover o cabeçalho da página de login e cadastro | Grupo 5 (Maicon, GustavoC, Gregory) | Até o começo da próxima aula |
+| 🧩 |  Busca de notícias (um campo de pesquisa com filtro por palavra-chave) | Grupo 6 (Leonardo,Charles) | Até o começo da próxima aula |
+| 🧩 |  Sistema de upload de imagens  | Richard  | Até o começo da próxima aula |
+| 🧩 |  Logo e Cabecalho | Grupo 7 (Tiago, Facchin, Gustavo) | 🔴 Corrigindo estilização do logo e aprimorando animações do cabeçalho |
 
 ---
 
@@ -95,7 +98,7 @@
 |:------|:-------------|:--------------|:----------------|
 | **1** | Pedro Oliveira, Guilherme, Icaro |Estilizar página de salvos| 🚧 Em desenvolvimento |
 | **2** | Barranha, Iago, João | Criação página de salvos| 🚧 Em desenvolvimento |
-| **3** | Camilo, Carlos, Laura | Criar botão de modo escuro/claro | 🚧 Em desenvolvimento |
+| **3** | Camilo, Carlos, Laura | Criar botão de modo escuro/claro | 🚧 Em desenvolvimento  |
 | **4** | Miguel, Evelyn, Pedro Crus | Estilização botão salvar| 🚧 Em desenvolvimento  |
 | **5** | Maicon, GustavoC, Gregory | Remoção do cabeçalho da página de login e cadastro| 🚧 Em desenvolvimento |
 | **6** | Leonardo, Richard, Charles | Campo de pesqusia por palavra-chave  | 🚧 Em desenvolvimento |
@@ -148,7 +151,7 @@ Qualquer solicitação de alteração deve ser encaminhada a um dos dois, garant
 🗂️ LEGENDA DE EMOJIS
 | Emoji | Significado               | Uso no README                                                  |
 | :---: | ------------------------- | -------------------------------------------------------------- |
-|   ✅   | **Implementado**          | Feature finalizada, testada e integrada à develop              |
+|   ✅   | **Implementado**          | Feature finalizada, testada e integrada à develop             |
 |   🚧  | **Em Homologação**        | Feature pronta, aguardando validação pelo grupo de homologação |
 |   🧪  | **Em Desenvolvimento**    | Feature em andamento pelos grupos de desenvolvimento           |
 |   🐛  | **Bug Encontrado**        | Indica problema reportado em alguma feature                    |
@@ -157,7 +160,7 @@ Qualquer solicitação de alteração deve ser encaminhada a um dos dois, garant
 |   🧩  | **Dependência**           | Requer outra feature antes de continuar                        |
 |   📦  | **Release**               | Versão estável do sistema pronta para merge na `main`          |
 |   🚀  | **Deploy**                | Aplicação publicada em produção                                |
-| 🧑‍💻 | **Responsáveis**          | Mostra os integrantes do grupo responsáveis pela feature       |
-|   ⏰   | **Deadline**              | Prazo de entrega definido pelo professor ou homologadores      |
+|   🧑‍💻  | **Responsáveis**          | Mostra os integrantes do grupo responsáveis pela feature       |
+|   ⏰  | **Deadline**              | Prazo de entrega definido pelo professor ou homologadores      |
 |   📝  | **Observação**            | Comentário adicional sobre o status de uma tarefa              |
 |   🔒  | **Restrito**              | Somente Anna e Gabriel podem alterar esta seção                |
