@@ -99,20 +99,28 @@
       "senha": "lacosteinformado",
       "artigosSalvos": [
         {
-          "url": "https://abcnews.go.com/US/earth-moons-orbiting-astronomers-explain-quasi-moon/story?id\\\\u003d126770774",
-          "nomeArtigo": "Will Earth have two moons orbiting it? Astronomers explain the 'quasi-moon' - ABC News - Breaking News, Latest News and Videos"
+          "url": "https://www.bloomberg.com/news/articles/2025-10-26/us-stock-futures-jump-on-china-trade-deal-progress-markets-wrap",
+          "nomeArtigo": "US Stock Futures Jump on China Trade Deal Progress: Markets Wrap - Bloomberg.com"
         },
         {
-          "url": "https://www.ksl.com/article/51393293/openai-launches-atlas-browser-to-compete-with-google-chrome",
-          "nomeArtigo": "OpenAI launches Atlas browser to compete with Google Chrome - KSL.com"
+          "url": "https://www.espn.com/nfl/story/_/id/46737966/after-emotional-week-justin-fields-helps-jets-win-first-game",
+          "nomeArtigo": "After emotional week, Fields helps Jets stun Cincy - ESPN"
         },
         {
-          "url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/nfl-wont-reconsider-its-bad-bunny-super-bowl-halftime-decision",
-          "nomeArtigo": "NFL won’t reconsider its Bad Bunny Super Bowl halftime decision - NBC Sports"
+          "url": "https://www.cbssports.com/nfl/news/steelers-packers-live-updates-score-analysis-highlights-sunday-night-football/live/",
+          "nomeArtigo": "Steelers vs. Packers live updates: Sunday Night Football score, highlights and analysis - CBS Sports"
         },
         {
-          "url": "https://www.npr.org/2025/10/22/nx-s1-5582748/iceland-mosquitoes-first-time",
-          "nomeArtigo": "Iceland reports the presence of mosquitoes for the first time, as climate warms - NPR"
+          "url": "https://fortune.com/2025/10/26/china-trade-deal-us-soybean-purchase-100-percent-tariff-bessent-trump-xi-jinping/",
+          "nomeArtigo": "China will make 'substantial' purchases of U.S. soybeans and should avoid 100% tariff, Bessent says - Fortune"
+        },
+        {
+          "url": "https://abcnews.go.com/Business/wireStory/flights-los-angeles-international-airport-halted-due-air-126880181",
+          "nomeArtigo": "Flights to Los Angeles International Airport halted due to air traffic controller shortage - ABC News - Breaking News, Latest News and Videos"
+        },
+        {
+          "url": "http://www.hollywoodreporter.com/movies/movie-news/chainsaw-man-movie-box-office-surprise-win-1236409559/",
+          "nomeArtigo": "Box Office Upset: ‘Chainsaw Man’ Soars to $17.3M Win; The Boss Loses to ‘Black Phone 2,’ ‘Regretting You’ - The Hollywood Reporter"
         }
       ]
     },

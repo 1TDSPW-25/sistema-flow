@@ -1,8 +1,10 @@
 import { useParams, useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { useNoticia } from "../../hooks/useNoticia";
 import type { UsuarioType } from "../../types/usuario";
 import { useLogado } from "../../hooks/useLogado";
-import { useState } from 'react'
+import Modal from "../../components/Modal/Modal";
+
 const API_URL = "http://localhost:3001";
 
 function Artigo() {
@@ -11,36 +13,50 @@ function Artigo() {
   const [searchParams] = useSearchParams();
   const { id } = useParams();
   const paramId = id || searchParams.get("artigo");
-   
 
-  const isArticleSaved = async () => {
-    const currentUser = await getCurrentUser();
+  const [showSavedModal, setShowSavedModal] = useState(false);
+  const [savedMessage, setSavedMessage] = useState<string>("");
+  const [isSaved, setIsSaved] = useState(false);
 
-    return currentUser?.artigosSalvos?.find(
-      (artigo) => artigo.nomeArtigo === filteredNews.title
-    );
-  };
+  const filteredNews = news[Number(paramId) - 1] || null;
 
   const getCurrentUser = async () => {
     const response = await fetch(`${API_URL}/usuarios`);
-
     if (!response.ok) return;
-
     const data: UsuarioType[] = await response.json();
     const currentUser = data.find((user) => user.email === userEmail);
-
     return currentUser;
   };
 
-  const [isSaved, setIsSaved] = useState(false);
+  const isArticleSaved = async (user?: UsuarioType | undefined | null) => {
+    const currentUser = user ?? (await getCurrentUser());
+    if (!currentUser || !filteredNews) return false;
+    return Boolean(
+      currentUser.artigosSalvos?.find(
+        (artigo) =>
+          artigo.nomeArtigo === filteredNews.title ||
+          artigo.url === filteredNews.url
+      )
+    );
+  };
 
   const handleSaveNews = async () => {
-    setIsSaved(true)
-    console.log("Notícia salva!");
-    
+    if (!filteredNews) return;
     const currentUser = await getCurrentUser();
 
-    if (await isArticleSaved()) return;
+    if (!currentUser) {
+      setSavedMessage("Não foi possível identificar o usuário.");
+      setShowSavedModal(true);
+      return;
+    }
+
+    if (await isArticleSaved(currentUser)) {
+      setSavedMessage("Esta notícia já foi salva.");
+      setShowSavedModal(true);
+      setIsSaved(true);
+      return;
+    }
+
     if (currentUser && "artigosSalvos" in currentUser) {
       currentUser.artigosSalvos?.push({
         url: filteredNews.url,
@@ -62,10 +78,29 @@ function Artigo() {
       },
       body: JSON.stringify(currentUser),
     });
-     return responsePut
-    };
 
-  const filteredNews = news[Number(paramId) - 1] || null;
+    if (responsePut.ok) {
+      setSavedMessage("Notícia salva com sucesso.");
+      setIsSaved(true);
+    } else {
+      setSavedMessage("Falha ao salvar a notícia.");
+    }
+    setShowSavedModal(true);
+    return responsePut;
+  };
+
+  useEffect(() => {
+    let mounted = true;
+    (async () => {
+      const user = await getCurrentUser();
+      const saved = await isArticleSaved(user);
+      if (mounted) setIsSaved(saved);
+    })();
+    return () => {
+      mounted = false;
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userEmail, paramId, news.length]);
 
   return (
     <div className="min-h-screen flex flex-col dark:bg-gray-700">
@@ -108,10 +143,10 @@ function Artigo() {
             </div>
 
             <div className="mb-6">
-            <button
-              onClick={handleSaveNews}
-              disabled={isSaved}
-              className={`w-full sm:w-auto text-white font-semibold px-6 py-3 rounded-full shadow text-sm sm:text-base text-center
+              <button
+                onClick={handleSaveNews}
+                disabled={isSaved}
+                className={`w-full sm:w-auto text-white font-semibold px-6 py-3 rounded-full shadow text-sm sm:text-base text-center
                 transition-colors duration-300 ease-in-out
                 ${
                   isSaved
@@ -119,10 +154,10 @@ function Artigo() {
                     : 'bg-[#0a1a2f] hover:bg-[#081524] cursor-pointer'
                 }
               `}
-            >
-              {isSaved ? 'Notícia Salva' : 'Salvar Notícia'}
-            </button>
-          </div>
+              >
+                {isSaved ? 'Notícia Salva' : 'Salvar Notícia'}
+              </button>
+            </div>
 
             <hr className="border-gray-300 my-6" />
 
@@ -156,8 +191,15 @@ function Artigo() {
           </div>
         )}
       </article>
+      <Modal
+        mostrar={showSavedModal}
+        titulo="Tudo certo"
+        mensagem={savedMessage}
+        onClose={() => setShowSavedModal(false)}
+      />
     </div>
   );
 }
 
 export { Artigo };
+
