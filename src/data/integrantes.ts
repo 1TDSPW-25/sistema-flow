@@ -160,4 +160,11 @@ export const integrantes: Integrante[] = [
     github: "https://github.com/MaiconDouglas-dev",
     foto: fotoMaicon,
   },
+  {
+    nome: "Gabriel Fachin",
+    turma: TURMA_PADRAO,
+    linkedin: "https://www.linkedin.com/in/gabriel-fachin-de-oliveira-9a0616240",
+    github: "https://github.com/GabrielFachin",
+    foto: "",
+  },
 ];
