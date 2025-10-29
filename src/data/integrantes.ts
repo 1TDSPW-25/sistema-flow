@@ -15,6 +15,11 @@ import fotoPedroCrus from "../assets/img/pedroC.jpeg";
 import fotoTiago from "../assets/img/tiago.jpeg";
 import fotoMaicon from "../assets/img/maicon.jpeg";
 import fotoGustavoC from "../assets/img/gustavoC.jpeg";
+import fotoMiguel from "../assets/img/miguel.jpg"
+import fotoIcaro from "../assets/img/icaro.jpg"
+import gabrielF from "../assets/img/gabrielF.jpg"
+import fotoEvellyn from "../assets/img/evellyn.jpg"
+import fotoGregory from "../assets/img/gregory.jpg"
 
 
 export type Integrante = {
@@ -165,6 +170,34 @@ export const integrantes: Integrante[] = [
     turma: TURMA_PADRAO,
     linkedin: "https://www.linkedin.com/in/gabriel-fachin-de-oliveira-9a0616240",
     github: "https://github.com/GabrielFachin",
-    foto: "",
+    foto: gabrielF
   },
+  {
+    nome: "Evellyn Barbosa Ferreira",
+    turma: TURMA_PADRAO,
+    linkedin: "https://www.linkedin.com/in/evellyn-barbosa-ferreira-8911122a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    github: "https://github.com/EvellynbFerreira",
+    foto: fotoEvellyn
+  },
+  {
+    nome: "Miguel Henrique Oliveira",
+    turma: TURMA_PADRAO,
+    linkedin: "https://www.linkedin.com/in/miguel-oliveira-dias-59b605322",
+    github: "https://github.com/Maigol123",
+    foto: fotoMiguel,
+  },
+  {
+    nome: "Icaro José",
+    turma: TURMA_PADRAO,
+    linkedin: "https://www.linkedin.com/in/icaro-jose-96b651324?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    github: "https://github.com/Icaro-Jose09",
+    foto: fotoIcaro
+  },
+  {
+    nome: "Levi Gregory",
+    turma: TURMA_PADRAO,
+    linkedin: "https://www.linkedin.com/in/gregoryazevedo/",
+    github: "https://github.com/aboutgregory",
+    foto: fotoGregory
+  }
 ];
