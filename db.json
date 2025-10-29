@@ -164,6 +164,13 @@
       "email": "leofiap@fiap.com.br",
       "senha": "12345",
       "avatar": "https://i.pravatar.cc/150?u=19"
+    },
+    {
+      "id": "65e7",
+      "nome": "Tiago",
+      "nomeUser": "Tiagozz",
+      "email": "tiagozguedes@gmail.com",
+      "senha": "Ti@guin"
     }
   ]
 }
