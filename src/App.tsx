@@ -2,6 +2,9 @@ import { Outlet, useLocation } from "react-router-dom";
 import Rodape from "./components/Rodape/Rodape";
 import Cabecalho from "./components/Cabecalho";
 import Toggle from "./components/Toggle";
+import UploadArquivosOnly from "./components/Upload/UploadArquivosOnly";
+
+
 
 export default function App() {
   const { pathname } = useLocation();
@@ -30,6 +33,9 @@ export default function App() {
         <span className="text-end text-gray-700 dark:text-gray-200">Dark mode</span>
         <Toggle onToggle={handleThemeToggle} />
       </div>
+
+      {}
+      {pathname === "/" && <UploadArquivosOnly />}
       <Outlet />
       <Rodape />
     </div>
