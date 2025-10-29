@@ -4,6 +4,10 @@ import Cabecalho from "./components/Cabecalho";
 import Toggle from "./components/Toggle";
 
 export default function App() {
+  const { pathname } = useLocation();
+
+  const hideHeader = pathname.startsWith("/login") || pathname.startsWith("/cadastro");
+
   const handleThemeToggle = () => {
     const theme = window.localStorage.getItem("theme");
 
@@ -19,12 +23,11 @@ export default function App() {
 
   return (
     <div className="mx-auto relative">
-      <Cabecalho />
+      {!hideHeader && <Cabecalho />}
+
+
       <div className="absolute top-22 right-2 grid gap-2 justify-items-center">
-        <span className="text-end text-gray-700 dark:text-gray-200">
-          {" "}
-          Dark mode
-        </span>
+        <span className="text-end text-gray-700 dark:text-gray-200">Dark mode</span>
         <Toggle onToggle={handleThemeToggle} />
       </div>
       <Outlet />
