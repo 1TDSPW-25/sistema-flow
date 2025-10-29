@@ -1,46 +1,24 @@
 import { useParams, useSearchParams } from "react-router-dom";
 import { useNoticia } from "../../hooks/useNoticia";
-import type { UsuarioType } from "../../types/usuario";
-import { useLogado } from "../../hooks/useLogado";
-import { useState } from 'react'
-const API_URL = "http://localhost:3001";
+import { useUser } from "../../hooks/useUser";
 
 function Artigo() {
   const news = useNoticia();
-  const { userEmail } = useLogado();
+  const { currentUser, setCurrentUser } = useUser();
   const [searchParams] = useSearchParams();
   const { id } = useParams();
   const paramId = id || searchParams.get("artigo");
-   
 
-  const isArticleSaved = async () => {
-    const currentUser = await getCurrentUser();
+  const filteredNews = news[Number(paramId) - 1] || null;
+  console.log({ currentUser });
 
-    return currentUser?.artigosSalvos?.find(
-      (artigo) => artigo.nomeArtigo === filteredNews.title
-    );
-  };
-
-  const getCurrentUser = async () => {
-    const response = await fetch(`${API_URL}/usuarios`);
-
-    if (!response.ok) return;
-
-    const data: UsuarioType[] = await response.json();
-    const currentUser = data.find((user) => user.email === userEmail);
-
-    return currentUser;
-  };
-
-  const [isSaved, setIsSaved] = useState(false);
+  const isSaved = currentUser?.artigosSalvos?.find(
+    (artigo) => artigo.nomeArtigo === filteredNews.title
+  );
 
   const handleSaveNews = async () => {
-    setIsSaved(true)
-    console.log("Notícia salva!");
-    
-    const currentUser = await getCurrentUser();
+    if (isSaved) return;
 
-    if (await isArticleSaved()) return;
     if (currentUser && "artigosSalvos" in currentUser) {
       currentUser.artigosSalvos?.push({
         url: filteredNews.url,
@@ -55,17 +33,20 @@ function Artigo() {
       ];
     }
 
-    const responsePut = await fetch(`${API_URL}/usuarios/${currentUser?.id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(currentUser),
-    });
-     return responsePut
-    };
+    if (currentUser) setCurrentUser(currentUser);
 
-  const filteredNews = news[Number(paramId) - 1] || null;
+    const responsePut = await fetch(
+      `${import.meta.env.VITE_API_URL_BASE}/usuarios/${currentUser?.id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(currentUser),
+      }
+    );
+    return responsePut;
+  };
 
   return (
     <div className="min-h-screen flex flex-col dark:bg-gray-700">
@@ -108,21 +89,21 @@ function Artigo() {
             </div>
 
             <div className="mb-6">
-            <button
-              onClick={handleSaveNews}
-              disabled={isSaved}
-              className={`w-full sm:w-auto text-white font-semibold px-6 py-3 rounded-full shadow text-sm sm:text-base text-center
+              <button
+                onClick={handleSaveNews}
+                disabled={Boolean(isSaved)}
+                className={`w-full sm:w-auto text-white font-semibold px-6 py-3 rounded-full shadow text-sm sm:text-base text-center
                 transition-colors duration-300 ease-in-out
                 ${
                   isSaved
-                    ? 'bg-green-600 cursor-not-allowed'
-                    : 'bg-[#0a1a2f] hover:bg-[#081524] cursor-pointer'
+                    ? "bg-green-600 cursor-not-allowed"
+                    : "bg-[#0a1a2f] hover:bg-[#081524] cursor-pointer"
                 }
               `}
-            >
-              {isSaved ? 'Notícia Salva' : 'Salvar Notícia'}
-            </button>
-          </div>
+              >
+                {isSaved ? "Notícia Salva" : "Salvar Notícia"}
+              </button>
+            </div>
 
             <hr className="border-gray-300 my-6" />
 

@@ -2,12 +2,12 @@ import { useState } from "react";
 import type { FormEvent } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import type { UsuarioType } from "../../types/usuario";
-
-const API_URL = "http://localhost:3001";
+import { useUser } from "../../hooks/useUser";
 
 export default function Login() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
+  const { currentUser, setCurrentUser } = useUser();
 
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -21,7 +21,9 @@ export default function Login() {
 
     try {
       // Buscar todos os usuários para validar login
-      const response = await fetch(`${API_URL}/usuarios`);
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL_BASE}/usuarios`
+      );
       if (!response.ok) {
         throw new Error("Falha ao conectar com o servidor. Tente novamente.");
       }
@@ -37,6 +39,8 @@ export default function Login() {
       }
 
       localStorage.setItem("userLogado", JSON.stringify(usuario));
+      setCurrentUser(usuario);
+      console.log({ currentUser,usuario });
 
       const articleId = searchParams.get("article");
       if (articleId) {
