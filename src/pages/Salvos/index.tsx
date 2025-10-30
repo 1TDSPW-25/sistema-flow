@@ -365,7 +365,7 @@ export default function Salvos() {
             </button>
           </div>
         ) : (
-          <>
+            <>
             {/* Controles de selecao em massa */}
             <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-2">
@@ -374,14 +374,15 @@ export default function Salvos() {
                   type="checkbox"
                   checked={pageAllSelected}
                   onChange={toggleSelectPage}
+                  className="rounded text-blue-600 focus:ring-blue-500"
                 />
-                <label htmlFor="select-page" className="text-sm text-gray-700">
-                  Selecionar pagina ({paginated.length})
+                <label htmlFor="select-page" className="text-sm text-gray-700 dark:text-gray-300">
+                  Selecionar página ({paginated.length})
                 </label>
                 <button
                   type="button"
                   onClick={selectAllFiltered}
-                  className="text-sm px-3 py-1 border border-gray-300 rounded-md bg-white hover:bg-gray-50 cursor-pointer"
+                  className="text-sm px-3 py-1 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer"
                 >
                   Selecionar todos ({sorted.length})
                 </button>
@@ -389,21 +390,21 @@ export default function Salvos() {
                   <button
                     type="button"
                     onClick={clearSelection}
-                    className="text-sm px-3 py-1 border border-gray-300 rounded-md bg-white hover:bg-gray-50 cursor-pointer"
+                    className="text-sm px-3 py-1 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer"
                   >
-                    Limpar selecao
+                    Limpar seleção
                   </button>
                 )}
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-sm text-gray-600">{selected.size} selecionado(s)</span>
+                <span className="text-sm text-gray-600 dark:text-gray-300">{selected.size} selecionado(s)</span>
                 <button
                   type="button"
                   disabled={selected.size === 0}
                   onClick={handleRemoveSelected}
                   className={`px-3 py-2 text-sm rounded-md border transition ${
                     selected.size === 0
-                      ? "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed"
+                      ? "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed dark:bg-gray-700 dark:text-gray-500 dark:border-gray-600"
                       : "bg-red-600 text-white border-red-600 hover:bg-red-700 cursor-pointer"
                   }`}
                 >
@@ -411,29 +412,31 @@ export default function Salvos() {
                 </button>
               </div>
             </div>
+            
             <ul className="space-y-4">
               {paginated.map((art) => (
                 <li
                   key={art.url}
-                  className="bg-white rounded-lg shadow p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
+                  className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
                 >
                   <div className="min-w-0 flex items-start gap-3">
                     <input
                       type="checkbox"
                       checked={isSelected(art.url)}
                       onChange={() => toggleSelect(art.url)}
+                      className="mt-1 rounded text-blue-600 focus:ring-blue-500 flex-shrink-0"
                     />
                     <button
                       type="button"
                       onClick={() => handleAbrirInterno(art)}
-                      className="text-left text-blue-700 hover:text-blue-900 font-semibold break-words cursor-pointer"
+                      className="text-left text-blue-700 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300 font-semibold break-words cursor-pointer min-w-0"
                       title={art.nomeArtigo}
                     >
                       {art.nomeArtigo}
                     </button>
                   </div>
 
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 flex-shrink-0">
                     <button
                       type="button"
                       onClick={() => handleAbrirInterno(art)}
@@ -452,11 +455,13 @@ export default function Salvos() {
                 </li>
               ))}
             </ul>
+            
             {!filtrados.length && (
-              <div className="mt-6 text-sm text-gray-600">Nenhuma noticia encontrada.</div>
+              <div className="mt-6 text-sm text-gray-600 dark:text-gray-300">Nenhuma notícia encontrada com os filtros e busca aplicados.</div>
             )}
+            
             <div className="mt-6 flex items-center justify-between gap-3">
-              <div className="text-sm text-gray-600">Pagina {page} de {totalPages}</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Página {page} de {totalPages}</div>
               <div className="flex items-center gap-2">
                 <button
                   type="button"
@@ -464,8 +469,8 @@ export default function Salvos() {
                   onClick={() => setPage((p) => Math.max(1, p - 1))}
                   className={`px-3 py-2 text-sm rounded-md border transition ${
                     page <= 1
-                      ? "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed"
-                      : "bg-white text-gray-800 border-gray-300 hover:bg-gray-50 cursor-pointer"
+                      ? "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed dark:bg-gray-700 dark:text-gray-500 dark:border-gray-600"
+                      : "bg-white text-gray-800 border-gray-300 hover:bg-gray-50 cursor-pointer dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 dark:hover:bg-gray-700"
                   }`}
                 >
                   Anterior
@@ -476,11 +481,11 @@ export default function Salvos() {
                   onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
                   className={`px-3 py-2 text-sm rounded-md border transition ${
                     page >= totalPages
-                      ? "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed"
-                      : "bg-white text-gray-800 border-gray-300 hover:bg-gray-50 cursor-pointer"
+                      ? "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed dark:bg-gray-700 dark:text-gray-500 dark:border-gray-600"
+                      : "bg-white text-gray-800 border-gray-300 hover:bg-gray-50 cursor-pointer dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 dark:hover:bg-gray-700"
                   }`}
                 >
-                  Proxima
+                  Próxima
                 </button>
               </div>
             </div>
@@ -490,3 +495,4 @@ export default function Salvos() {
     </main>
   );
 }
+          
