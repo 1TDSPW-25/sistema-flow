@@ -28,14 +28,11 @@ export default function Cadastro() {
       const usuarios: UsuarioType[] = await responseGet.json();
 
       // 2. Verificar se o e-mail ou nome de usuário já existem
-      // 2. Coletar todos os erros de validação
-      const validationErrors: string[] = [];
       const emailExists = usuarios.some((user) => user.email === email);
       if (emailExists) {
         setError("Este e-mail já está em uso. Deseja fazer login?");
         setIsSubmitting(false);
         return;
-        validationErrors.push("Este e-mail já está em uso.");
       }
 
       const userExists = usuarios.some((user) => user.nomeUser === nomeUser);
@@ -44,16 +41,6 @@ export default function Cadastro() {
           "Este nome de usuário já está em uso. Escolha outro ou faça login."
         );
         setIsSubmitting(false);
-        return;
-        validationErrors.push("Este nome de usuário já está em uso.");
-      }
-
-      // Se houver erros, exibe a mensagem e para a execução
-      if (validationErrors.length > 0) {
-        const errorMessage = validationErrors.join(" ");
-        setError(
-          emailExists ? `${errorMessage} Deseja fazer login?` : errorMessage
-        );
         return;
       }
 
@@ -85,8 +72,44 @@ export default function Cadastro() {
   }
 
   return (
-    <main className="min-h-screen flex flex-col justify-center items-center bg-gray-50 dark:bg-gray-700 px-4 sm:px-6 lg-px-8">
+    <main className="min-h-screen flex flex-col justify-center items-center bg-gray-50 dark:bg-gray-700 px-4 sm:px-6 lg:px-8">
       <section className="w-full max-w-md sm:max-w-lg md:max-w-xl bg-gray-900 shadow-xl rounded-lg p-6 sm:p-8 md:p-10 space-y-6 border-2 border-gray-200 dark:border-gray-950">
+        {/* Botão Voltar */}
+        <div className="flex justify-start">
+          <button
+            onClick={() => navigate("/")}
+            className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium cursor-pointer"
+            aria-label="Voltar para a página inicial"
+          >
+            <svg 
+              className="w-4 h-4" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d="M10 19l-7-7m0 0l7-7m-7 7h18" 
+              />
+            </svg>
+            Voltar
+          </button>
+        </div>
+
+        {/* Logo NewsLab clicável */}
+        <div className="text-center">
+          <Link 
+            to="/" 
+            className="inline-block transition-transform hover:scale-105 active:scale-95"
+          >
+            <span className="text-3xl sm:text-4xl font-black tracking-tight text-white">
+              News<span className="text-green-500">Lab</span>
+            </span>
+          </Link>
+        </div>
+
         <div className="text-center space-y-2">
           <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
             Cadastro
@@ -190,9 +213,9 @@ export default function Cadastro() {
           )}
 
           <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full flex justify-center items-center py-2 sm:py-3 border border-transparent rounded-md text-base sm:text-lg font-semibold text-white bg-[#1C3546] hover:bg-[#30576b] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white disabled:bg-gray-400 transition duration-150 ease-in-out"
+          type="submit"
+          disabled={isSubmitting}
+          className="w-full flex justify-center items-center py-2 sm:py-3 border border-transparent rounded-md text-base sm:text-lg font-semibold text-white bg-[#1C3546] hover:bg-[#30576b] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white disabled:bg-gray-400 transition duration-150 ease-in-out cursor-pointer disabled:cursor-not-allowed"
           >
             {isSubmitting ? (
               <span className="flex items-center">
