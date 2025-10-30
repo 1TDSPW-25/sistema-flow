@@ -46,6 +46,10 @@ export default function Home() {
       );
     });
 
+
+    const limitedNews = filteredNews.slice(0, 8);
+
+
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-gray-700 flex flex-col items-center px-4 sm:px-6 lg:px-8 pb-20">
       <header className="w-full flex flex-col items-center gap-4 pt-10 pb-6">
@@ -77,7 +81,7 @@ export default function Home() {
           max-w-7xl
         "
       >
-        {filteredNews.map(({ post, index }) => (
+        {limitedNews.map(({ post, index }) => (
           <Card
             key={post.url ?? index}
             {...post}
