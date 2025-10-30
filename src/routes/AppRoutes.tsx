@@ -9,6 +9,7 @@ import Contato from "../pages/Contato/index.tsx";
 import Erro from "../pages/Erro/index.tsx";
 import { Artigo } from "../pages/Artigo/Artigo.tsx";
 import Perfil from "../pages/Perfil/index.tsx";
+import Salvos from "../pages/Salvos/index.tsx";
 import "../main.css";
 
 
@@ -28,6 +29,7 @@ export const router = createBrowserRouter([
       { path: "/login", element: <Login /> },
       { path: "/editar-cadastro/:id", element: <Cadastro /> },
       { path: "/perfil", element: <Perfil /> },
+      { path: "/salvos", element: <Salvos /> },
     ],
   },
 ], {basename:"/sistema-flow"} );
