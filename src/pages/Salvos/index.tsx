@@ -127,11 +127,13 @@ export default function Salvos() {
       default:
         return list.sort(byTitle);
     }
-  }, [filtrados, sortKey]);
+}, [filtrados, sortKey]);
+  
   const totalPages = useMemo(
     () => Math.max(1, Math.ceil(sorted.length / pageSize)),
     [sorted],
   );
+  
   const paginated = useMemo(() => {
     const start = (page - 1) * pageSize;
     return sorted.slice(start, start + pageSize);
@@ -159,6 +161,7 @@ export default function Salvos() {
   }, [sorted]);
 
   const isSelected = (url: string) => selected.has(url);
+  
   const toggleSelect = (url: string) => {
     setSelected((prev) => {
       const next = new Set(prev);
@@ -166,7 +169,9 @@ export default function Salvos() {
       return next;
     });
   };
+  
   const pageAllSelected = useMemo(() => paginated.every((a) => selected.has(a.url)) && paginated.length > 0, [paginated, selected]);
+  
   const toggleSelectPage = () => {
     setSelected((prev) => {
       const next = new Set(prev);
@@ -178,25 +183,32 @@ export default function Salvos() {
       return next;
     });
   };
+  
   const selectAllFiltered = () => setSelected(new Set(sorted.map((a) => a.url)));
+  
   const clearSelection = () => setSelected(new Set());
 
   async function handleRemoveSelected() {
     if (!usuario || selected.size === 0) return;
     const confirmar = window.confirm(`Remover ${selected.size} item(ns) dos salvos?`);
     if (!confirmar) return;
+    
     try {
       setErrorMessage(null);
       setSuccessMessage(null);
+      
       const removeSet = new Set(selected);
       const novosSalvos = (usuario.artigosSalvos ?? []).filter((a) => !removeSet.has(a.url));
       const usuarioAtualizado: UsuarioType = { ...usuario, artigosSalvos: novosSalvos };
+      
       const response = await fetch(`${API_URL}/usuarios/${usuario.id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(usuarioAtualizado),
       });
+      
       if (!response.ok) throw new Error("Falha ao remover selecionados.");
+      
       setUsuario(usuarioAtualizado);
       setSalvos(novosSalvos);
       clearSelection();
@@ -258,51 +270,51 @@ export default function Salvos() {
 
   if (isLoading) {
     return (
-      <main className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-4">
+      <main className="min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-700 p-4">
         <FaSpinner className="h-10 w-10 text-blue-600 animate-spin" />
-        <h2 className="mt-4 text-xl font-semibold text-gray-800">Carregando seus salvos...</h2>
-        <p className="text-gray-600">Por favor, aguarde um momento.</p>
+        <h2 className="mt-4 text-xl font-semibold text-gray-800 dark:text-gray-100">Carregando seus salvos...</h2>
+        <p className="text-gray-600 dark:text-gray-300">Por favor, aguarde um momento.</p>
       </main>
     );
   }
 
   return (
-    <main className="min-h-screen bg-gray-50 px-4 sm:px-6 lg:px-8 py-8">
-    <header className="max-w-5xl mx-auto mb-8 text-center">
-      <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">Artigos Salvos</h1>
-      <p className="text-gray-600 mt-2 text-lg">Acompanhe aqui as notícias que você salvou.</p>
-    </header>
+    <main className="min-h-screen bg-gray-50 dark:bg-gray-700 px-4 sm:px-6 lg:px-8 py-8">
+      <header className="max-w-5xl mx-auto mb-8 text-center">
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-50">Artigos Salvos</h1>
+        <p className="text-gray-600 dark:text-gray-300 mt-2 text-lg">Acompanhe aqui as notícias que você salvou.</p>
+      </header>
 
       <section className="max-w-5xl mx-auto">
         {/* Busca, filtros e ordenacao */}
         <div className="mb-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-2">
-          <input
-            type="text"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="Pesquisar salvos..."
-            className="w-full max-w-md px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          {(search || sourceFilter) && (
-            <button
-              type="button"
-              onClick={() => {
-                setSearch("");
-                setSourceFilter("");
-              }}
-              className="px-3 py-2 text-sm bg-gray-100 border border-gray-300 rounded-md hover:bg-gray-200 cursor-pointer"
-            >
-              Limpar
-            </button>
-          )}
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Pesquisar salvos..."
+              className="w-full max-w-md px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-100"
+            />
+            {(search || sourceFilter) && (
+              <button
+                type="button"
+                onClick={() => {
+                  setSearch("");
+                  setSourceFilter("");
+                }}
+                className="px-3 py-2 text-sm bg-gray-100 dark:bg-gray-600 text-gray-700 dark:text-gray-100 border border-gray-300 dark:border-gray-500 rounded-md hover:bg-gray-200 dark:hover:bg-gray-500 cursor-pointer"
+              >
+                Limpar
+              </button>
+            )}
           </div>
 
           <div className="flex items-center gap-3">
             <select
               value={sourceFilter}
               onChange={(e) => setSourceFilter(e.target.value)}
-              className="px-3 py-2 border border-gray-300 rounded-md bg-white"
+              className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-100"
             >
               <option value="">Todas as fontes</option>
               {uniqueSources.map((src) => (
@@ -315,7 +327,7 @@ export default function Salvos() {
             <select
               value={sortKey}
               onChange={(e) => setSortKey(e.target.value as any)}
-              className="px-3 py-2 border border-gray-300 rounded-md bg-white"
+              className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-100"
             >
               <option value="title_asc">Titulo A-Z</option>
               <option value="title_desc">Titulo Z-A</option>
@@ -324,33 +336,36 @@ export default function Salvos() {
             </select>
           </div>
         </div>
+        
         {errorMessage && (
           <div className="mb-4 p-4 rounded-lg bg-red-50 text-red-800 border border-red-200 flex items-center gap-3">
             <FaExclamationCircle className="h-5 w-5 text-red-600 flex-shrink-0" />
             <span className="font-medium">{errorMessage}</span>
           </div>
         )}
-            {successMessage && (
+        
+        {successMessage && (
           <div className="mb-4 p-4 rounded-lg bg-green-50 text-green-800 border border-green-200 flex items-center gap-3">
             <FaCheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
             <span className="font-medium">{successMessage}</span>
           </div>
         )}
+        
         {!temSalvos ? (
-          <div className="text-center py-20 px-6 bg-gray-50 rounded-lg border-2 border-dashed border-gray-300">
-              <FaRegBookmark className="mx-auto h-12 w-12 text-gray-400" />
-              <h3 className="mt-4 text-xl font-semibold text-gray-900">Nenhum artigo salvo</h3>
-              <p className="text-gray-500 mt-2 mb-6">Voce ainda nao salvou nenhuma noticia. Comece a explorar!</p>
-              <button
-                type="button"
-                className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md font-medium hover:bg-blue-700 transition-all transform hover:scale-105 cursor-pointer"
-                onClick={() => navigate("/")}
-              >
-                Explorar notícias
+          <div className="text-center py-20 px-6 bg-gray-50 dark:bg-gray-800 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600">
+            <FaRegBookmark className="mx-auto h-12 w-12 text-gray-400 dark:text-gray-500" />
+            <h3 className="mt-4 text-xl font-semibold text-gray-900 dark:text-gray-50">Nenhum artigo salvo</h3>
+            <p className="text-gray-500 dark:text-gray-400 mt-2 mb-6">Voce ainda nao salvou nenhuma noticia. Comece a explorar!</p>
+            <button
+              type="button"
+              className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md font-medium hover:bg-blue-700 transition-all transform hover:scale-105 cursor-pointer"
+              onClick={() => navigate("/")}
+            >
+              Explorar notícias
             </button>
           </div>
-          ) : (
-          <>
+        ) : (
+            <>
             {/* Controles de selecao em massa */}
             <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-2">
@@ -359,14 +374,15 @@ export default function Salvos() {
                   type="checkbox"
                   checked={pageAllSelected}
                   onChange={toggleSelectPage}
+                  className="rounded text-blue-600 focus:ring-blue-500"
                 />
-                <label htmlFor="select-page" className="text-sm text-gray-700">
-                  Selecionar pagina ({paginated.length})
+                <label htmlFor="select-page" className="text-sm text-gray-700 dark:text-gray-300">
+                  Selecionar página ({paginated.length})
                 </label>
                 <button
                   type="button"
                   onClick={selectAllFiltered}
-                  className="text-sm px-3 py-1 border border-gray-300 rounded-md bg-white hover:bg-gray-50 cursor-pointer"
+                  className="text-sm px-3 py-1 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer"
                 >
                   Selecionar todos ({sorted.length})
                 </button>
@@ -374,21 +390,21 @@ export default function Salvos() {
                   <button
                     type="button"
                     onClick={clearSelection}
-                    className="text-sm px-3 py-1 border border-gray-300 rounded-md bg-white hover:bg-gray-50 cursor-pointer"
+                    className="text-sm px-3 py-1 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer"
                   >
-                    Limpar selecao
+                    Limpar seleção
                   </button>
                 )}
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-sm text-gray-600">{selected.size} selecionado(s)</span>
+                <span className="text-sm text-gray-600 dark:text-gray-300">{selected.size} selecionado(s)</span>
                 <button
                   type="button"
                   disabled={selected.size === 0}
                   onClick={handleRemoveSelected}
                   className={`px-3 py-2 text-sm rounded-md border transition ${
                     selected.size === 0
-                      ? "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed"
+                      ? "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed dark:bg-gray-700 dark:text-gray-500 dark:border-gray-600"
                       : "bg-red-600 text-white border-red-600 hover:bg-red-700 cursor-pointer"
                   }`}
                 >
@@ -396,29 +412,31 @@ export default function Salvos() {
                 </button>
               </div>
             </div>
+            
             <ul className="space-y-4">
               {paginated.map((art) => (
                 <li
                   key={art.url}
-                  className="bg-white rounded-lg shadow p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
+                  className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
                 >
                   <div className="min-w-0 flex items-start gap-3">
                     <input
                       type="checkbox"
                       checked={isSelected(art.url)}
                       onChange={() => toggleSelect(art.url)}
+                      className="mt-1 rounded text-blue-600 focus:ring-blue-500 flex-shrink-0"
                     />
                     <button
                       type="button"
                       onClick={() => handleAbrirInterno(art)}
-                      className="text-left text-blue-700 hover:text-blue-900 font-semibold break-words cursor-pointer"
+                      className="text-left text-blue-700 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300 font-semibold break-words cursor-pointer min-w-0"
                       title={art.nomeArtigo}
                     >
                       {art.nomeArtigo}
                     </button>
                   </div>
 
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 flex-shrink-0">
                     <button
                       type="button"
                       onClick={() => handleAbrirInterno(art)}
@@ -437,11 +455,13 @@ export default function Salvos() {
                 </li>
               ))}
             </ul>
+            
             {!filtrados.length && (
-              <div className="mt-6 text-sm text-gray-600">Nenhuma noticia encontrada.</div>
+              <div className="mt-6 text-sm text-gray-600 dark:text-gray-300">Nenhuma notícia encontrada com os filtros e busca aplicados.</div>
             )}
+            
             <div className="mt-6 flex items-center justify-between gap-3">
-              <div className="text-sm text-gray-600">Pagina {page} de {totalPages}</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Página {page} de {totalPages}</div>
               <div className="flex items-center gap-2">
                 <button
                   type="button"
@@ -449,8 +469,8 @@ export default function Salvos() {
                   onClick={() => setPage((p) => Math.max(1, p - 1))}
                   className={`px-3 py-2 text-sm rounded-md border transition ${
                     page <= 1
-                      ? "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed"
-                      : "bg-white text-gray-800 border-gray-300 hover:bg-gray-50 cursor-pointer"
+                      ? "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed dark:bg-gray-700 dark:text-gray-500 dark:border-gray-600"
+                      : "bg-white text-gray-800 border-gray-300 hover:bg-gray-50 cursor-pointer dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 dark:hover:bg-gray-700"
                   }`}
                 >
                   Anterior
@@ -461,11 +481,11 @@ export default function Salvos() {
                   onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
                   className={`px-3 py-2 text-sm rounded-md border transition ${
                     page >= totalPages
-                      ? "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed"
-                      : "bg-white text-gray-800 border-gray-300 hover:bg-gray-50 cursor-pointer"
+                      ? "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed dark:bg-gray-700 dark:text-gray-500 dark:border-gray-600"
+                      : "bg-white text-gray-800 border-gray-300 hover:bg-gray-50 cursor-pointer dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 dark:hover:bg-gray-700"
                   }`}
                 >
-                  Proxima
+                  Próxima
                 </button>
               </div>
             </div>
@@ -475,3 +495,4 @@ export default function Salvos() {
     </main>
   );
 }
+          
