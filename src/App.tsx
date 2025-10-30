@@ -33,9 +33,6 @@ export default function App() {
         <span className="text-end text-gray-700 dark:text-gray-200">Dark mode</span>
         <Toggle onToggle={handleThemeToggle} />
       </div>
-
-      {}
-      {pathname === "/" && <UploadArquivosOnly />}
       <Outlet />
       <Rodape />
     </div>
