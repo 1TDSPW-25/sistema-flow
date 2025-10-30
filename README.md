@@ -44,18 +44,37 @@
 | Status | Feature | Responsáveis |
 |:-------|:---------|:--------------|
 | ✅ | Realizar a lista de tarefas no README.md | Prof. Alexandre |
-| ✅ | Criar o projeto (VITE+REACT+TS) do zero | Camilo, Carlos, Laura |
-| ✅ | Limpar o boiler-plate e instalar pacotes: react-router-dom, tailwindcss, json-server, react-icons, react-use-form | Maicon, GustavoC, Gregory |
-| ✅ | Criar estrutura de rotas e registrar estas (ROTAS: Home, Login, Cadastro) | Barranha, Iago, João |
-| ✅ | Criar página `/sobre`, sem estilização | Grupo 5 (Maicon, GustavoC, Gregory) | 
-| ✅ | Criar botão “ver mais” + verificação de cadastro | Grupo 3 (Camilo, Carlos, Laura)|
-| ✅ | Criar formulário de login (usuário e senha), validar com react-use-form e autenticar cr (`/usuarios`), redirecionar p/ `/home` | Grupo 2 (Barranha, Iago, João) | 
+| ✅ | Criar o projeto (VITE+REACT+TS) do zero | Grupo 3 |
+| ✅ | Limpar o boiler-plate e instalar pacotes: react-router-dom, tailwindcss, json-server, react-icons, react-use-form | Grupo 5 |
+| ✅ | Criar estrutura de rotas e registrar estas (ROTAS: Home, Login, Cadastro) | Grupo 2 |
+| ✅ | Criar página `/sobre`, sem estilização | Grupo 5 | 
+| ✅ | Criar botão “ver mais” + verificação de cadastro | Grupo 3 |
+| ✅ | Criar formulário de login (usuário e senha), validar com react-use-form e autenticar cr (`/usuarios`), redirecionar p/ `/home` | Grupo 2 | 
 | ✅ | Criar página `/contato` com formulário (nome, email, mensagem e botão enviar), sem estilização | Grupo 5 | 
 | ✅ | Estilizar página de login | Grupo 2 | 
 | ✅ | Criar formulário de cadastro (nome, nom senha, avatar), enviar via POST para `/usuarios` e redirecionar p/ login | Grupo 1 | 
 | ✅ | Estilizar página `/contato` | Grupo 6 | 
 | ✅ | Estilizar página de notícia | Grupo 4 | 
 | ✅ | Modificar estrutura de rotas: criar pasta `routes/AppRoutes`, mover páginas para `pages/` | Grupo 3 | 
+| ✅ | Criar página de detalhes da notícia | Grupo 3 | 
+| ✅ | Estilizar página de cadastro | Grupo 1  | 
+| ✅ | Adicionar botão “Salvar notícia” na página de detalhes | Grupo 2 | 
+| ✅ | Fazer responsividade de todas as páginas  | Grupo 3 |
+| ✅ | Estilizar botão salvar + layout da página de detalhes | Grupo 4 |
+| ✅ | Estilizar página de sobre | Grupo 5 |
+| ✅ | Criar logo | Grupo 1 |
+| ✅ | Criar página de perfil (dados da conta)| Grupo 6 |
+| ✅ | Criar página de editar dados da conta | Grupo 5 |
+| ✅ | Modo escuro / claro | Grupo 3 |
+| ✅ | Criar página "Salvos" | Grupo 1 |
+| ✅ |  Paginação (exibir 8 notícias por página) | Grupo 3 |
+| ✅ |  Validação de estado do botão(mostrar visualmente se a notícia já está salva) | Grupo 4 |
+| ✅ |  Remover o cabeçalho da página de login e cadastro | Grupo 5 |
+| ✅ |  Busca de notícias (um campo de pesquisa com filtro por palavra-chave) | Grupo 6 |
+| ✅ |  Sistema de upload de imagens  | Richard  |
+| ✅ |  Aplicar dark mode na página de salvos  | Grupo 2 |
+| ✅ |  Colocando navegação nas páginas de login e cadastro para página incial | Grupo 1 |
+| ✅ |  Correção de Bugs | Grupo 7 |
 
 ---
 
@@ -63,22 +82,6 @@
 
 | Status | Feature | Grupo / Responsáveis | Observação |
 |:-------|:---------|:----------------------|:------------|
-| 🚧 | Criar página de detalhes da notícia | Grupo 3 (Camilo, Carlos, Laura) | Em homologação |
-| 🚧 | Estilizar página de cadastro | Grupo 1 (Pedro Oliveira, Guilherme, Icaro) | Em homologação |
-| 🚧 | Adicionar botão “Salvar notícia” na página de detalhes | Grupo 2 (Barranha, Iago, João) | Implementando lógicas e adicionando animação de salvo com sucesso | 
-| 🚧 | Fazer responsividade de todas as páginas  | Grupo 3 (Camilo, Carlos, Laura) | Em homologação|
-| 🚧 | Estilizar botão salvar + layout da página de detalhes | Grupo 4 (Miguel, Pedro, Evelyn) | Em homologação | 
-| 🚧 | Estilizar página de sobre | Grupo 5 (Maicon, GustavoC, Gregory) | Em homologação |
-| 🚧 | Criar logo | Grupo 1 (Pedro Oliveira, Guilherme, Icaro) | Alteração de estilização pendente |
-| 🚧 | Criar página de perfil (dados da conta)| Grupo 6 (Leonardo, Richard, Charles) | Em homologação |
-| 🚧 | Criar página de editar dados da conta | Grupo 5 (Maicon, GustavoC, Gregory) | Em homologação |
-| 🚧 | Modo escuro / claro | Grupo 3 (Camilo, Carlos, Laura) | Em homologação |
-| 🚧 | Criar página "Salvos" | Grupo 1 (Pedro Oliveira, Guilherme, Icaro) | Em homologação |
-| 🚧 |  Paginação (exibir 8 notícias por página) | Grupo 3 (Camilo, Carlos, Laura) | Em homologação|
-| 🚧 |  Validação de estado do botão(mostrar visualmente se a notícia já está salva) | Grupo 4 (Miguel, Evelyn, Pedro Crus) | Em homologação |
-| 🚧 |  Remover o cabeçalho da página de login e cadastro | Grupo 5 (Maicon, GustavoC, Gregory) | Em homologação |
-| 🚧 |  Busca de notícias (um campo de pesquisa com filtro por palavra-chave) | Grupo 6 (Leonardo,Charles) | Em homologação |
-| 🚧 |  Sistema de upload de imagens  | Richard  |Em homologação |
 
 
 ---
@@ -87,9 +90,6 @@
 
 | Status | Feature | Grupo / Responsáveis | Observação |
 |:-------|:---------|:----------------------|:------------|
-| 🧩 |  Aplicar dark mode na página de salvos  | Grupo 2 (Barranha, Iago, João) | Até o começo da próxima aula |
-| 🧩 |  Colocando navegação nas páginas de login e cadastro para página incial | Grupo 1 (Pedro Oliveira, Guilherme, Icaro) | Até o começo da próxima aula|
-| 🧩 |  Logo e Cabecalho | Grupo 7 (Tiago, Facchin, Gustavo) | 🔴 Corrigindo estilização do logo e aprimorando animações do cabeçalho |
 
 ---
 
@@ -104,17 +104,6 @@
 | **5** | Maicon, GustavoC, Gregory | Remoção do cabeçalho da página de login e cadastro| 🚧 Em desenvolvimento |
 | **6** | Leonardo, Richard, Charles | Campo de pesqusia por palavra-chave  | 🚧 Em desenvolvimento |
 | **7** | Tiago, Facchin, Gustavo | Testes e validações gerais | 🚧 Em desenvolvimento |
-
----
-
-## 🐞 CONTROLE DE BUGS E HOMOLOGAÇÕES *(EXEMPLO)*
-
-| ID | Feature | Grupo | Status | Responsável pelo Bugfix | Observação |
-|----|----------|--------|---------|--------------------------|-------------|
-| #001 | Página /sobre | Grupo 5 | 🔍 Em análise | - | Aguardando validação visual |
-| #002 | Login | Grupo 2 | ✅ Corrigido | Barranha | Validação e redirecionamento ajustados |
-| #003 | Cadastro | Grupo 1 | 🚧 Corrigindo | Icaro | Endpoint não retorna status correto |
-| #004 | Estrutura de rotas | Grupo 3 | ⏳ Testando | Camilo | Dependente de revisão final |
 
 ---
 
