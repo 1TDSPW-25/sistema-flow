@@ -2,7 +2,6 @@ import { Outlet, useLocation } from "react-router-dom";
 import Rodape from "./components/Rodape/Rodape";
 import Cabecalho from "./components/Cabecalho";
 import Toggle from "./components/Toggle";
-import UploadArquivosOnly from "./components/Upload/UploadArquivosOnly";
 
 
 
