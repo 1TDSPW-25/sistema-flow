@@ -1,66 +1,110 @@
-import { useEffect, useState } from "react";
-import type { Article } from "../../types/home";
+import { useState } from "react";
 import { Card } from "../../components/Card/Card";
 import Modal from "../../components/Modal/Modal";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNoticia } from "../../hooks/useNoticia";
+import { useLogado } from "../../hooks/useLogado";
 
 export default function Home() {
-  const [news, setNews] = useState<Array<Article>>([]);
+  const news = useNoticia();
   const [showModal, setShowModal] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
+  const { userIsLogged } = useLogado();
 
-  useEffect(() => {
-    const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=0596354ecea24b1c93f25943b4f8dd9e`;
+  const handleProtectedAction = (id: number) => {
+    const newSearchParams = new URLSearchParams(searchParams);
+    newSearchParams.set("article", String(id));
+    setSearchParams(newSearchParams);
 
-    const req = async () => {
-      const getNews = await fetch(url);
-      const newsResponse = await getNews.json();
-      setNews(newsResponse.articles);
-    };
-    req();
-  }, []);
-
-  const handleProtectedAction = () => {
-    const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado") || "null");
-    if(!usuarioLogado) {
+    if (!userIsLogged) {
       setShowModal(true);
     } else {
-      alert("Usuário logado! Aqui você pode abrir a notícia ou navegar.");
+      navigate(`/artigo/${id}`);
     }
   };
 
-  return (
-    <main className="min-h-screen pb-16 bg-gray-50 max-w-7xl mx-auto"> 
-      
-      <div className="w-full pt-8 pb-6 mb-8"> 
-        
-        <p 
-          className="
-            text-center 
-            text-lg
-            font-normal /* Tornando um pouco mais visível */
-            text-gray-700 /* Escurecendo para ser lido sem a faixa de fundo */
-            tracking-widest
-          "
-        >
-          O QUE ESTÁ ACONTECENDO NO MUNDO?
-        </p>
+  const normalizedSearch = searchTerm.trim().toLowerCase();
+  const filteredNews = news
+    .map((post, index) => ({ post, index }))
+    .filter(
+      ({ post }) => post.title && post.description && post.urlToImage
+    )
+    .filter(({ post }) => {
+      if (!normalizedSearch) return true;
 
-      </div>
-      <section className="card-gallery px-4 py-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {news.map((post, index) => (
-         <Card key={index} {...post} onVerMais={handleProtectedAction}/>
+      const searchableFields = [
+        post.title,
+        post.description,
+        post.content,
+        post.source?.name,
+      ].filter(Boolean) as Array<string>;
+
+      return searchableFields.some((field) =>
+        field.toLowerCase().includes(normalizedSearch)
+      );
+    });
+
+
+    const limitedNews = filteredNews.slice(0, 8);
+
+
+  return (
+    <main className="min-h-screen bg-gray-50 dark:bg-gray-700 flex flex-col items-center px-4 sm:px-6 lg:px-8 pb-20">
+      <header className="w-full flex flex-col items-center gap-4 pt-10 pb-6">
+        <p className="text-base sm:text-lg md:text-xl font-semibold text-gray-700 dark:text-gray-50 tracking-widest text-center">
+          O QUE ESTA ACONTECENDO NO MUNDO?
+        </p>
+        <label className="w-full max-w-lg">
+          <span className="sr-only">Buscar noticias por palavra-chave</span>
+          <input
+            type="search"
+            value={searchTerm}
+            onChange={(event) => setSearchTerm(event.target.value)}
+            placeholder="Busque por palavra-chave (titulo, fonte, descricao...)"
+            className="w-full rounded-full border border-gray-300 bg-white px-5 py-3 text-sm sm:text-base text-gray-700 shadow focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100"
+          />
+        </label>
+      </header>
+
+      <section
+        className="
+          w-full
+          grid
+          grid-cols-1
+          sm:grid-cols-2
+          lg:grid-cols-3
+          xl:grid-cols-4
+          gap-6
+          justify-items-center
+          max-w-7xl
+        "
+      >
+        {limitedNews.map(({ post, index }) => (
+          <Card
+            key={post.url ?? index}
+            {...post}
+            onVerMais={() => handleProtectedAction(index + 1)}
+          />
         ))}
       </section>
 
+      {!filteredNews.length && (
+        <p className="mt-8 text-center text-sm sm:text-base text-gray-600 dark:text-gray-300">
+          Nao encontramos resultados para "{searchTerm}". Tente outras palavras-chave.
+        </p>
+      )}
+
       <Modal
         mostrar={showModal}
-        titulo="Atenção"
-        mensagem="Você precisa estar logado para ver essa notícia."
+        titulo="Atencao"
+        mensagem="Voce precisa estar logado para ver essa noticia."
         onClose={() => setShowModal(false)}
         acaoOpcional={{
           texto: "Ir para Login",
-          onClick: () => navigate("/login"),
+          onClick: () =>
+            navigate(`/login?article=${searchParams.get("article")}`),
         }}
       />
     </main>

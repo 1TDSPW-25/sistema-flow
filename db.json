@@ -96,7 +96,81 @@
       "nome": "jacare dos palmares",
       "nomeUser": "jacareinformado",
       "email": "jacare@gmail.com",
-      "senha": "lacosteinformado"
+      "senha": "lacosteinformado",
+      "artigosSalvos": [
+        {
+          "url": "https://www.bloomberg.com/news/articles/2025-10-26/us-stock-futures-jump-on-china-trade-deal-progress-markets-wrap",
+          "nomeArtigo": "US Stock Futures Jump on China Trade Deal Progress: Markets Wrap - Bloomberg.com"
+        },
+        {
+          "url": "https://www.espn.com/nfl/story/_/id/46737966/after-emotional-week-justin-fields-helps-jets-win-first-game",
+          "nomeArtigo": "After emotional week, Fields helps Jets stun Cincy - ESPN"
+        },
+        {
+          "url": "https://www.cbssports.com/nfl/news/steelers-packers-live-updates-score-analysis-highlights-sunday-night-football/live/",
+          "nomeArtigo": "Steelers vs. Packers live updates: Sunday Night Football score, highlights and analysis - CBS Sports"
+        },
+        {
+          "url": "https://fortune.com/2025/10/26/china-trade-deal-us-soybean-purchase-100-percent-tariff-bessent-trump-xi-jinping/",
+          "nomeArtigo": "China will make 'substantial' purchases of U.S. soybeans and should avoid 100% tariff, Bessent says - Fortune"
+        },
+        {
+          "url": "https://abcnews.go.com/Business/wireStory/flights-los-angeles-international-airport-halted-due-air-126880181",
+          "nomeArtigo": "Flights to Los Angeles International Airport halted due to air traffic controller shortage - ABC News - Breaking News, Latest News and Videos"
+        },
+        {
+          "url": "http://www.hollywoodreporter.com/movies/movie-news/chainsaw-man-movie-box-office-surprise-win-1236409559/",
+          "nomeArtigo": "Box Office Upset: ‘Chainsaw Man’ Soars to $17.3M Win; The Boss Loses to ‘Black Phone 2,’ ‘Regretting You’ - The Hollywood Reporter"
+        }
+      ]
+    },
+    {
+      "id": "93c1",
+      "nome": "bob",
+      "nomeUser": "bob",
+      "email": "bob@bob",
+      "senha": "bob",
+      "artigosSalvos": [
+        {
+          "url": "http://www.billboard.com/music/music-news/demi-lovato-eating-substance-issues-responsibility-1236095458/",
+          "nomeArtigo": "Demi Lovato Says She Felt a ‘Responsibility’ Not to ‘Sweep It Under the Rug’ When She Struggled With Eating Disorder - Yahoo"
+        },
+        {
+          "url": "https://www.cbsnews.com/news/us-debt-38-trillion-government-shutdown-2025/",
+          "nomeArtigo": "U.S. debt tops $38 trillion for the first time, worsened by government shutdown - CBS News"
+        },
+        {
+          "url": "https://www.nbcnews.com/health/health-news/comes-walking-health-longer-better-study-suggests-rcna240095",
+          "nomeArtigo": "When it comes to walking for health, longer is better, study suggests - NBC News"
+        },
+        {
+          "url": "https://www.politico.com/news/2025/10/27/suspect-charlie-kirk-killing-clothes-00624100",
+          "nomeArtigo": "Suspect in Charlie Kirk killing can wear street clothes in court amid ‘extraordinary’ attention - Politico"
+        },
+        {
+          "url": "https://www.cbsnews.com/news/trump-china-trade-deal-asia-tour-continues-japan-sanae-takaichi/",
+          "nomeArtigo": "Trump predicts China trade deal finalized in days as his Asia tour continues in Japan - CBS News"
+        },
+        {
+          "url": "https://www.whitehouse.gov/briefings-statements/2025/10/united-states-japan-framework-for-securing-the-supply-of-critical-minerals-and-rare-earths-through-mining-and-processing/",
+          "nomeArtigo": "United States-Japan Framework For Securing the Supply of Critical Minerals and Rare Earths through Mining and Processing - The White House (.gov)"
+        }
+      ]
+    },
+    {
+      "id": "61cc",
+      "nome": "Leo",
+      "nomeUser": "leo1234",
+      "email": "leofiap@fiap.com.br",
+      "senha": "12345",
+      "avatar": "https://i.pravatar.cc/150?u=19"
+    },
+    {
+      "id": "65e7",
+      "nome": "Tiago",
+      "nomeUser": "Tiagozz",
+      "email": "tiagozguedes@gmail.com",
+      "senha": "Ti@guin"
     }
   ]
 }
