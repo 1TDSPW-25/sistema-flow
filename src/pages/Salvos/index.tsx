@@ -127,11 +127,13 @@ export default function Salvos() {
       default:
         return list.sort(byTitle);
     }
-  }, [filtrados, sortKey]);
+}, [filtrados, sortKey]);
+  
   const totalPages = useMemo(
     () => Math.max(1, Math.ceil(sorted.length / pageSize)),
     [sorted],
   );
+  
   const paginated = useMemo(() => {
     const start = (page - 1) * pageSize;
     return sorted.slice(start, start + pageSize);
@@ -159,6 +161,7 @@ export default function Salvos() {
   }, [sorted]);
 
   const isSelected = (url: string) => selected.has(url);
+  
   const toggleSelect = (url: string) => {
     setSelected((prev) => {
       const next = new Set(prev);
@@ -166,7 +169,9 @@ export default function Salvos() {
       return next;
     });
   };
+  
   const pageAllSelected = useMemo(() => paginated.every((a) => selected.has(a.url)) && paginated.length > 0, [paginated, selected]);
+  
   const toggleSelectPage = () => {
     setSelected((prev) => {
       const next = new Set(prev);
@@ -178,25 +183,32 @@ export default function Salvos() {
       return next;
     });
   };
+  
   const selectAllFiltered = () => setSelected(new Set(sorted.map((a) => a.url)));
+  
   const clearSelection = () => setSelected(new Set());
 
   async function handleRemoveSelected() {
     if (!usuario || selected.size === 0) return;
     const confirmar = window.confirm(`Remover ${selected.size} item(ns) dos salvos?`);
     if (!confirmar) return;
+    
     try {
       setErrorMessage(null);
       setSuccessMessage(null);
+      
       const removeSet = new Set(selected);
       const novosSalvos = (usuario.artigosSalvos ?? []).filter((a) => !removeSet.has(a.url));
       const usuarioAtualizado: UsuarioType = { ...usuario, artigosSalvos: novosSalvos };
+      
       const response = await fetch(`${API_URL}/usuarios/${usuario.id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(usuarioAtualizado),
       });
+      
       if (!response.ok) throw new Error("Falha ao remover selecionados.");
+      
       setUsuario(usuarioAtualizado);
       setSalvos(novosSalvos);
       clearSelection();
@@ -258,51 +270,51 @@ export default function Salvos() {
 
   if (isLoading) {
     return (
-      <main className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-4">
+      <main className="min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-700 p-4">
         <FaSpinner className="h-10 w-10 text-blue-600 animate-spin" />
-        <h2 className="mt-4 text-xl font-semibold text-gray-800">Carregando seus salvos...</h2>
-        <p className="text-gray-600">Por favor, aguarde um momento.</p>
+        <h2 className="mt-4 text-xl font-semibold text-gray-800 dark:text-gray-100">Carregando seus salvos...</h2>
+        <p className="text-gray-600 dark:text-gray-300">Por favor, aguarde um momento.</p>
       </main>
     );
   }
 
   return (
-    <main className="min-h-screen bg-gray-50 px-4 sm:px-6 lg:px-8 py-8">
-    <header className="max-w-5xl mx-auto mb-8 text-center">
-      <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">Artigos Salvos</h1>
-      <p className="text-gray-600 mt-2 text-lg">Acompanhe aqui as notícias que você salvou.</p>
-    </header>
+    <main className="min-h-screen bg-gray-50 dark:bg-gray-700 px-4 sm:px-6 lg:px-8 py-8">
+      <header className="max-w-5xl mx-auto mb-8 text-center">
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-50">Artigos Salvos</h1>
+        <p className="text-gray-600 dark:text-gray-300 mt-2 text-lg">Acompanhe aqui as notícias que você salvou.</p>
+      </header>
 
       <section className="max-w-5xl mx-auto">
         {/* Busca, filtros e ordenacao */}
         <div className="mb-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-2">
-          <input
-            type="text"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="Pesquisar salvos..."
-            className="w-full max-w-md px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          {(search || sourceFilter) && (
-            <button
-              type="button"
-              onClick={() => {
-                setSearch("");
-                setSourceFilter("");
-              }}
-              className="px-3 py-2 text-sm bg-gray-100 border border-gray-300 rounded-md hover:bg-gray-200 cursor-pointer"
-            >
-              Limpar
-            </button>
-          )}
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Pesquisar salvos..."
+              className="w-full max-w-md px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-100"
+            />
+            {(search || sourceFilter) && (
+              <button
+                type="button"
+                onClick={() => {
+                  setSearch("");
+                  setSourceFilter("");
+                }}
+                className="px-3 py-2 text-sm bg-gray-100 dark:bg-gray-600 text-gray-700 dark:text-gray-100 border border-gray-300 dark:border-gray-500 rounded-md hover:bg-gray-200 dark:hover:bg-gray-500 cursor-pointer"
+              >
+                Limpar
+              </button>
+            )}
           </div>
 
           <div className="flex items-center gap-3">
             <select
               value={sourceFilter}
               onChange={(e) => setSourceFilter(e.target.value)}
-              className="px-3 py-2 border border-gray-300 rounded-md bg-white"
+              className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-100"
             >
               <option value="">Todas as fontes</option>
               {uniqueSources.map((src) => (
@@ -315,7 +327,7 @@ export default function Salvos() {
             <select
               value={sortKey}
               onChange={(e) => setSortKey(e.target.value as any)}
-              className="px-3 py-2 border border-gray-300 rounded-md bg-white"
+              className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-100"
             >
               <option value="title_asc">Titulo A-Z</option>
               <option value="title_desc">Titulo Z-A</option>
@@ -324,32 +336,35 @@ export default function Salvos() {
             </select>
           </div>
         </div>
+        
         {errorMessage && (
           <div className="mb-4 p-4 rounded-lg bg-red-50 text-red-800 border border-red-200 flex items-center gap-3">
             <FaExclamationCircle className="h-5 w-5 text-red-600 flex-shrink-0" />
             <span className="font-medium">{errorMessage}</span>
           </div>
         )}
-            {successMessage && (
+        
+        {successMessage && (
           <div className="mb-4 p-4 rounded-lg bg-green-50 text-green-800 border border-green-200 flex items-center gap-3">
             <FaCheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
             <span className="font-medium">{successMessage}</span>
           </div>
         )}
+        
         {!temSalvos ? (
-          <div className="text-center py-20 px-6 bg-gray-50 rounded-lg border-2 border-dashed border-gray-300">
-              <FaRegBookmark className="mx-auto h-12 w-12 text-gray-400" />
-              <h3 className="mt-4 text-xl font-semibold text-gray-900">Nenhum artigo salvo</h3>
-              <p className="text-gray-500 mt-2 mb-6">Voce ainda nao salvou nenhuma noticia. Comece a explorar!</p>
-              <button
-                type="button"
-                className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md font-medium hover:bg-blue-700 transition-all transform hover:scale-105 cursor-pointer"
-                onClick={() => navigate("/")}
-              >
-                Explorar notícias
+          <div className="text-center py-20 px-6 bg-gray-50 dark:bg-gray-800 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600">
+            <FaRegBookmark className="mx-auto h-12 w-12 text-gray-400 dark:text-gray-500" />
+            <h3 className="mt-4 text-xl font-semibold text-gray-900 dark:text-gray-50">Nenhum artigo salvo</h3>
+            <p className="text-gray-500 dark:text-gray-400 mt-2 mb-6">Voce ainda nao salvou nenhuma noticia. Comece a explorar!</p>
+            <button
+              type="button"
+              className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md font-medium hover:bg-blue-700 transition-all transform hover:scale-105 cursor-pointer"
+              onClick={() => navigate("/")}
+            >
+              Explorar notícias
             </button>
           </div>
-          ) : (
+        ) : (
           <>
             {/* Controles de selecao em massa */}
             <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
