@@ -58,6 +58,42 @@ export default function Login() {
   return (
     <main className="min-h-screen flex flex-col justify-center items-center bg-gray-50 dark:bg-gray-700 px-4 sm:px-6 lg:px-8">
       <section className="w-full max-w-md sm:max-w-lg md:max-w-xl bg-gray-900 shadow-xl rounded-lg p-6 sm:p-8 md:p-10 space-y-6 border-2 border-gray-200 dark:border-gray-950">
+        {/* Botão Voltar */}
+        <div className="flex justify-start">
+          <button
+            onClick={() => navigate("/")}
+            className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium cursor-pointer"
+            aria-label="Voltar para a página inicial"
+          >
+            <svg 
+              className="w-4 h-4" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d="M10 19l-7-7m0 0l7-7m-7 7h18" 
+              />
+            </svg>
+            Voltar
+          </button>
+        </div>
+
+        {/* Logo NewsLab clicável */}
+        <div className="text-center">
+          <Link 
+            to="/" 
+            className="inline-block transition-transform hover:scale-105 active:scale-95"
+          >
+            <span className="text-3xl sm:text-4xl font-black tracking-tight text-white">
+              News<span className="text-green-500">Lab</span>
+            </span>
+          </Link>
+        </div>
+
         <div className="text-center space-y-2">
           <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
             Login
