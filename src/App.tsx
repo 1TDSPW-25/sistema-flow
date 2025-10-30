@@ -44,7 +44,8 @@ export default function App() {
 
       {pathname === "/" && <UploadArquivosOnly />}
       <Outlet />
-      <Rodape />
+      
+      {!hideHeader && <Rodape />}
     </div>
   );
 }
