@@ -78,7 +78,7 @@ export default function Cadastro() {
         <div className="flex justify-start">
           <button
             onClick={() => navigate("/")}
-            className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium"
+            className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium cursor-pointer"
             aria-label="Voltar para a página inicial"
           >
             <svg 
